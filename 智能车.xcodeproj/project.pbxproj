@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D033371C9E3C59AB6686ED2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73EB9212159418199A4E0E0E /* libPods.a */; };
+		CE3BC7871BE863F10002CBA4 /* RequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3BC7861BE863F10002CBA4 /* RequestModel.m */; };
 		CE43340A1BE77DF1000C407D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4334091BE77DF1000C407D /* main.m */; };
 		CE43340D1BE77DF1000C407D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE43340C1BE77DF1000C407D /* AppDelegate.m */; };
 		CE4334101BE77DF1000C407D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE43340F1BE77DF1000C407D /* ViewController.m */; };
@@ -14,6 +16,8 @@
 		CE4334151BE77DF1000C407D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE4334141BE77DF1000C407D /* Images.xcassets */; };
 		CE4334181BE77DF1000C407D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4334161BE77DF1000C407D /* LaunchScreen.xib */; };
 		CE4334241BE77DF1000C407D /* ___Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4334231BE77DF1000C407D /* ___Tests.m */; };
+		CE43343C1BE79D14000C407D /* LoginEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4334361BE79D14000C407D /* LoginEntry.m */; };
+		CE43343D1BE79D14000C407D /* NetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4334391BE79D14000C407D /* NetWork.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +31,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		49B9B2A4749628EDFBFA77D6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		73EB9212159418199A4E0E0E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE3BC7851BE863F10002CBA4 /* RequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestModel.h; sourceTree = "<group>"; };
+		CE3BC7861BE863F10002CBA4 /* RequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestModel.m; sourceTree = "<group>"; };
 		CE4334041BE77DF1000C407D /* 智能车.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "智能车.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4334081BE77DF1000C407D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE4334091BE77DF1000C407D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -40,6 +48,12 @@
 		CE43341D1BE77DF1000C407D /* 智能车Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "智能车Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4334221BE77DF1000C407D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE4334231BE77DF1000C407D /* ___Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "___Tests.m"; sourceTree = "<group>"; };
+		CE4334331BE786A9000C407D /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		CE4334351BE79D14000C407D /* LoginEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginEntry.h; sourceTree = "<group>"; };
+		CE4334361BE79D14000C407D /* LoginEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginEntry.m; sourceTree = "<group>"; };
+		CE4334381BE79D14000C407D /* NetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWork.h; sourceTree = "<group>"; };
+		CE4334391BE79D14000C407D /* NetWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWork.m; sourceTree = "<group>"; };
+		DF493D1521F524A3CAE4B433 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D033371C9E3C59AB6686ED2 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +75,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E16B881A4C030B010454404 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				49B9B2A4749628EDFBFA77D6 /* Pods.debug.xcconfig */,
+				DF493D1521F524A3CAE4B433 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C92BF94D803FDF1DFD80220E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				73EB9212159418199A4E0E0E /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CE4333FB1BE77DF0000C407D = {
 			isa = PBXGroup;
 			children = (
 				CE4334061BE77DF1000C407D /* 智能车 */,
 				CE4334201BE77DF1000C407D /* 智能车Tests */,
 				CE4334051BE77DF1000C407D /* Products */,
+				4E16B881A4C030B010454404 /* Pods */,
+				C92BF94D803FDF1DFD80220E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,6 +115,11 @@
 		CE4334061BE77DF1000C407D /* 智能车 */ = {
 			isa = PBXGroup;
 			children = (
+				CE43342D1BE77E72000C407D /* Tool */,
+				CE43342E1BE77E7D000C407D /* Config */,
+				CE43342F1BE77E84000C407D /* Controller */,
+				CE4334301BE77E8C000C407D /* Model */,
+				CE4334311BE77E93000C407D /* Images */,
 				CE43340B1BE77DF1000C407D /* AppDelegate.h */,
 				CE43340C1BE77DF1000C407D /* AppDelegate.m */,
 				CE43340E1BE77DF1000C407D /* ViewController.h */,
@@ -119,6 +158,64 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		CE43342D1BE77E72000C407D /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				CE4334341BE79D14000C407D /* Login */,
+				CE4334371BE79D14000C407D /* NetWork */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		CE43342E1BE77E7D000C407D /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				CE4334331BE786A9000C407D /* PrefixHeader.pch */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		CE43342F1BE77E84000C407D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CE4334301BE77E8C000C407D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE3BC7851BE863F10002CBA4 /* RequestModel.h */,
+				CE3BC7861BE863F10002CBA4 /* RequestModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CE4334311BE77E93000C407D /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		CE4334341BE79D14000C407D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				CE4334351BE79D14000C407D /* LoginEntry.h */,
+				CE4334361BE79D14000C407D /* LoginEntry.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		CE4334371BE79D14000C407D /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				CE4334381BE79D14000C407D /* NetWork.h */,
+				CE4334391BE79D14000C407D /* NetWork.m */,
+			);
+			path = NetWork;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +223,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE4334271BE77DF1000C407D /* Build configuration list for PBXNativeTarget "智能车" */;
 			buildPhases = (
+				6D85F8B1AF3FC015B61EF077 /* Check Pods Manifest.lock */,
 				CE4334001BE77DF0000C407D /* Sources */,
 				CE4334011BE77DF0000C407D /* Frameworks */,
 				CE4334021BE77DF0000C407D /* Resources */,
+				DEBB0924CFAD3B0BDFC03E49 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -214,13 +313,49 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6D85F8B1AF3FC015B61EF077 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DEBB0924CFAD3B0BDFC03E49 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CE4334001BE77DF0000C407D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CE4334101BE77DF1000C407D /* ViewController.m in Sources */,
+				CE3BC7871BE863F10002CBA4 /* RequestModel.m in Sources */,
+				CE43343D1BE79D14000C407D /* NetWork.m in Sources */,
 				CE43340D1BE77DF1000C407D /* AppDelegate.m in Sources */,
+				CE43343C1BE79D14000C407D /* LoginEntry.m in Sources */,
 				CE43340A1BE77DF1000C407D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -345,8 +480,11 @@
 		};
 		CE4334281BE77DF1000C407D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49B9B2A4749628EDFBFA77D6 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/智能车/Config/PrefixHeader.pch";
 				INFOPLIST_FILE = "智能车/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -355,8 +493,11 @@
 		};
 		CE4334291BE77DF1000C407D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF493D1521F524A3CAE4B433 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/智能车/Config/PrefixHeader.pch";
 				INFOPLIST_FILE = "智能车/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -416,6 +557,7 @@
 				CE4334291BE77DF1000C407D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CE43342A1BE77DF1000C407D /* Build configuration list for PBXNativeTarget "智能车Tests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +566,7 @@
 				CE43342C1BE77DF1000C407D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

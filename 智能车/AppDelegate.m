@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "RequestModel.h"
 
 @interface AppDelegate ()
 
@@ -16,6 +17,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    RequestModel *model = [[RequestModel alloc] init];
+//    [model sendMessageWithPhone:@"18883867540" content:@"【益车利】a555<br>(以上为益车利给您的命令码)"];
+    [model getReplyMessagesWithPhone:@"18883867540" startTime:[NSDate distantPast] endTime:[NSDate distantFuture]];
     // Override point for customization after application launch.
     return YES;
 }

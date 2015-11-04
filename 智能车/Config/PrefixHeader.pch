@@ -1,0 +1,51 @@
+//
+//  PrefixHeader.pch
+//  MoblieCQUPT_iOS
+//
+//  Created by user on 15/8/18.
+//  Copyright (c) 2015年 Orange-W. All rights reserved.
+//
+
+#ifndef MoblieCQUPT_iOS_PrefixHeader_pch
+#define MoblieCQUPT_iOS_PrefixHeader_pch
+
+/** 公共头文件 **/
+#import <AFNetworking.h>
+#import <UIKit+AFNetworking.h>
+#import "NetWork.h"
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#if DEBUG
+    #define DDLog(xx, ...)  NSLog(@"%s(%d): " xx, __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+    #define NSLog(format, ...) do {                                                                          \
+    fprintf(stderr, "<%s : %d> | %s\n",                                           \
+    [[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String],  \
+    __LINE__, __func__);                                                        \
+    (NSLog)((format), ##__VA_ARGS__);                                           \
+    fprintf(stderr, "-------\n");                                               \
+    } while (0)
+#else
+    #define DDLog(xx, ...)     ;
+    #define NSLog(format, ...) ;
+#endif
+
+#define kColorMainColor  [UIColor colorWithRed:3/255.0 green:169/255.0 blue:244/255.0 alpha:1]
+
+#define kSizeMainScreenHeight [UIScreen mainScreen].bounds.size.height
+#define kSizeMainScreenWdth [UIScreen mainScreen].bounds.size.width
+#define kColorBarTintColor MAIN_COLOR
+#define kColorItemTintColor [UIColor blackColor]
+
+
+
+#define RGBColor(r,g,b,a) ([UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a])
+
+/** url宏 **/
+#define APPKEY @"64b56d71e0de2a45427bac0077e4a4a6"
+#define kRequestUrlSendMessage  @"http://yunpian.com/v1/sms/send.json"
+#define kRequestUrlPullStatus   @"http://yunpian.com/v1/sms/pull_status.json"
+#define kRequestUrlPullReply    @"http://yunpian.com/v1/sms/get_reply.json"
+
+
+#endif
