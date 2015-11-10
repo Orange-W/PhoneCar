@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "RequestModel.h"
+#import "RequestBaseModel.h"
+#import "PullCenterModel.h"
 
 @interface AppDelegate ()
 
@@ -17,9 +18,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    RequestModel *model = [[RequestModel alloc] init];
-//    [model sendMessageWithPhone:@"18883867540" content:@"【益车利】a555<br>(以上为益车利给您的命令码)"];
-    [model getReplyMessagesWithPhone:@"18883867540" startTime:[NSDate distantPast] endTime:[NSDate distantFuture]];
+    [NSTimeZone setDefaultTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
+//    RequestBaseModel *model = [[RequestBaseModel alloc] init];
+
+//    [model sendMessageWithPhone:@"18883867540" content:@"【益车利】a5551\n(以上为益车利给您的车载设备的命令,命令类型号: {1})"];
+
+//    [model getReplyMessagesWithPhone:@"18883867540" startTime:[NSDate distantPast] endTime:[NSDate distantFuture]];
     // Override point for customization after application launch.
     return YES;
 }

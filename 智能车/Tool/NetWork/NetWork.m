@@ -26,6 +26,7 @@
     
     NSOperationQueue *operationQueue = manager.operationQueue;
     
+    
     [manager.reachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
         switch (status) {
             case AFNetworkReachabilityStatusReachableViaWWAN:
@@ -59,7 +60,7 @@
                  // WithErrorCodeBlock: (ErrorCode) errorBlock
                     WithFailureBlock: (FailureFunction) failureFunction
 {
-
+    
     AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] init];
 //    manager = [self addCommonHeader:manager withUserToken:nil];//header
     AFHTTPRequestOperation *op = [manager GET:requestURLString parameters:parameter success:^(AFHTTPRequestOperation *operation, id responseObject) {
