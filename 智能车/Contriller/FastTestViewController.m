@@ -43,8 +43,13 @@
     
     _pullCenter = [PullCenterModel sharePullCenter];
     _pullCenter.showReturnLabel = self.showReturnLabel;
-    _pullCenter.pullPhone = kTestPhone;
+    NSString *pullPhone = [[NSUserDefaults standardUserDefaults] objectForKey:@"pullPhone"];
+    if (!pullPhone) {
+        pullPhone = kTestPhone;
+    }
+    _pullCenter.pullPhone = pullPhone;
     [_pullCenter pullLoopStart];
+
 //    MBProgressHUD *HUD = [MBProgressHUD showHUDAddedTo:self.view animated:NO];
 //    HUD.labelText = @"请求中";
 //    HUD.detailsLabelText = @"剩余时间(60s)";
@@ -110,7 +115,7 @@
         _showPhoneLabel.text = [NSString stringWithFormat:@"改绑成功:%@",_phoneTextField.text];
         _pullCenter.pullPhone = [_phoneTextField.text mutableCopy];
         _phoneTextField.text = @"";
-        
+        [[NSUserDefaults standardUserDefaults] setObject:_pullCenter.pullPhone forKey:@"pullPhone"];
     }
 }
 
@@ -118,6 +123,12 @@
     [_phoneTextField resignFirstResponder];
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    _showPhoneLabel.text = [NSString stringWithFormat:@"当前绑定:%@",_pullCenter.pullPhone];
+    _pullCenter = [PullCenterModel sharePullCenter];
+    
+}
 
 
 

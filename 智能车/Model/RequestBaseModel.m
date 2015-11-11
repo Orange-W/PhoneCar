@@ -69,7 +69,7 @@ static const NSInteger replyPageSize = 20;
 }
 
 - (void) failureTodo:(NSInteger)returnCode{
-    NSLog(@"错误码:%ld",returnCode);
+    NSLog(@"错误码:%ld",(long)returnCode);
 }
 
 

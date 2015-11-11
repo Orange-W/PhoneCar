@@ -279,7 +279,7 @@ static const unsigned int  outTimeMax = 120;
 - (MBProgressHUD *)showProgresstoView:(UIView *)view {
     // 快速显示一个提示信息
     MBProgressHUD *HUD = [MBProgressHUD showHUDAddedTo:view animated:YES];
-    HUD.labelText = @"请求中";
+    HUD.labelText = @"命令已发送,等待回复";
     // 隐藏时候从父控件中移除
     HUD.removeFromSuperViewOnHide = YES;
     
