@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CE4334031BE77DF0000C407D"
-               BuildableName = "&#x667a;&#x80fd;&#x8f66;.app"
-               BlueprintName = "&#x667a;&#x80fd;&#x8f66;"
-               ReferencedContainer = "container:&#x667a;&#x80fd;&#x8f66;.xcodeproj">
+               BuildableName = "YCLCar.app"
+               BlueprintName = "YCLCar"
+               ReferencedContainer = "container:YCLCar.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CE43341C1BE77DF1000C407D"
-               BuildableName = "&#x667a;&#x80fd;&#x8f66;Tests.xctest"
-               BlueprintName = "&#x667a;&#x80fd;&#x8f66;Tests"
-               ReferencedContainer = "container:&#x667a;&#x80fd;&#x8f66;.xcodeproj">
+               BuildableName = "YCLCarTests.xctest"
+               BlueprintName = "YCLCarTests"
+               ReferencedContainer = "container:YCLCar.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CE43341C1BE77DF1000C407D"
-               BuildableName = "&#x667a;&#x80fd;&#x8f66;Tests.xctest"
-               BlueprintName = "&#x667a;&#x80fd;&#x8f66;Tests"
-               ReferencedContainer = "container:&#x667a;&#x80fd;&#x8f66;.xcodeproj">
+               BuildableName = "YCLCarTests.xctest"
+               BlueprintName = "YCLCarTests"
+               ReferencedContainer = "container:YCLCar.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CE4334031BE77DF0000C407D"
-            BuildableName = "&#x667a;&#x80fd;&#x8f66;.app"
-            BlueprintName = "&#x667a;&#x80fd;&#x8f66;"
-            ReferencedContainer = "container:&#x667a;&#x80fd;&#x8f66;.xcodeproj">
+            BuildableName = "YCLCar.app"
+            BlueprintName = "YCLCar"
+            ReferencedContainer = "container:YCLCar.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -77,9 +77,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CE4334031BE77DF0000C407D"
-            BuildableName = "&#x667a;&#x80fd;&#x8f66;.app"
-            BlueprintName = "&#x667a;&#x80fd;&#x8f66;"
-            ReferencedContainer = "container:&#x667a;&#x80fd;&#x8f66;.xcodeproj">
+            BuildableName = "YCLCar.app"
+            BlueprintName = "YCLCar"
+            ReferencedContainer = "container:YCLCar.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -96,9 +96,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CE4334031BE77DF0000C407D"
-            BuildableName = "&#x667a;&#x80fd;&#x8f66;.app"
-            BlueprintName = "&#x667a;&#x80fd;&#x8f66;"
-            ReferencedContainer = "container:&#x667a;&#x80fd;&#x8f66;.xcodeproj">
+            BuildableName = "YCLCar.app"
+            BlueprintName = "YCLCar"
+            ReferencedContainer = "container:YCLCar.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

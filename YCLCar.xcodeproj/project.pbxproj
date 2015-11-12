@@ -45,7 +45,7 @@
 		CE1165B71BEF41EE008C2FC6 /* YCLCarEventUnlockModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCLCarEventUnlockModel.m; sourceTree = "<group>"; };
 		CE3BC7851BE863F10002CBA4 /* RequestBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestBaseModel.h; sourceTree = "<group>"; };
 		CE3BC7861BE863F10002CBA4 /* RequestBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestBaseModel.m; sourceTree = "<group>"; };
-		CE4334041BE77DF1000C407D /* 智能车.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "智能车.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE4334041BE77DF1000C407D /* YCLCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YCLCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4334081BE77DF1000C407D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE4334091BE77DF1000C407D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CE43340B1BE77DF1000C407D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 		CE4334121BE77DF1000C407D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE4334141BE77DF1000C407D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CE4334171BE77DF1000C407D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		CE43341D1BE77DF1000C407D /* 智能车Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "智能车Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE43341D1BE77DF1000C407D /* YCLCarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YCLCarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4334221BE77DF1000C407D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE4334231BE77DF1000C407D /* ___Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "___Tests.m"; sourceTree = "<group>"; };
 		CE4334331BE786A9000C407D /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -139,8 +139,8 @@
 		CE4334051BE77DF1000C407D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CE4334041BE77DF1000C407D /* 智能车.app */,
-				CE43341D1BE77DF1000C407D /* 智能车Tests.xctest */,
+				CE4334041BE77DF1000C407D /* YCLCar.app */,
+				CE43341D1BE77DF1000C407D /* YCLCarTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -307,9 +307,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CE4334031BE77DF0000C407D /* 智能车 */ = {
+		CE4334031BE77DF0000C407D /* YCLCar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CE4334271BE77DF1000C407D /* Build configuration list for PBXNativeTarget "智能车" */;
+			buildConfigurationList = CE4334271BE77DF1000C407D /* Build configuration list for PBXNativeTarget "YCLCar" */;
 			buildPhases = (
 				6D85F8B1AF3FC015B61EF077 /* Check Pods Manifest.lock */,
 				CE4334001BE77DF0000C407D /* Sources */,
@@ -321,14 +321,14 @@
 			);
 			dependencies = (
 			);
-			name = "智能车";
+			name = YCLCar;
 			productName = "智能车";
-			productReference = CE4334041BE77DF1000C407D /* 智能车.app */;
+			productReference = CE4334041BE77DF1000C407D /* YCLCar.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CE43341C1BE77DF1000C407D /* 智能车Tests */ = {
+		CE43341C1BE77DF1000C407D /* YCLCarTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CE43342A1BE77DF1000C407D /* Build configuration list for PBXNativeTarget "智能车Tests" */;
+			buildConfigurationList = CE43342A1BE77DF1000C407D /* Build configuration list for PBXNativeTarget "YCLCarTests" */;
 			buildPhases = (
 				CE4334191BE77DF1000C407D /* Sources */,
 				CE43341A1BE77DF1000C407D /* Frameworks */,
@@ -339,9 +339,9 @@
 			dependencies = (
 				CE43341F1BE77DF1000C407D /* PBXTargetDependency */,
 			);
-			name = "智能车Tests";
+			name = YCLCarTests;
 			productName = "智能车Tests";
-			productReference = CE43341D1BE77DF1000C407D /* 智能车Tests.xctest */;
+			productReference = CE43341D1BE77DF1000C407D /* YCLCarTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -362,7 +362,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CE4333FF1BE77DF0000C407D /* Build configuration list for PBXProject "智能车" */;
+			buildConfigurationList = CE4333FF1BE77DF0000C407D /* Build configuration list for PBXProject "YCLCar" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -375,8 +375,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CE4334031BE77DF0000C407D /* 智能车 */,
-				CE43341C1BE77DF1000C407D /* 智能车Tests */,
+				CE4334031BE77DF0000C407D /* YCLCar */,
+				CE43341C1BE77DF1000C407D /* YCLCarTests */,
 			);
 		};
 /* End PBXProject section */
@@ -469,7 +469,7 @@
 /* Begin PBXTargetDependency section */
 		CE43341F1BE77DF1000C407D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CE4334031BE77DF0000C407D /* 智能车 */;
+			target = CE4334031BE77DF0000C407D /* YCLCar */;
 			targetProxy = CE43341E1BE77DF1000C407D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -584,7 +584,7 @@
 				INFOPLIST_FILE = "智能车/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = YCLCar;
 			};
 			name = Debug;
 		};
@@ -598,7 +598,7 @@
 				INFOPLIST_FILE = "智能车/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = YCLCar;
 			};
 			name = Release;
 		};
@@ -616,7 +616,7 @@
 				);
 				INFOPLIST_FILE = "智能车Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = YCLCarTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/智能车.app/智能车";
 			};
 			name = Debug;
@@ -631,7 +631,7 @@
 				);
 				INFOPLIST_FILE = "智能车Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = YCLCarTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/智能车.app/智能车";
 			};
 			name = Release;
@@ -639,7 +639,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CE4333FF1BE77DF0000C407D /* Build configuration list for PBXProject "智能车" */ = {
+		CE4333FF1BE77DF0000C407D /* Build configuration list for PBXProject "YCLCar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CE4334251BE77DF1000C407D /* Debug */,
@@ -648,7 +648,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CE4334271BE77DF1000C407D /* Build configuration list for PBXNativeTarget "智能车" */ = {
+		CE4334271BE77DF1000C407D /* Build configuration list for PBXNativeTarget "YCLCar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CE4334281BE77DF1000C407D /* Debug */,
@@ -657,7 +657,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CE43342A1BE77DF1000C407D /* Build configuration list for PBXNativeTarget "智能车Tests" */ = {
+		CE43342A1BE77DF1000C407D /* Build configuration list for PBXNativeTarget "YCLCarTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CE43342B1BE77DF1000C407D /* Debug */,
