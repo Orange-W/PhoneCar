@@ -18,7 +18,6 @@
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 #if DEBUG
-    #define DDLog(xx, ...)  NSLog(@"%s(%d): " xx, __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
     #define NSLog(format, ...) do {                                                                          \
     fprintf(stderr, "<%s : %d> | %s\n",                                           \
     [[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String],  \
