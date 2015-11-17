@@ -7,6 +7,8 @@
 //
 
 #import "PullCenterModel.h"
+#import "SetPasswordViewController.h"
+#import "FastTestViewController.h"
 
 @interface PullCenterModel()
 @property (strong, nonatomic) NSDate *pullInitTime;
@@ -30,7 +32,6 @@ static const unsigned int  outTimeMax = 120;
     [self registEvent:YCLEventName forView:(UIView *)view];
     switch (YCLEventName) {
         case YCLCarEventUnlock:
-
             [self.unlockModel sendMessage];
             break;
         case YCLCarEventLock:
@@ -41,6 +42,9 @@ static const unsigned int  outTimeMax = 120;
             break;
         case YCLCarEventCloseAir:
             [self.closeAirModel sendMessage];
+            break;
+        case YCLCarEventMatchPhone:
+            [self.matchModel sendMessage];
             break;
         default:
             NSLog(@"wrong");
@@ -54,7 +58,7 @@ static const unsigned int  outTimeMax = 120;
 - (void)registEvent:(YCLPullEvent) YCLEventName forView:(UIView *)view{
     [_pullQueueIdSet addObject:@(YCLEventName)];
     _pullInitTime = [NSDate date];
-    _pullEventStartTimeArray[YCLEventName] = [NSDate date];
+//    _pullEventStartTimeArray[YCLEventName] = [NSDate date];
     _outTime = outTimeMax;
     [self showProgresstoView:view];
 }
@@ -97,9 +101,9 @@ static const unsigned int  outTimeMax = 120;
     }
     _earilyPullTime = [NSDate date];
     
-    for (NSDate *compareTime in _pullEventStartTimeArray) {
-        _earilyPullTime = [_earilyPullTime earlierDate:compareTime];
-    }
+//    for (NSDate *compareTime in _pullEventStartTimeArray) {
+//        _earilyPullTime = [_earilyPullTime earlierDate:compareTime];
+//    }
     NSLog(@"%@",[_pullInitTime description]);
 #warning 记得改时间,测试用
     [self getReplyMessagesWithPhone:_pullPhone
@@ -121,8 +125,9 @@ static const unsigned int  outTimeMax = 120;
 
 -(void)sucessToDo:(NSDictionary *)returnValue{
     NSArray *textArray = returnValue[@"sms_reply"];
-    
-    for (int i=0; i<[_pullEventStartTimeArray count]; i++) {
+#warning 测试
+    textArray = @[@{@"text":@"18883867540"}];
+    for (int i=0; i<YCLCarEventEnd; i++) {
         if ([_pullQueueIdSet containsObject:@(i)]) {
 #warning 这里是单线
             [self singleLineDealWithPullTextArray:textArray];
@@ -143,12 +148,12 @@ static const unsigned int  outTimeMax = 120;
     NSString *codeString = [textArray firstObject][@"text"];
     if (!codeString) {
         NSLog(@"本次无数据");
-        return 0;
+        return NO;
     }
-    for (int i=0;i<_pullEventStartTimeArray.count;i++) {
+    for (int i=0;i<YCLCarEventEnd;i++) {
         if ([_pullQueueIdSet containsObject:@(i)]) {
-            NSString *returnString=@"";
             NSString *description = @"";
+            NSString *returnString=@"";
             switch (i) {
                 case YCLCarEventUnlock:
                     description = [self.unlockModel description];
@@ -162,17 +167,37 @@ static const unsigned int  outTimeMax = 120;
                 case YCLCarEventCloseAir:
                     description = [self.closeAirModel description];
                     break;
+                case YCLCarEventMatchPhone:
+                    returnString = [self.matchModel analysisCodeWithString:codeString];
+                    [self.progressHUD setLabelText:returnString];
+                    [self.progressHUD setDetailsLabelText:@""];
+                    [self.progressHUD hide:YES afterDelay:3];
+                    [_pullQueueIdSet removeAllObjects];
+                    if ([returnString isEqualToString:@"匹配完成"]) {
+#warning 下一个页面
+                        UIStoryboard *storyBord = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+                        SetPasswordViewController *setPasswordViewController = [storyBord instantiateViewControllerWithIdentifier:@"SetPasswordStoryBord"];
+                        [self.localViewController presentViewController:setPasswordViewController animated:YES completion:nil];
+                        return YES;
+                    }
+                    NSLog(@"匹配失败!!");
+                    return NO;
+                    break;
                 default:
                     NSLog(@"wrong");
                     break;
             }
+            
+            
             returnString = [self.unlockModel analysisCodeWithString:codeString];
             if (returnString) {
-                self.showReturnLabel.text = [NSString stringWithFormat:@"%@:%@",description,returnString];
+                FastTestViewController *fastViewController = (FastTestViewController *)self.localViewController;
+                fastViewController.showReturnLabel.text = [NSString stringWithFormat:@"%@:%@",description,returnString];
                 [self.progressHUD setLabelText:@"请求成功!"];
                 [self.progressHUD setDetailsLabelText:@""];
                 [self.progressHUD hide:YES afterDelay:3];
                 [_pullQueueIdSet removeAllObjects];
+                return YES;
             }
     
         }
@@ -180,20 +205,6 @@ static const unsigned int  outTimeMax = 120;
     return NO;
 }
 
-//- (YCLPullEvent)dealWithPullTextArray:(NSArray *)textArray{
-////    NSLog(@"%@",textArray);
-////    static dispatch_once_t onceToken;
-////        dispatch_once(&onceToken, ^{
-//    for (NSDictionary *detailArray in textArray) {
-//        NSLog(@"%@",detailArray[@"text"]);
-//        NSString *textString = detailArray[@"text"];
-//        
-//
-//        
-//    }
-////        });
-//    return 0;
-//}
 
 - (YCLCarEventUnlockModel *)unlockModel{
     if (!_unlockModel) {
@@ -218,6 +229,12 @@ static const unsigned int  outTimeMax = 120;
         _closeAirModel = [[YCLCarEventCloseAirModel alloc] init];
     }
     return  _closeAirModel;
+}
+- (YCLMatchPhoneModel *)matchModel{
+    if (!_matchModel) {
+        _matchModel = [[YCLMatchPhoneModel alloc] init];
+    }
+    return  _matchModel;
 }
 
 #pragma mark -
@@ -255,7 +272,7 @@ static const unsigned int  outTimeMax = 120;
             sharedInstance = [super allocWithZone:zone];
             sharedInstance.pullQueueIdSet = [[NSMutableSet alloc] init];
             NSDate *now = [NSDate distantFuture];
-            sharedInstance.pullEventStartTimeArray = [NSMutableArray arrayWithObjects:now,now,now,now,now,now,now,now,now,now, nil];
+//            sharedInstance.pullEventStartTimeArray = [NSMutableArray arrayWithObjects:now,now,now,now,now,now,now,now,now,now, nil];
             sharedInstance.pullPhone = @"";
             return sharedInstance;
         }

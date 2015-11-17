@@ -10,19 +10,13 @@
 
 @interface YCLCarEventBaseModel : RequestBaseModel
 
-- (NSArray *)configArray;
-- (NSString *)code;
+- (NSString *)pullPhone;//返回当前绑定手机
+- (NSArray *)configArray;//配置数组
+- (NSString *)code;//命令码
 
-- (NSString *) analysisCodeWithString:(NSString *)codeString;
-- (void)sendMessage;
+- (NSString *) analysisCodeWithString:(NSString *)codeString;//解析返回值
+- (void)sendMessage;//发送命令
 
-/**
- *  @author Orange-W, 15-11-10 13:11:22
- *
- *  @brief  解析函数
- *  @param codeString  返回码
- *  @param configArray 配置数组
- *  @return 结果集
- */
-- (NSString *) infoStringFromCodeString:(NSString *)codeString andConfigArray:(NSArray *)configArray;
+
+
 @end

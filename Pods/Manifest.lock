@@ -22,6 +22,7 @@ PODS:
     - AFNetworking/NSURLSession
   - MBProgressHUD (0.9.1)
   - MJRefresh (2.3.2)
+  - MYIntroduction (0.1.1)
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
@@ -29,15 +30,26 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
-  - MBProgressHUD (~> 0.9.1)
+  - MBProgressHUD
   - MJRefresh (~> 2.3.2)
+  - MYIntroduction (from `https://github.com/MatthewYork/iPhone-IntroductionTutorial.git`)
   - SDWebImage
-  - UIColor+BFPaperColors (~> 1.7.1)
+  - UIColor+BFPaperColors
+
+EXTERNAL SOURCES:
+  MYIntroduction:
+    :git: https://github.com/MatthewYork/iPhone-IntroductionTutorial.git
+
+CHECKOUT OPTIONS:
+  MYIntroduction:
+    :commit: 4e44cf359bf654edf756047ee9da0f77d086ec2d
+    :git: https://github.com/MatthewYork/iPhone-IntroductionTutorial.git
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   MJRefresh: 0f6f5e8387970607c26080b44058b229a23065d7
+  MYIntroduction: f2c9a6b1e4e39cf82c3f123625cba89c64299359
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   UIColor+BFPaperColors: 03101fe6c10ed00c6daae7c26553f1de41500853
 

@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface FastTestViewController : UIViewController
-
+@property (weak, nonatomic) IBOutlet UILabel *showReturnLabel;
 @end

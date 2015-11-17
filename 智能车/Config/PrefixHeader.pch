@@ -25,9 +25,13 @@
     (NSLog)((format), ##__VA_ARGS__);                                           \
     fprintf(stderr, "-------\n");                                               \
     } while (0)
+
+    #define kTestPhone @"18883867540"
+
 #else
     #define DDLog(xx, ...)     ;
     #define NSLog(format, ...) ;
+    #define kTestPhone @""
 #endif
 
 #define kColorMainColor  [UIColor colorWithRed:3/255.0 green:169/255.0 blue:244/255.0 alpha:1]
@@ -36,8 +40,10 @@
 #define kSizeMainScreenWdth [UIScreen mainScreen].bounds.size.width
 #define kColorBarTintColor MAIN_COLOR
 #define kColorItemTintColor [UIColor blackColor]
+#define kPasswordNumberSet @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+#define kApplicationUserDefaultKeyPullPhone @"pullPhone"
+#define kApplicationUserDefaultKeyPassword @"appPassword"
 
-#define kTestPhone @"18883867540"
 
 
 #define RGBColor(r,g,b,a) ([UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a])

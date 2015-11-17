@@ -11,6 +11,7 @@
 #import "YCLCarEventLockModel.h"
 #import "YCLCarEventOpenAirModel.h"
 #import "YCLCarEventCloseAirModel.h"
+#import "YCLMatchPhoneModel.h"
 
 typedef NS_ENUM(NSInteger,YCLPullEvent){
     YCLCarEventUnlock = 1,  //开锁
@@ -18,19 +19,22 @@ typedef NS_ENUM(NSInteger,YCLPullEvent){
     YCLCarEventOpenAir,     //开空调
     YCLCarEventCloseAir,    //关空调
     
+    YCLCarEventMatchPhone = 11,
+    YCLCarEventEnd,
+    
 };
 
 
 @interface PullCenterModel : RequestBaseModel
 
-@property (strong, nonatomic) UILabel *showReturnLabel;
+@property (strong, nonatomic) UIViewController *localViewController;
 @property (strong, nonatomic) MBProgressHUD *progressHUD;
 @property (assign, atomic) NSInteger outTime;
 @property (strong, nonatomic) YCLCarEventUnlockModel *unlockModel;
 @property (strong, nonatomic) YCLCarEventLockModel *lockModel;
 @property (strong, nonatomic) YCLCarEventOpenAirModel *openAirModel;
 @property (strong, nonatomic) YCLCarEventCloseAirModel *closeAirModel;
-
+@property (strong, nonatomic) YCLMatchPhoneModel *matchModel;
 
 @property (copy, atomic)NSString *pullPhone;
 @property (strong, atomic)NSDate* earilyPullTime;
@@ -43,4 +47,6 @@ typedef NS_ENUM(NSInteger,YCLPullEvent){
 
 - (BOOL) addPullEvent:(YCLPullEvent) YCLEventName forView:(UIView *)view;
 - (void)pullLoopStart;
+
+- (MBProgressHUD *)showProgresstoView:(UIView *)view ;
 @end

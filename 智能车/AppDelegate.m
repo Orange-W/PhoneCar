@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "RequestBaseModel.h"
 #import "PullCenterModel.h"
 
 @interface AppDelegate ()
@@ -19,6 +18,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [NSTimeZone setDefaultTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
+   
+    _pullCenter = [PullCenterModel sharePullCenter];
+    NSString *pullPhone = [[NSUserDefaults standardUserDefaults] objectForKey:@"pullPhone"];
+    if (!pullPhone) {
+        pullPhone = kTestPhone;
+    }
+    _pullCenter.pullPhone = pullPhone;
+    [_pullCenter pullLoopStart];
+    
+    
 //    RequestBaseModel *model = [[RequestBaseModel alloc] init];
 
 //    [model sendMessageWithPhone:@"18883867540" content:@"【益车利】a5551\n(以上为益车利给您的车载设备的命令,命令类型号: {1})"];

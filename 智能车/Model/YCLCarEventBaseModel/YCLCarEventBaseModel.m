@@ -31,8 +31,7 @@
 }
 
 - (void)sendMessage{
-    PullCenterModel *phoneModel = [PullCenterModel sharePullCenter] ;
-    NSString *phoneNumber = [phoneModel pullPhone];
+    NSString *phoneNumber = [self pullPhone];
     NSLog(@"%@",[self description]);
     [self sendMessageWithPhone:phoneNumber content:[NSString stringWithFormat:@"【益车利】%@\n(以上为益车利给您的车载设备的命令,命令类型号: {1})",self.code]];
 }
@@ -68,4 +67,10 @@
              ];
 }
 - (NSString *)code{return @"0";}
+
+- (NSString *)pullPhone{
+    PullCenterModel *phoneModel = [PullCenterModel sharePullCenter];
+    return [phoneModel pullPhone];
+}
+
 @end

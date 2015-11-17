@@ -8,6 +8,8 @@
 
 #import "FastTestViewController.h"
 #import "PullCenterModel.h"
+#import <MYIntroductionView.h>
+
 @interface FastTestViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *phoneTextField;
 @property (weak, nonatomic) IBOutlet UIButton *changePhoneButton;
@@ -19,19 +21,20 @@
 @property (weak, nonatomic) IBOutlet UIButton *closeButton;
 
 @property (weak, nonatomic) IBOutlet UIButton *sendMessageButton;
-@property (weak, nonatomic) IBOutlet UILabel *showReturnLabel;
+
 
 @property (strong, nonatomic) NSString *nowPhone;
 @property (strong, nonatomic) NSString *showReturn;
 
-@property (strong, nonatomic)PullCenterModel *pullCenter;
+@property (weak, nonatomic)PullCenterModel *pullCenter;
 @end
 
 @implementation FastTestViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
+    _pullCenter = [PullCenterModel sharePullCenter];
+    _pullCenter.localViewController = self;
     
     
 //    MBProgressHUD *HUD = [[MBProgressHUD alloc] initWithView:self.view];
@@ -41,15 +44,7 @@
 //    HUD.labelText = @"Loading";
 //    [HUD showWhileExecuting:@selector(myProgressTask:) onTarget:self withObject:nil animated:YES];
     
-    _pullCenter = [PullCenterModel sharePullCenter];
-    _pullCenter.showReturnLabel = self.showReturnLabel;
-    NSString *pullPhone = [[NSUserDefaults standardUserDefaults] objectForKey:@"pullPhone"];
-    if (!pullPhone) {
-        pullPhone = kTestPhone;
-    }
-    _pullCenter.pullPhone = pullPhone;
-    [_pullCenter pullLoopStart];
-
+   
 //    MBProgressHUD *HUD = [MBProgressHUD showHUDAddedTo:self.view animated:NO];
 //    HUD.labelText = @"请求中";
 //    HUD.detailsLabelText = @"剩余时间(60s)";
@@ -72,7 +67,38 @@
     
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    _showPhoneLabel.text = [NSString stringWithFormat:@"当前绑定:%@",_pullCenter.pullPhone];
+    _pullCenter = [PullCenterModel sharePullCenter];
+    
+    //读取沙盒数据
+    NSUserDefaults * settings1 = [NSUserDefaults standardUserDefaults];
+    NSString *key1 = [NSString stringWithFormat:@"isFirstLaunch"];
+    BOOL value = [settings1 boolForKey:key1];
+//    if (!value)  //如果没有数据
+//    {
+        //STEP 1 Construct Panels
+        MYIntroductionPanel *panel = [[MYIntroductionPanel alloc] initWithimage:[UIImage imageNamed:@"default.jpg"] title:@"第一步" description:@"欢迎使用益车利,使用前请先匹配您的设备号"];
+        
+        //You may also add in a title for each panel
+        MYIntroductionPanel *panel2 = [[MYIntroductionPanel alloc] initWithimage:[UIImage imageNamed:@"indexbc.png"] title:@"第二步" description:@"为您的 app 谁定开启密码"];
+        /*A more customized version*/
+        MYIntroductionView *introductionView = [[MYIntroductionView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) headerText:@"初始化设置" panels:@[panel, panel2] languageDirection:MYLanguageDirectionLeftToRight];
+        [introductionView setBackgroundImage:[UIImage imageNamed:@"112.png"]];
+        
+    
+        
+        //STEP 3: Show introduction view
+        [introductionView showInView:self.view animateDuration:1];
 
+        //写入数据
+//        NSUserDefaults * setting = [NSUserDefaults standardUserDefaults];
+//        NSString * key = [NSString stringWithFormat:@"isFirstLaunch"];
+//        [setting setBool:YES forKey:key];
+//        [setting synchronize];
+//    }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -123,12 +149,6 @@
     [_phoneTextField resignFirstResponder];
 }
 
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    _showPhoneLabel.text = [NSString stringWithFormat:@"当前绑定:%@",_pullCenter.pullPhone];
-    _pullCenter = [PullCenterModel sharePullCenter];
-    
-}
 
 
 

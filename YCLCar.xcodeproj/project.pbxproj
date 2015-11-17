@@ -10,33 +10,45 @@
 		0D033371C9E3C59AB6686ED2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73EB9212159418199A4E0E0E /* libPods.a */; };
 		CE1165B81BEF41EE008C2FC6 /* YCLCarEventUnlockModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1165B71BEF41EE008C2FC6 /* YCLCarEventUnlockModel.m */; };
 		CE3BC7871BE863F10002CBA4 /* RequestBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3BC7861BE863F10002CBA4 /* RequestBaseModel.m */; };
+		CE42DCCB1BF8C550007363FD /* SetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE42DCCA1BF8C550007363FD /* SetPasswordViewController.m */; };
 		CE43340A1BE77DF1000C407D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4334091BE77DF1000C407D /* main.m */; };
 		CE43340D1BE77DF1000C407D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE43340C1BE77DF1000C407D /* AppDelegate.m */; };
 		CE4334101BE77DF1000C407D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE43340F1BE77DF1000C407D /* ViewController.m */; };
 		CE4334131BE77DF1000C407D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4334111BE77DF1000C407D /* Main.storyboard */; };
 		CE4334151BE77DF1000C407D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE4334141BE77DF1000C407D /* Images.xcassets */; };
 		CE4334181BE77DF1000C407D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4334161BE77DF1000C407D /* LaunchScreen.xib */; };
-		CE4334241BE77DF1000C407D /* ___Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4334231BE77DF1000C407D /* ___Tests.m */; };
 		CE43343C1BE79D14000C407D /* LoginEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4334361BE79D14000C407D /* LoginEntry.m */; };
 		CE43343D1BE79D14000C407D /* NetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4334391BE79D14000C407D /* NetWork.m */; };
-		CE4FDEC91BEB34D800AC7601 /* FastTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4FDEC81BEB34D800AC7601 /* FastTestViewController.m */; };
+		CE566B811BF66A5300DBB839 /* 112.png in Resources */ = {isa = PBXBuildFile; fileRef = CE566B801BF66A5300DBB839 /* 112.png */; };
+		CE566B831BF6702500DBB839 /* default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE566B821BF6702500DBB839 /* default.jpg */; };
+		CE566B851BF6703900DBB839 /* indexbc.png in Resources */ = {isa = PBXBuildFile; fileRef = CE566B841BF6703900DBB839 /* indexbc.png */; };
 		CE79716A1BF1B90500358D57 /* YCLCarEventLockModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7971691BF1B90500358D57 /* YCLCarEventLockModel.m */; };
 		CE79716E1BF1BE9B00358D57 /* YCLCarEventBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE79716D1BF1BE9B00358D57 /* YCLCarEventBaseModel.m */; };
 		CE7971731BF1CAF100358D57 /* YCLCarEventCloseAirModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7971721BF1CAF100358D57 /* YCLCarEventCloseAirModel.m */; };
 		CE7971761BF1CB0900358D57 /* YCLCarEventOpenAirModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7971751BF1CB0900358D57 /* YCLCarEventOpenAirModel.m */; };
 		CE7F663E1BEC8156006EA7E9 /* PullCenterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7F663D1BEC8156006EA7E9 /* PullCenterModel.m */; };
+		CEA24BFA1BF72B8A001BF0A5 /* YCLMatchPhoneModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA24BF91BF72B8A001BF0A5 /* YCLMatchPhoneModel.m */; };
+		CEB70A511BFB973E00FC3163 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB70A3F1BFB973E00FC3163 /* logo.png */; };
+		CEB70A521BFB973E00FC3163 /* app_default.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB70A411BFB973E00FC3163 /* app_default.png */; };
+		CEB70A531BFB973E00FC3163 /* car_status.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB70A421BFB973E00FC3163 /* car_status.png */; };
+		CEB70A541BFB973E00FC3163 /* ic_launcher.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB70A431BFB973E00FC3163 /* ic_launcher.png */; };
+		CEB70A551BFB973E00FC3163 /* kongdiao.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB70A441BFB973E00FC3163 /* kongdiao.png */; };
+		CEB70A561BFB973E00FC3163 /* kongdiao_off.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB70A451BFB973E00FC3163 /* kongdiao_off.png */; };
+		CEB70A571BFB973E00FC3163 /* lockclosed.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB70A461BFB973E00FC3163 /* lockclosed.png */; };
+		CEB70A581BFB973E00FC3163 /* lockopen.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB70A471BFB973E00FC3163 /* lockopen.png */; };
+		CEB70A591BFB973E00FC3163 /* more.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB70A481BFB973E00FC3163 /* more.png */; };
+		CEB70A5A1BFB973E00FC3163 /* power_off.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB70A491BFB973E00FC3163 /* power_off.png */; };
+		CEB70A5B1BFB973E00FC3163 /* power_on.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB70A4A1BFB973E00FC3163 /* power_on.png */; };
+		CEB70A5C1BFB973E00FC3163 /* search_car.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB70A4B1BFB973E00FC3163 /* search_car.png */; };
+		CEB70A5D1BFB973E00FC3163 /* search_car_voice_off.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB70A4C1BFB973E00FC3163 /* search_car_voice_off.png */; };
+		CEB70A5E1BFB973E00FC3163 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB70A4D1BFB973E00FC3163 /* settings.png */; };
+		CEB70A5F1BFB973E00FC3163 /* slider.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB70A4E1BFB973E00FC3163 /* slider.png */; };
+		CEB70A601BFB973E00FC3163 /* slider_control.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB70A4F1BFB973E00FC3163 /* slider_control.png */; };
+		CEB70A611BFB973E00FC3163 /* xiansu.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB70A501BFB973E00FC3163 /* xiansu.png */; };
+		CEB70A701BFB981C00FC3163 /* FastTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB70A6C1BFB981C00FC3163 /* FastTestViewController.m */; };
+		CEB70A711BFB981C00FC3163 /* MatchPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB70A6F1BFB981C00FC3163 /* MatchPhoneViewController.m */; };
 		CEE614761BEA32B8004873AA /* MatchPhoneModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE614751BEA32B8004873AA /* MatchPhoneModel.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		CE43341E1BE77DF1000C407D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CE4333FC1BE77DF0000C407D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CE4334031BE77DF0000C407D;
-			remoteInfo = "智能车";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		49B9B2A4749628EDFBFA77D6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -45,6 +57,8 @@
 		CE1165B71BEF41EE008C2FC6 /* YCLCarEventUnlockModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCLCarEventUnlockModel.m; sourceTree = "<group>"; };
 		CE3BC7851BE863F10002CBA4 /* RequestBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestBaseModel.h; sourceTree = "<group>"; };
 		CE3BC7861BE863F10002CBA4 /* RequestBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestBaseModel.m; sourceTree = "<group>"; };
+		CE42DCC91BF8C550007363FD /* SetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetPasswordViewController.h; sourceTree = "<group>"; };
+		CE42DCCA1BF8C550007363FD /* SetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetPasswordViewController.m; sourceTree = "<group>"; };
 		CE4334041BE77DF1000C407D /* YCLCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YCLCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4334081BE77DF1000C407D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE4334091BE77DF1000C407D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -55,7 +69,6 @@
 		CE4334121BE77DF1000C407D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE4334141BE77DF1000C407D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CE4334171BE77DF1000C407D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		CE43341D1BE77DF1000C407D /* YCLCarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YCLCarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4334221BE77DF1000C407D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE4334231BE77DF1000C407D /* ___Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "___Tests.m"; sourceTree = "<group>"; };
 		CE4334331BE786A9000C407D /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -63,8 +76,9 @@
 		CE4334361BE79D14000C407D /* LoginEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginEntry.m; sourceTree = "<group>"; };
 		CE4334381BE79D14000C407D /* NetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWork.h; sourceTree = "<group>"; };
 		CE4334391BE79D14000C407D /* NetWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWork.m; sourceTree = "<group>"; };
-		CE4FDEC71BEB34D800AC7601 /* FastTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastTestViewController.h; sourceTree = "<group>"; };
-		CE4FDEC81BEB34D800AC7601 /* FastTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FastTestViewController.m; sourceTree = "<group>"; };
+		CE566B801BF66A5300DBB839 /* 112.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 112.png; sourceTree = "<group>"; };
+		CE566B821BF6702500DBB839 /* default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default.jpg; sourceTree = "<group>"; };
+		CE566B841BF6703900DBB839 /* indexbc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = indexbc.png; sourceTree = "<group>"; };
 		CE7971681BF1B90500358D57 /* YCLCarEventLockModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCLCarEventLockModel.h; sourceTree = "<group>"; };
 		CE7971691BF1B90500358D57 /* YCLCarEventLockModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCLCarEventLockModel.m; sourceTree = "<group>"; };
 		CE79716C1BF1BE9B00358D57 /* YCLCarEventBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YCLCarEventBaseModel.h; path = YCLCarEventBaseModel/YCLCarEventBaseModel.h; sourceTree = "<group>"; };
@@ -75,6 +89,29 @@
 		CE7971751BF1CB0900358D57 /* YCLCarEventOpenAirModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCLCarEventOpenAirModel.m; sourceTree = "<group>"; };
 		CE7F663C1BEC8156006EA7E9 /* PullCenterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PullCenterModel.h; path = PullCenter/PullCenterModel.h; sourceTree = "<group>"; };
 		CE7F663D1BEC8156006EA7E9 /* PullCenterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PullCenterModel.m; path = PullCenter/PullCenterModel.m; sourceTree = "<group>"; };
+		CEA24BF81BF72B8A001BF0A5 /* YCLMatchPhoneModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YCLMatchPhoneModel.h; path = MatchPhoneModel/YCLMatchPhoneModel.h; sourceTree = "<group>"; };
+		CEA24BF91BF72B8A001BF0A5 /* YCLMatchPhoneModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YCLMatchPhoneModel.m; path = MatchPhoneModel/YCLMatchPhoneModel.m; sourceTree = "<group>"; };
+		CEB70A3F1BFB973E00FC3163 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		CEB70A411BFB973E00FC3163 /* app_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_default.png; sourceTree = "<group>"; };
+		CEB70A421BFB973E00FC3163 /* car_status.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car_status.png; sourceTree = "<group>"; };
+		CEB70A431BFB973E00FC3163 /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
+		CEB70A441BFB973E00FC3163 /* kongdiao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kongdiao.png; sourceTree = "<group>"; };
+		CEB70A451BFB973E00FC3163 /* kongdiao_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kongdiao_off.png; sourceTree = "<group>"; };
+		CEB70A461BFB973E00FC3163 /* lockclosed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lockclosed.png; sourceTree = "<group>"; };
+		CEB70A471BFB973E00FC3163 /* lockopen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lockopen.png; sourceTree = "<group>"; };
+		CEB70A481BFB973E00FC3163 /* more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more.png; sourceTree = "<group>"; };
+		CEB70A491BFB973E00FC3163 /* power_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = power_off.png; sourceTree = "<group>"; };
+		CEB70A4A1BFB973E00FC3163 /* power_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = power_on.png; sourceTree = "<group>"; };
+		CEB70A4B1BFB973E00FC3163 /* search_car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search_car.png; sourceTree = "<group>"; };
+		CEB70A4C1BFB973E00FC3163 /* search_car_voice_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search_car_voice_off.png; sourceTree = "<group>"; };
+		CEB70A4D1BFB973E00FC3163 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		CEB70A4E1BFB973E00FC3163 /* slider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slider.png; sourceTree = "<group>"; };
+		CEB70A4F1BFB973E00FC3163 /* slider_control.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slider_control.png; sourceTree = "<group>"; };
+		CEB70A501BFB973E00FC3163 /* xiansu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xiansu.png; sourceTree = "<group>"; };
+		CEB70A6B1BFB981C00FC3163 /* FastTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastTestViewController.h; sourceTree = "<group>"; };
+		CEB70A6C1BFB981C00FC3163 /* FastTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FastTestViewController.m; sourceTree = "<group>"; };
+		CEB70A6E1BFB981C00FC3163 /* MatchPhoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchPhoneViewController.h; sourceTree = "<group>"; };
+		CEB70A6F1BFB981C00FC3163 /* MatchPhoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchPhoneViewController.m; sourceTree = "<group>"; };
 		CEE614741BEA32B8004873AA /* MatchPhoneModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchPhoneModel.h; sourceTree = "<group>"; };
 		CEE614751BEA32B8004873AA /* MatchPhoneModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchPhoneModel.m; sourceTree = "<group>"; };
 		DF493D1521F524A3CAE4B433 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -86,13 +123,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D033371C9E3C59AB6686ED2 /* libPods.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CE43341A1BE77DF1000C407D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +155,16 @@
 			name = "开锁";
 			sourceTree = "<group>";
 		};
+		CE42DCC81BF8C550007363FD /* 设置密码 */ = {
+			isa = PBXGroup;
+			children = (
+				CE42DCC91BF8C550007363FD /* SetPasswordViewController.h */,
+				CE42DCCA1BF8C550007363FD /* SetPasswordViewController.m */,
+			);
+			name = "设置密码";
+			path = SetPassword;
+			sourceTree = "<group>";
+		};
 		CE4333FB1BE77DF0000C407D = {
 			isa = PBXGroup;
 			children = (
@@ -140,7 +180,6 @@
 			isa = PBXGroup;
 			children = (
 				CE4334041BE77DF1000C407D /* YCLCar.app */,
-				CE43341D1BE77DF1000C407D /* YCLCarTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -152,7 +191,7 @@
 				CE43342E1BE77E7D000C407D /* Config */,
 				CE4FDEC61BEB34CB00AC7601 /* Contriller */,
 				CE4334301BE77E8C000C407D /* Model */,
-				CE4334311BE77E93000C407D /* Images */,
+				CE566B7F1BF66A4B00DBB839 /* Images */,
 				CE43340B1BE77DF1000C407D /* AppDelegate.h */,
 				CE43340C1BE77DF1000C407D /* AppDelegate.m */,
 				CE43340E1BE77DF1000C407D /* ViewController.h */,
@@ -211,6 +250,7 @@
 		CE4334301BE77E8C000C407D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CEA24BF71BF72B1C001BF0A5 /* 匹配设备 */,
 				CE7971701BF1CACA00358D57 /* 关空调 */,
 				CE79716F1BF1CABE00358D57 /* 开空调 */,
 				CE7971671BF1B84A00358D57 /* 关锁 */,
@@ -223,13 +263,6 @@
 				CE79716D1BF1BE9B00358D57 /* YCLCarEventBaseModel.m */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		CE4334311BE77E93000C407D /* Images */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Images;
 			sourceTree = "<group>";
 		};
 		CE4334341BE79D14000C407D /* Login */ = {
@@ -253,10 +286,23 @@
 		CE4FDEC61BEB34CB00AC7601 /* Contriller */ = {
 			isa = PBXGroup;
 			children = (
-				CE4FDEC71BEB34D800AC7601 /* FastTestViewController.h */,
-				CE4FDEC81BEB34D800AC7601 /* FastTestViewController.m */,
+				CEB70A6A1BFB981C00FC3163 /* 快速测试 */,
+				CEB70A6D1BFB981C00FC3163 /* 匹配测试号 */,
+				CE42DCC81BF8C550007363FD /* 设置密码 */,
 			);
 			path = Contriller;
+			sourceTree = "<group>";
+		};
+		CE566B7F1BF66A4B00DBB839 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				CEB70A3E1BFB973E00FC3163 /* mipmap-xhdpi */,
+				CEB70A401BFB973E00FC3163 /* mipmap-xxhdpi */,
+				CE566B841BF6703900DBB839 /* indexbc.png */,
+				CE566B821BF6702500DBB839 /* default.jpg */,
+				CE566B801BF66A5300DBB839 /* 112.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 		CE7971671BF1B84A00358D57 /* 关锁 */ = {
@@ -295,6 +341,66 @@
 			name = "接收处理队列";
 			sourceTree = "<group>";
 		};
+		CEA24BF71BF72B1C001BF0A5 /* 匹配设备 */ = {
+			isa = PBXGroup;
+			children = (
+				CEA24BF81BF72B8A001BF0A5 /* YCLMatchPhoneModel.h */,
+				CEA24BF91BF72B8A001BF0A5 /* YCLMatchPhoneModel.m */,
+			);
+			name = "匹配设备";
+			sourceTree = "<group>";
+		};
+		CEB70A3E1BFB973E00FC3163 /* mipmap-xhdpi */ = {
+			isa = PBXGroup;
+			children = (
+				CEB70A3F1BFB973E00FC3163 /* logo.png */,
+			);
+			path = "mipmap-xhdpi";
+			sourceTree = "<group>";
+		};
+		CEB70A401BFB973E00FC3163 /* mipmap-xxhdpi */ = {
+			isa = PBXGroup;
+			children = (
+				CEB70A411BFB973E00FC3163 /* app_default.png */,
+				CEB70A421BFB973E00FC3163 /* car_status.png */,
+				CEB70A431BFB973E00FC3163 /* ic_launcher.png */,
+				CEB70A441BFB973E00FC3163 /* kongdiao.png */,
+				CEB70A451BFB973E00FC3163 /* kongdiao_off.png */,
+				CEB70A461BFB973E00FC3163 /* lockclosed.png */,
+				CEB70A471BFB973E00FC3163 /* lockopen.png */,
+				CEB70A481BFB973E00FC3163 /* more.png */,
+				CEB70A491BFB973E00FC3163 /* power_off.png */,
+				CEB70A4A1BFB973E00FC3163 /* power_on.png */,
+				CEB70A4B1BFB973E00FC3163 /* search_car.png */,
+				CEB70A4C1BFB973E00FC3163 /* search_car_voice_off.png */,
+				CEB70A4D1BFB973E00FC3163 /* settings.png */,
+				CEB70A4E1BFB973E00FC3163 /* slider.png */,
+				CEB70A4F1BFB973E00FC3163 /* slider_control.png */,
+				CEB70A501BFB973E00FC3163 /* xiansu.png */,
+			);
+			path = "mipmap-xxhdpi";
+			sourceTree = "<group>";
+		};
+		CEB70A6A1BFB981C00FC3163 /* 快速测试 */ = {
+			isa = PBXGroup;
+			children = (
+				CEB70A6B1BFB981C00FC3163 /* FastTestViewController.h */,
+				CEB70A6C1BFB981C00FC3163 /* FastTestViewController.m */,
+			);
+			name = "快速测试";
+			path = FastTest;
+			sourceTree = "<group>";
+		};
+		CEB70A6D1BFB981C00FC3163 /* 匹配测试号 */ = {
+			isa = PBXGroup;
+			children = (
+				CEB70A6E1BFB981C00FC3163 /* MatchPhoneViewController.h */,
+				CEB70A6F1BFB981C00FC3163 /* MatchPhoneViewController.m */,
+			);
+			name = "匹配测试号";
+			path = MatchPhone;
+			sourceTree = "<group>";
+		};
 		CEE614771BEA32C1004873AA /* 匹配功能 */ = {
 			isa = PBXGroup;
 			children = (
@@ -326,24 +432,6 @@
 			productReference = CE4334041BE77DF1000C407D /* YCLCar.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CE43341C1BE77DF1000C407D /* YCLCarTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CE43342A1BE77DF1000C407D /* Build configuration list for PBXNativeTarget "YCLCarTests" */;
-			buildPhases = (
-				CE4334191BE77DF1000C407D /* Sources */,
-				CE43341A1BE77DF1000C407D /* Frameworks */,
-				CE43341B1BE77DF1000C407D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CE43341F1BE77DF1000C407D /* PBXTargetDependency */,
-			);
-			name = YCLCarTests;
-			productName = "智能车Tests";
-			productReference = CE43341D1BE77DF1000C407D /* YCLCarTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -355,10 +443,6 @@
 				TargetAttributes = {
 					CE4334031BE77DF0000C407D = {
 						CreatedOnToolsVersion = 6.4;
-					};
-					CE43341C1BE77DF1000C407D = {
-						CreatedOnToolsVersion = 6.4;
-						TestTargetID = CE4334031BE77DF0000C407D;
 					};
 				};
 			};
@@ -376,7 +460,6 @@
 			projectRoot = "";
 			targets = (
 				CE4334031BE77DF0000C407D /* YCLCar */,
-				CE43341C1BE77DF1000C407D /* YCLCarTests */,
 			);
 		};
 /* End PBXProject section */
@@ -386,16 +469,29 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEB70A531BFB973E00FC3163 /* car_status.png in Resources */,
+				CEB70A571BFB973E00FC3163 /* lockclosed.png in Resources */,
+				CE566B811BF66A5300DBB839 /* 112.png in Resources */,
 				CE4334131BE77DF1000C407D /* Main.storyboard in Resources */,
+				CEB70A5F1BFB973E00FC3163 /* slider.png in Resources */,
+				CEB70A5B1BFB973E00FC3163 /* power_on.png in Resources */,
 				CE4334181BE77DF1000C407D /* LaunchScreen.xib in Resources */,
+				CEB70A5C1BFB973E00FC3163 /* search_car.png in Resources */,
+				CEB70A551BFB973E00FC3163 /* kongdiao.png in Resources */,
 				CE4334151BE77DF1000C407D /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CE43341B1BE77DF1000C407D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				CEB70A5A1BFB973E00FC3163 /* power_off.png in Resources */,
+				CEB70A511BFB973E00FC3163 /* logo.png in Resources */,
+				CEB70A601BFB973E00FC3163 /* slider_control.png in Resources */,
+				CEB70A611BFB973E00FC3163 /* xiansu.png in Resources */,
+				CE566B831BF6702500DBB839 /* default.jpg in Resources */,
+				CE566B851BF6703900DBB839 /* indexbc.png in Resources */,
+				CEB70A581BFB973E00FC3163 /* lockopen.png in Resources */,
+				CEB70A5D1BFB973E00FC3163 /* search_car_voice_off.png in Resources */,
+				CEB70A591BFB973E00FC3163 /* more.png in Resources */,
+				CEB70A5E1BFB973E00FC3163 /* settings.png in Resources */,
+				CEB70A561BFB973E00FC3163 /* kongdiao_off.png in Resources */,
+				CEB70A521BFB973E00FC3163 /* app_default.png in Resources */,
+				CEB70A541BFB973E00FC3163 /* ic_launcher.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,9 +535,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE4FDEC91BEB34D800AC7601 /* FastTestViewController.m in Sources */,
+				CEB70A701BFB981C00FC3163 /* FastTestViewController.m in Sources */,
 				CE79716E1BF1BE9B00358D57 /* YCLCarEventBaseModel.m in Sources */,
+				CEB70A711BFB981C00FC3163 /* MatchPhoneViewController.m in Sources */,
 				CE79716A1BF1B90500358D57 /* YCLCarEventLockModel.m in Sources */,
+				CE42DCCB1BF8C550007363FD /* SetPasswordViewController.m in Sources */,
 				CEE614761BEA32B8004873AA /* MatchPhoneModel.m in Sources */,
 				CE4334101BE77DF1000C407D /* ViewController.m in Sources */,
 				CE3BC7871BE863F10002CBA4 /* RequestBaseModel.m in Sources */,
@@ -453,26 +551,11 @@
 				CE1165B81BEF41EE008C2FC6 /* YCLCarEventUnlockModel.m in Sources */,
 				CE7971731BF1CAF100358D57 /* YCLCarEventCloseAirModel.m in Sources */,
 				CE7F663E1BEC8156006EA7E9 /* PullCenterModel.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CE4334191BE77DF1000C407D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CE4334241BE77DF1000C407D /* ___Tests.m in Sources */,
+				CEA24BFA1BF72B8A001BF0A5 /* YCLMatchPhoneModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		CE43341F1BE77DF1000C407D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CE4334031BE77DF0000C407D /* YCLCar */;
-			targetProxy = CE43341E1BE77DF1000C407D /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CE4334111BE77DF1000C407D /* Main.storyboard */ = {
@@ -530,7 +613,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -567,7 +650,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -602,40 +685,6 @@
 			};
 			name = Release;
 		};
-		CE43342B1BE77DF1000C407D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "智能车Tests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = YCLCarTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/智能车.app/智能车";
-			};
-			name = Debug;
-		};
-		CE43342C1BE77DF1000C407D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "智能车Tests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = YCLCarTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/智能车.app/智能车";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -653,15 +702,6 @@
 			buildConfigurations = (
 				CE4334281BE77DF1000C407D /* Debug */,
 				CE4334291BE77DF1000C407D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CE43342A1BE77DF1000C407D /* Build configuration list for PBXNativeTarget "YCLCarTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CE43342B1BE77DF1000C407D /* Debug */,
-				CE43342C1BE77DF1000C407D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

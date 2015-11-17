@@ -60,6 +60,12 @@
 #define COCOAPODS_VERSION_MINOR_MJRefresh 3
 #define COCOAPODS_VERSION_PATCH_MJRefresh 2
 
+// MYIntroduction
+#define COCOAPODS_POD_AVAILABLE_MYIntroduction
+#define COCOAPODS_VERSION_MAJOR_MYIntroduction 0
+#define COCOAPODS_VERSION_MINOR_MYIntroduction 1
+#define COCOAPODS_VERSION_PATCH_MYIntroduction 1
+
 // SDWebImage
 #define COCOAPODS_POD_AVAILABLE_SDWebImage
 #define COCOAPODS_VERSION_MAJOR_SDWebImage 3
