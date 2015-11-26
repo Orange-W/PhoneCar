@@ -21,9 +21,12 @@
    
     _pullCenter = [PullCenterModel sharePullCenter];
     NSString *pullPhone = [[NSUserDefaults standardUserDefaults] objectForKey:@"pullPhone"];
+#warning 跳过匹配设备,正式请去掉
     if (!pullPhone) {
         pullPhone = kTestPhone;
+        [[NSUserDefaults standardUserDefaults] setObject:pullPhone forKey:kApplicationUserDefaultKeyPullPhone];
     }
+    
     _pullCenter.pullPhone = pullPhone;
     [_pullCenter pullLoopStart];
     

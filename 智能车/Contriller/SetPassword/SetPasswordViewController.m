@@ -13,7 +13,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *repeatPasswordTextField;
 
 @property (weak, nonatomic) IBOutlet UILabel *passwordLabel;
-@property (weak, nonatomic) IBOutlet UILabel *repeatPasswordLabel;
 @end
 
 @implementation SetPasswordViewController
@@ -35,21 +34,25 @@
 }
 - (IBAction)setPassword:(UIButton *)sender {
     if (_passwordTextField.text.length <6) {
-        _passwordLabel.text = @"请设置至少6位密码!";
+        _passwordLabel.text = @"密码至少6位";
         return ;
     }
     if (![_passwordTextField.text isEqualToString:_repeatPasswordTextField.text] ) {
-        _repeatPasswordLabel.text = @"两次密码不一致";
+        _passwordLabel.text = @"密码不一致";
         return ;
     }
     
-    _passwordLabel.text = @"";
-    _repeatPasswordLabel.text = @"密码合法";
     MBProgressHUD *HUD = [MBProgressHUD showHUDAddedTo:self.view animated:1];
     [HUD setLabelText:@"设置成功"];
     [HUD setRemoveFromSuperViewOnHide:YES];
     [HUD hide:YES afterDelay:2];
-    [[NSUserDefaults standardUserDefaults] setObject:_repeatPasswordLabel.text forKey:kApplicationUserDefaultKeyPassword];
+    [[NSUserDefaults standardUserDefaults] setObject:_passwordTextField.text forKey:kApplicationUserDefaultKeyPassword];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    NSLog(@"_passwordTextField:%@",_passwordTextField.text);
+    
+    UIStoryboard *storyBord = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    UIViewController *loginViewController = [storyBord instantiateViewControllerWithIdentifier:@"LoginNav"];
+    [self presentViewController:loginViewController animated:NO completion:nil];
     
 }
 
@@ -66,14 +69,13 @@
     
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [_passwordTextField resignFirstResponder];
+    [_repeatPasswordTextField resignFirstResponder];
 }
-*/
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
 
 @end

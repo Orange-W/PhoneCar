@@ -11,16 +11,23 @@
 #import "SetPasswordViewController.h"
 
 @implementation MatchPhoneViewController
-
--(void)viewDidAppear:(BOOL)animated{
+-(void)viewDidLoad{
     NSString *pullPhone = [[NSUserDefaults standardUserDefaults] objectForKey:kApplicationUserDefaultKeyPullPhone];
     NSString *appPassword = [[NSUserDefaults standardUserDefaults] objectForKey:kApplicationUserDefaultKeyPassword];
+    _matchTestField.delegate = self;
+    _matchTestField.keyboardType = UIKeyboardTypeNumberPad;
     if (appPassword && pullPhone) {
-        NSLog(@"传颂主片面");
-    }else if (pullPhone){
+        NSLog(@"登录页面");
         UIStoryboard *storyBord = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-        SetPasswordViewController *setPasswordViewController = [storyBord instantiateViewControllerWithIdentifier:@"SetPasswordStoryBord"];
+        UIViewController *loginViewController = [storyBord instantiateViewControllerWithIdentifier:@"LoginNav"];
+        [self presentViewController:loginViewController animated:NO completion:nil];
+    }else if (pullPhone){
+        NSLog(@"设置密码");
+        UIStoryboard *storyBord = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+        SetPasswordViewController *setPasswordViewController = [storyBord instantiateViewControllerWithIdentifier:@"SetPasswordNav"];
         [self presentViewController:setPasswordViewController animated:NO completion:nil];
+    }else{
+        NSLog(@"匹配设备");
     }
 }
 
@@ -40,5 +47,26 @@
         [[NSUserDefaults standardUserDefaults] setObject:number forKey:kApplicationUserDefaultKeyPullPhone];
         [pullCenter addPullEvent:YCLCarEventMatchPhone forView:self.view];
     }
+}
+
+- (IBAction)isAllowable:(UITextField *)sender {
+    NSLog(@"22");
+    if (sender.text.length!=11) {
+        _warningLabel.text = @"绑定设备号应为11位!";
+        _warningLabel.textColor = [UIColor redColor];
+    }else{
+        _warningLabel.textColor = [UIColor greenColor];
+        _warningLabel.text = @"设备号合格!";
+        [[NSUserDefaults standardUserDefaults] setObject:sender.text forKey:@"pullPhone"];
+    }
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [_matchTestField resignFirstResponder];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
 }
 @end

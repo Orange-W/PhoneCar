@@ -1,0 +1,108 @@
+//
+//  ViewController.m
+//  智能车
+//
+//  Created by user on 15/11/2.
+//  Copyright (c) 2015年 Orange-W. All rights reserved.
+//
+
+#import "MainViewController.h"
+#import "PullCenterModel.h"
+
+@interface MainViewController () <UIScrollViewDelegate>
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollowView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+
+@end
+
+@implementation MainViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    if (_pageControl.currentPage) {
+        _titleLabel.text = @"益车利支持多种使用场景";
+    }else{
+        _titleLabel.text = @"益车利,你的最佳选择";
+    }
+    // Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    _scrollowView.delegate = self;
+    _scrollowView.contentSize = (CGSize){kSizeMainScreenWdth*2,[_scrollowView frame].size.height};
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0,kSizeMainScreenWdth,_scrollowView.frame.size.height)];
+    imageView.image = [UIImage imageNamed:@"slider.png"];
+    UIImageView *imageView2 = [[UIImageView alloc] initWithFrame:CGRectMake(kSizeMainScreenWdth, 0,kSizeMainScreenWdth,_scrollowView.frame.size.height)];
+    imageView2.image = [UIImage imageNamed:@"slider_control.png"];
+    imageView.center = (CGPoint){imageView.center.x,imageView.center.y-20};
+    
+    [_scrollowView addSubview:imageView];
+    [_scrollowView addSubview:imageView2];
+    for(int i=1;i<=9;i++){
+        UIButton *myButton = (UIButton *)[self.view viewWithTag:i];
+        CGFloat buttomEdge = myButton.titleEdgeInsets.bottom;
+        NSInteger buttonLabelTextLength = myButton.titleLabel.text.length;
+        CGFloat rate = kSizeMainScreenWdth/320;
+//        NSLog(@"%f",rate);
+        myButton.titleEdgeInsets =
+            (UIEdgeInsets){0,0,-40*rate*1.6,myButton.frame.size.width-30+(buttonLabelTextLength-3)*rate*6};
+    }
+   
+
+}
+
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+  _pageControl.currentPage = scrollView.contentOffset.x >= kSizeMainScreenWdth?1:0;
+    if (_pageControl.currentPage) {
+        _titleLabel.text = @"益车利支持多种使用场景";
+    }else{
+        _titleLabel.text = @"益车利,你的最佳选择";
+    }
+    
+}
+
+- (IBAction)clickOnButton:(UIButton *)sender forEvent:(UIEvent *)event {
+    NSInteger tag = sender.tag;
+    YCLPullEvent pullEvent = 0;
+    switch (tag) {
+        case 1:
+            pullEvent = YCLCarEventOpenAir;
+            break;
+        case 2:
+            pullEvent = YCLCarEventCloseAir;
+            break;
+        case 3:
+            pullEvent = YCLCarEventLock;
+            break;
+        case 4:
+            pullEvent = YCLCarEventUnlock;
+            break;
+        case 5:
+            
+            break;
+        case 6:
+            
+            break;
+        case 7:
+            
+            break;
+        case 8:
+            
+            break;
+        case 9:
+            
+            break;
+        default:
+            break;
+    }
+    [[PullCenterModel sharePullCenter] addPullEvent:pullEvent forView:self.view];
+}
+
+
+@end

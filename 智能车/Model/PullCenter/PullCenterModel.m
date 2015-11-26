@@ -8,7 +8,7 @@
 
 #import "PullCenterModel.h"
 #import "SetPasswordViewController.h"
-#import "FastTestViewController.h"
+
 
 @interface PullCenterModel()
 @property (strong, nonatomic) NSDate *pullInitTime;
@@ -28,9 +28,10 @@ static const unsigned int  outTimeMax = 120;
     if([_pullQueueIdSet containsObject:@(YCLEventName)]) {
         return NO;
     }
-//    [[self progressHUD] hide:NO];
-    [self registEvent:YCLEventName forView:(UIView *)view];
+    
     switch (YCLEventName) {
+        case YCLCarEventNone:
+            return NO;
         case YCLCarEventUnlock:
             [self.unlockModel sendMessage];
             break;
@@ -46,11 +47,25 @@ static const unsigned int  outTimeMax = 120;
         case YCLCarEventMatchPhone:
             [self.matchModel sendMessage];
             break;
+        case YCLCarEventCarSituation:
+           [self.carSituationModel sendMessage];
+            break;
+        case YCLCarEventFindCarOutside:
+            [self.carOutsideModel sendMessage];
+            break;
+        case YCLCarEventFindCarSilence:
+            [self.carSilenceModel sendMessage];
+            break;
+//        case YCLCarEventAddPhone: //发送消息和删除一样
+//        case YCLCarEventDeletePhone:
+//            [self.matchModel sendMessage];
+//            break;
         default:
             NSLog(@"wrong");
             break;
     }
     
+    [self registEvent:YCLEventName forView:(UIView *)view];
 //    NSLog(@"%@%d",[_pullQueueIdSet allObjects],isHas);
     return YES;
 }
@@ -96,7 +111,7 @@ static const unsigned int  outTimeMax = 120;
 - (void) runPullLoop{
     
     if([_pullQueueIdSet count] == 0){
-        NSLog(@"空队列,不请求!");
+//        NSLog(@"空队列,不请求!");
         return;
     }
     _earilyPullTime = [NSDate date];
@@ -125,8 +140,7 @@ static const unsigned int  outTimeMax = 120;
 
 -(void)sucessToDo:(NSDictionary *)returnValue{
     NSArray *textArray = returnValue[@"sms_reply"];
-#warning 测试
-    textArray = @[@{@"text":@"18883867540"}];
+
     for (int i=0; i<YCLCarEventEnd; i++) {
         if ([_pullQueueIdSet containsObject:@(i)]) {
 #warning 这里是单线
@@ -144,12 +158,13 @@ static const unsigned int  outTimeMax = 120;
     }
 }
 
-- (YCLPullEvent)singleLineDealWithPullTextArray:(NSArray *)textArray{
+- (YCLPullEvent)singleLineDealWithPullTextArray:(NSArray *)textArray {
     NSString *codeString = [textArray firstObject][@"text"];
     if (!codeString) {
         NSLog(@"本次无数据");
         return NO;
     }
+    NSLog(@"返回:%@",textArray);
     for (int i=0;i<YCLCarEventEnd;i++) {
         if ([_pullQueueIdSet containsObject:@(i)]) {
             NSString *description = @"";
@@ -167,32 +182,32 @@ static const unsigned int  outTimeMax = 120;
                 case YCLCarEventCloseAir:
                     description = [self.closeAirModel description];
                     break;
-                case YCLCarEventMatchPhone:
-                    returnString = [self.matchModel analysisCodeWithString:codeString];
-                    [self.progressHUD setLabelText:returnString];
-                    [self.progressHUD setDetailsLabelText:@""];
-                    [self.progressHUD hide:YES afterDelay:3];
-                    [_pullQueueIdSet removeAllObjects];
-                    if ([returnString isEqualToString:@"匹配完成"]) {
-#warning 下一个页面
-                        UIStoryboard *storyBord = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-                        SetPasswordViewController *setPasswordViewController = [storyBord instantiateViewControllerWithIdentifier:@"SetPasswordStoryBord"];
-                        [self.localViewController presentViewController:setPasswordViewController animated:YES completion:nil];
-                        return YES;
-                    }
-                    NSLog(@"匹配失败!!");
-                    return NO;
+                case YCLCarEventCarSituation:
+                    description = [self.carSituationModel description];
                     break;
+                case YCLCarEventFindCarOutside:
+                    description = [self.carOutsideModel description];
+                    break;
+                case YCLCarEventFindCarSilence:
+                    description = [self.carSilenceModel description];
+                    break;
+                case YCLCarEventMatchPhone:
+                    //把逻辑提出成函数
+                    return [self isMatchPhoneWithCodeString:codeString];
+//                case YCLCarEventAddPhone:
+//                case YCLCarEventDeletePhone:
+//                    return [self isSuccessMatchPhoneWithCodeTring:codeString forEventString:@"addPhone"];
+//                    return [self isSuccessMatchPhoneWithCodeTring:codeString forEventString:@"deletePhone"];
                 default:
                     NSLog(@"wrong");
                     break;
             }
             
-            
+            //使用返回
             returnString = [self.unlockModel analysisCodeWithString:codeString];
             if (returnString) {
-                FastTestViewController *fastViewController = (FastTestViewController *)self.localViewController;
-                fastViewController.showReturnLabel.text = [NSString stringWithFormat:@"%@:%@",description,returnString];
+                NSLog(@"结果:%@",returnString);
+                
                 [self.progressHUD setLabelText:@"请求成功!"];
                 [self.progressHUD setDetailsLabelText:@""];
                 [self.progressHUD hide:YES afterDelay:3];
@@ -235,6 +250,24 @@ static const unsigned int  outTimeMax = 120;
         _matchModel = [[YCLMatchPhoneModel alloc] init];
     }
     return  _matchModel;
+}
+- (YCLCarEventCarSituationModel *)carSituationModel{
+    if (!_carSituationModel) {
+        _carSituationModel = [[YCLCarEventCarSituationModel alloc] init];
+    }
+    return  _carSituationModel;
+}
+- (YCLCarEventFindCarOutsideModel *)carOutsideModel{
+    if (!_carOutsideModel) {
+        _carOutsideModel = [[YCLCarEventFindCarOutsideModel alloc] init];
+    }
+    return  _carOutsideModel;
+}
+- (YCLCarEventFindCarSilenceModel *)carSilenceModel{
+    if (!_carSilenceModel) {
+        _carSilenceModel = [[YCLCarEventFindCarSilenceModel alloc] init];
+    }
+    return  _carSilenceModel;
 }
 
 #pragma mark -
@@ -292,7 +325,7 @@ static const unsigned int  outTimeMax = 120;
 }
 
 
-#pragma 其他
+#pragma 进度框配置
 - (MBProgressHUD *)showProgresstoView:(UIView *)view {
     // 快速显示一个提示信息
     MBProgressHUD *HUD = [MBProgressHUD showHUDAddedTo:view animated:YES];
@@ -306,6 +339,41 @@ static const unsigned int  outTimeMax = 120;
     
     
     return HUD;
+}
+
+#pragma match phone 操作的逻辑函数
+- (BOOL) isMatchPhoneWithCodeString:(NSString *)codeString{
+    NSString *returnString = [self.matchModel analysisCodeWithString:codeString];
+    [self.progressHUD setLabelText:returnString];
+    [self.progressHUD setDetailsLabelText:@""];
+    [self.progressHUD hide:YES afterDelay:3];
+    [_pullQueueIdSet removeAllObjects];
+    
+    if ([returnString isEqualToString:@"匹配完成"]) {
+        UIStoryboard *storyBord = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+        SetPasswordViewController *setPasswordViewController = [storyBord instantiateViewControllerWithIdentifier:@"SetPasswordStoryBord"];
+        [self.localViewController presentViewController:setPasswordViewController animated:YES completion:nil];
+        return YES;
+    }
+    
+    NSLog(@"匹配失败!!");
+    return NO;
+}
+
+- (BOOL) isSuccessMatchPhoneWithCodeTring:(NSString *)codeString
+                                 forEventString:(NSString *)eventString{
+    if (![self isMatchPhoneWithCodeString:codeString]) {
+        return NO;
+    }
+    //push 去添加设备
+    
+    if ([eventString isEqualToString:@"addPhone"]) {
+        
+    }else{
+        
+    }
+    
+    return YES;
 }
 
 

@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MatchPhoneViewController : UIViewController
+@interface MatchPhoneViewController : UIViewController <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *matchTestField;
 @property (strong, nonatomic) IBOutlet UIView *matchButton;
+@property (weak, nonatomic) IBOutlet UILabel *warningLabel;
 
 @end

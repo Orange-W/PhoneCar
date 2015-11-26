@@ -12,14 +12,23 @@
 #import "YCLCarEventOpenAirModel.h"
 #import "YCLCarEventCloseAirModel.h"
 #import "YCLMatchPhoneModel.h"
+#import "YCLCarEventCarSituationModel.h"
+#import "YCLCarEventFindCarOutsideModel.h"
+#import "YCLCarEventFindCarSilenceModel.h"
 
 typedef NS_ENUM(NSInteger,YCLPullEvent){
+    YCLCarEventNone = 0,
     YCLCarEventUnlock = 1,  //开锁
     YCLCarEventLock,        //关锁
     YCLCarEventOpenAir,     //开空调
     YCLCarEventCloseAir,    //关空调
+    YCLCarEventCarSituation, //车辆状况
+    YCLCarEventFindCarOutside, //野外寻车
+    YCLCarEventFindCarSilence, //静音寻车 ~> 7
     
     YCLCarEventMatchPhone = 11,
+    YCLCarEventAddPhone,
+    YCLCarEventDeletePhone,
     YCLCarEventEnd,
     
 };
@@ -35,6 +44,9 @@ typedef NS_ENUM(NSInteger,YCLPullEvent){
 @property (strong, nonatomic) YCLCarEventOpenAirModel *openAirModel;
 @property (strong, nonatomic) YCLCarEventCloseAirModel *closeAirModel;
 @property (strong, nonatomic) YCLMatchPhoneModel *matchModel;
+@property (strong, nonatomic) YCLCarEventCarSituationModel *carSituationModel;
+@property (strong, nonatomic) YCLCarEventFindCarOutsideModel *carOutsideModel;
+@property (strong, nonatomic) YCLCarEventFindCarSilenceModel *carSilenceModel;
 
 @property (copy, atomic)NSString *pullPhone;
 @property (strong, atomic)NSDate* earilyPullTime;

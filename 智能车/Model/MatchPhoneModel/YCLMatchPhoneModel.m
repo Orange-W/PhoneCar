@@ -17,12 +17,12 @@
     if (!isContain) {
         return @"本机不是合法手机，不能进行下一步";
     }
-    
+    self.analysisData = codeString;
     return @"匹配完成";
 }
 
 - (NSString *)code{return @"TC0";}
 - (NSString *)description{return @"匹配号码";}
 - (NSArray *)configArray{return nil;}
--(void)sendMessage{}
+//-(void)sendMessage{}
 @end

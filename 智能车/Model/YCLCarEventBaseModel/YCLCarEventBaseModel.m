@@ -23,6 +23,7 @@
             }
         }
     }
+    self.analysisData = outPut;
     return outPut;
 }
 
@@ -38,10 +39,13 @@
 - (NSArray *)configArray{
     return @[
              @[
-                 @{@"key":@"3",@"value":@"命令返回3."},
-                 @{@"key":@"0",@"value":@"命令返回0."},
-                 @{@"key":@"9",@"value":@"命令返回9."},
-                 @{@"key":@"6",@"value":@"命令返回6."},
+                 @{@"key":@"3",@"value":@"开空调:"},
+                 @{@"key":@"0",@"value":@"关空调:"},
+                 @{@"key":@"9",@"value":@"开锁:"},
+                 @{@"key":@"6",@"value":@"关锁:"},
+                 @{@"key":@"1",@"value":@"车辆状况:"},
+                 @{@"key":@"2",@"value":@"静音停车:"},
+                 @{@"key":@"5",@"value":@"野外寻车:"},
                  ],
              @[
                  @{@"key":@"a",@"value":@"命令起效."},
@@ -66,7 +70,7 @@
                  ],
              ];
 }
-- (NSString *)code{return @"0";}
+- (NSString *)code{return @"";}
 
 - (NSString *)pullPhone{
     PullCenterModel *phoneModel = [PullCenterModel sharePullCenter];
