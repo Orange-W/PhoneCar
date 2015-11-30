@@ -16,4 +16,5 @@
 - (NSString *)description{
     return @"静音寻车!";
 }
+-(void)sendMessage{}
 @end

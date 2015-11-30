@@ -35,21 +35,22 @@
 #endif
 
 #define kColorMainColor  [UIColor colorWithRed:3/255.0 green:169/255.0 blue:244/255.0 alpha:1]
+#define kColorBarTintColor [UIColor blueColor]
+#define kColorItemTintColor [UIColor blackColor]
 
 #define kSizeMainScreenHeight [UIScreen mainScreen].bounds.size.height
 #define kSizeMainScreenWdth [UIScreen mainScreen].bounds.size.width
-#define kColorBarTintColor [UIColor blueColor]
-#define kColorItemTintColor [UIColor blackColor]
 #define kPasswordNumberSet @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
 #define kApplicationUserDefaultKeyPullPhone @"pullPhone"
 #define kApplicationUserDefaultKeyPassword @"appPassword"
+#define kApplicationUserDefaultHasMatchAuthKey @"hasMatchAuthKey"
 
 
 
 #define RGBColor(r,g,b,a) ([UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a])
 
 /** url宏 **/
-#define APPKEY @"64b56d71e0de2a45427bac0077e4a4a6"
+#define APPKEY @"bd8fa178c5a9e0a8ca18a85cf041709b"
 #define kRequestUrlSendMessage  @"http://yunpian.com/v1/sms/send.json"
 #define kRequestUrlPullStatus   @"http://yunpian.com/v1/sms/pull_status.json"
 #define kRequestUrlPullReply    @"http://yunpian.com/v1/sms/get_reply.json"

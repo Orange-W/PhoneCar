@@ -8,9 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSUInteger, YCLMatchMode) {
+    YCLMatchPhone = 0,
+    YCLMatchAuthKey,
+};
+
 @interface MatchPhoneViewController : UIViewController <UITextFieldDelegate>
+@property (assign, nonatomic) YCLMatchMode matchMode;
 @property (weak, nonatomic) IBOutlet UITextField *matchTestField;
-@property (strong, nonatomic) IBOutlet UIView *matchButton;
+@property (weak, nonatomic) IBOutlet UIButton *matchButton;
 @property (weak, nonatomic) IBOutlet UILabel *warningLabel;
 
 @end

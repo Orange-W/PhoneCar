@@ -84,13 +84,13 @@
             pullEvent = YCLCarEventUnlock;
             break;
         case 5:
-            
+            pullEvent = YCLCarEventCarSituation;
             break;
         case 6:
-            
+            pullEvent = YCLCarEventFindCarOutside;
             break;
         case 7:
-            
+            pullEvent = YCLCarEventFindCarSilence;
             break;
         case 8:
             

@@ -8,11 +8,13 @@
 
 #import "PullCenterModel.h"
 #import "SetPasswordViewController.h"
-
+#import "MatchPhoneViewController.h"
+#import "CoverView.h"
 
 @interface PullCenterModel()
 @property (strong, nonatomic) NSDate *pullInitTime;
-
+@property (strong, nonatomic) UIWindow *detailWindow;
+@property (strong, nonatomic) CoverView *detailView;
 @end
 
 @implementation PullCenterModel
@@ -24,7 +26,9 @@ static const unsigned int  outTimeMax = 120;
 
 #pragma mark -
 #pragma mark 请求入列
-- (BOOL) addPullEvent:(YCLPullEvent) YCLEventName forView:(UIView *)view{
+- (BOOL) addPullEvent:(YCLPullEvent) YCLEventName
+              forView:(UIView *)view
+             userInfo:(NSArray *)infoArray{
     if([_pullQueueIdSet containsObject:@(YCLEventName)]) {
         return NO;
     }
@@ -48,7 +52,7 @@ static const unsigned int  outTimeMax = 120;
             [self.matchModel sendMessage];
             break;
         case YCLCarEventCarSituation:
-           [self.carSituationModel sendMessage];
+            [self.carSituationModel sendMessage];
             break;
         case YCLCarEventFindCarOutside:
             [self.carOutsideModel sendMessage];
@@ -56,19 +60,30 @@ static const unsigned int  outTimeMax = 120;
         case YCLCarEventFindCarSilence:
             [self.carSilenceModel sendMessage];
             break;
-//        case YCLCarEventAddPhone: //发送消息和删除一样
-//        case YCLCarEventDeletePhone:
-//            [self.matchModel sendMessage];
-//            break;
+            //        case YCLCarEventAddPhone: //发送消息和删除一样
+            //        case YCLCarEventDeletePhone:
+            //            [self.matchModel sendMessage];
+            //            break;
         default:
             NSLog(@"wrong");
             break;
     }
     
     [self registEvent:YCLEventName forView:(UIView *)view];
-//    NSLog(@"%@%d",[_pullQueueIdSet allObjects],isHas);
+    //    NSLog(@"%@%d",[_pullQueueIdSet allObjects],isHas);
+    //#warning remove
+    //    [self singleLineDealWithPullTextArray:@[]];
+    
     return YES;
+
 }
+
+- (BOOL) addPullEvent:(YCLPullEvent) YCLEventName forView:(UIView *)view{
+    return [self addPullEvent:YCLEventName forView:view userInfo:nil];
+}
+
+
+
 
 - (void)registEvent:(YCLPullEvent) YCLEventName forView:(UIView *)view{
     [_pullQueueIdSet addObject:@(YCLEventName)];
@@ -160,6 +175,11 @@ static const unsigned int  outTimeMax = 120;
 
 - (YCLPullEvent)singleLineDealWithPullTextArray:(NSArray *)textArray {
     NSString *codeString = [textArray firstObject][@"text"];
+    NSString  *commandCode= [codeString substringWithRange:NSMakeRange(0,1)];
+    YCLCarEventBaseModel *baseModel;
+//#warning remove
+//    codeString = @"0a0000";
+    
     if (!codeString) {
         NSLog(@"本次无数据");
         return NO;
@@ -171,27 +191,35 @@ static const unsigned int  outTimeMax = 120;
             NSString *returnString=@"";
             switch (i) {
                 case YCLCarEventUnlock:
+                    baseModel = self.unlockModel;
                     description = [self.unlockModel description];
                     break;
                 case YCLCarEventLock:
+                    baseModel = self.lockModel;
                     description = [self.lockModel description];
                     break;
                 case YCLCarEventOpenAir:
+                    baseModel = self.openAirModel;
                     description = [self.openAirModel description];
                     break;
                 case YCLCarEventCloseAir:
+                    baseModel = self.closeAirModel;
                     description = [self.closeAirModel description];
                     break;
                 case YCLCarEventCarSituation:
+                    baseModel = self.carSituationModel;
                     description = [self.carSituationModel description];
                     break;
                 case YCLCarEventFindCarOutside:
+                    baseModel = self.carOutsideModel;
                     description = [self.carOutsideModel description];
                     break;
                 case YCLCarEventFindCarSilence:
+                    baseModel = self.carSilenceModel;
                     description = [self.carSilenceModel description];
                     break;
                 case YCLCarEventMatchPhone:
+//                    baseModel = self.carSilenceModel;
                     //把逻辑提出成函数
                     return [self isMatchPhoneWithCodeString:codeString];
 //                case YCLCarEventAddPhone:
@@ -203,21 +231,51 @@ static const unsigned int  outTimeMax = 120;
                     break;
             }
             
+            //命令不一致就不执行
+            if (![commandCode isEqualToString:baseModel.code]) {
+                
+                NSLog(@"非匹配回复:%@,%@",commandCode,baseModel.code);//
+                return NO;
+            }
+            
             //使用返回
             returnString = [self.unlockModel analysisCodeWithString:codeString];
             if (returnString) {
-                NSLog(@"结果:%@",returnString);
+                
                 
                 [self.progressHUD setLabelText:@"请求成功!"];
                 [self.progressHUD setDetailsLabelText:@""];
-                [self.progressHUD hide:YES afterDelay:3];
+                [self.progressHUD hide:YES afterDelay:1];
                 [_pullQueueIdSet removeAllObjects];
+                
+               
+                NSArray *backStringArray = [self showDetailViewWithCodeStringArray:returnString];
+                NSLog(@"结果:%@",backStringArray);
+                
+                [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionTransitionFlipFromTop
+                                 animations:^{
+                                     self.detailWindow.alpha = 1;
+                } completion:nil];
+                
+                
                 return YES;
             }
     
         }
     }
     return NO;
+}
+
+#pragma 设置展示返回 view
+- (NSArray *) showDetailViewWithCodeStringArray:(NSString *)returnString{
+    NSArray *backStringArray = [returnString componentsSeparatedByString:NSLocalizedString(@" ", nil)];
+    self.detailView.label1.text = [NSString stringWithFormat:@"命令:%@",backStringArray[0]];
+    self.detailView.label2.text = [NSString stringWithFormat:@"是否起效:%@",backStringArray[1]];
+    self.detailView.label3.text = [NSString stringWithFormat:@"空调:%@",backStringArray[2]];
+    self.detailView.label4.text = [NSString stringWithFormat:@"设备灯:%@",backStringArray[3]];
+    self.detailView.label5.text = [NSString stringWithFormat:@"门锁:%@",backStringArray[4]];
+    self.detailView.label6.text = [NSString stringWithFormat:@"限位开关:%@",backStringArray[5]];
+    return backStringArray;
 }
 
 
@@ -270,6 +328,36 @@ static const unsigned int  outTimeMax = 120;
     return  _carSilenceModel;
 }
 
+- (UIWindow *)detailWindow
+{
+    if (!_detailWindow) {
+        _detailWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        [_detailWindow setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.4]];
+       
+        NSArray *nibContents = [[NSBundle mainBundle] loadNibNamed:@"CoverView" owner:self options:nil];
+        CoverView *plainView = [nibContents lastObject];
+        self.detailView = plainView;
+        
+        plainView.frame = CGRectMake(30, 100, kSizeMainScreenWdth-60, kSizeMainScreenHeight-200);
+        
+        // Add to the view hierarchy (thus retain).
+        [self.progressHUD addSubview:plainView];
+
+        [_detailWindow setWindowLevel:UIWindowLevelAlert + 1];//
+        
+        [_detailWindow addSubview:plainView];
+        
+    }
+    return _detailWindow;
+}
+- (IBAction)closeDetailView:(id)sender {
+    [UIView animateWithDuration:1 animations:^{
+        self.detailWindow.alpha = 0;
+    }];
+//    self.detailView.label1.text = @"233";
+    NSLog(@"关闭展示窗");
+}
+
 #pragma mark -
 #pragma mark 单例
 + (PullCenterModel *)sharePullCenter{
@@ -304,8 +392,9 @@ static const unsigned int  outTimeMax = 120;
         if (sharedInstance == nil) {
             sharedInstance = [super allocWithZone:zone];
             sharedInstance.pullQueueIdSet = [[NSMutableSet alloc] init];
-            NSDate *now = [NSDate distantFuture];
-//            sharedInstance.pullEventStartTimeArray = [NSMutableArray arrayWithObjects:now,now,now,now,now,now,now,now,now,now, nil];
+//            NSDate *now = [NSDate distantFuture];
+          [sharedInstance.detailWindow makeKeyAndVisible];
+            sharedInstance.detailWindow.alpha = 0;
             sharedInstance.pullPhone = @"";
             return sharedInstance;
         }
@@ -351,8 +440,9 @@ static const unsigned int  outTimeMax = 120;
     
     if ([returnString isEqualToString:@"匹配完成"]) {
         UIStoryboard *storyBord = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-        SetPasswordViewController *setPasswordViewController = [storyBord instantiateViewControllerWithIdentifier:@"SetPasswordStoryBord"];
-        [self.localViewController presentViewController:setPasswordViewController animated:YES completion:nil];
+        MatchPhoneViewController *matchPhoneViewController = [storyBord instantiateViewControllerWithIdentifier:@"MatchStoryBord"];
+        matchPhoneViewController.matchMode = YCLMatchAuthKey;
+        [self.localViewController presentViewController:matchPhoneViewController animated:YES completion:nil];
         return YES;
     }
     

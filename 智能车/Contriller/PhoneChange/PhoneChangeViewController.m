@@ -11,7 +11,7 @@
 
 @interface PhoneChangeViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *matchTestField;
-@property (strong, nonatomic) IBOutlet UIView *matchButton;
+@property (strong, nonatomic) IBOutlet UIButton *matchButton;
 @property (weak, nonatomic) IBOutlet UILabel *warningLabel;
 
 @end

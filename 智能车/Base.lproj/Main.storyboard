@@ -161,25 +161,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="af2-gE-G05">
-                                <rect key="frame" x="217" y="227" width="166" height="46"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="166" id="pzL-10-bmh"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="tintColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
-                                <state key="normal" title="开始匹配">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="touchMatchButton:" destination="brK-Dd-bkR" eventType="touchUpInside" id="jar-gd-GCD"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请填写您的11位设备号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KV1-m6-jch">
                                 <rect key="frame" x="217" y="168" width="166" height="30"/>
                                 <animations/>
@@ -204,6 +185,25 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="af2-gE-G05">
+                                <rect key="frame" x="217" y="227" width="166" height="46"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="166" id="pzL-10-bmh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="tintColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                <state key="normal" title="开始匹配">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchMatchButton:" destination="brK-Dd-bkR" eventType="touchUpInside" id="BIt-ZH-agh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -219,7 +219,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="匹配设备" id="a2e-FH-FSJ"/>
                     <connections>
-                        <outlet property="matchButton" destination="fnC-YP-q0a" id="yde-1V-gr3"/>
+                        <outlet property="matchButton" destination="af2-gE-G05" id="6sr-sm-j02"/>
                         <outlet property="matchTestField" destination="KV1-m6-jch" id="UCB-7i-dvQ"/>
                         <outlet property="warningLabel" destination="OFd-ei-s5U" id="ZTr-8h-FKN"/>
                     </connections>

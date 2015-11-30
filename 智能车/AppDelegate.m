@@ -30,7 +30,7 @@
     _pullCenter.pullPhone = pullPhone;
     [_pullCenter pullLoopStart];
     
-    
+
 //    RequestBaseModel *model = [[RequestBaseModel alloc] init];
 
 //    [model sendMessageWithPhone:@"18883867540" content:@"【益车利】a5551\n(以上为益车利给您的车载设备的命令,命令类型号: {1})"];

@@ -15,6 +15,7 @@
     BOOL isContain = [codeString containsString:[self pullPhone]];
     NSLog(@"解析匹配返回");
     if (!isContain) {
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:kApplicationUserDefaultKeyPullPhone];
         return @"本机不是合法手机，不能进行下一步";
     }
     self.analysisData = codeString;

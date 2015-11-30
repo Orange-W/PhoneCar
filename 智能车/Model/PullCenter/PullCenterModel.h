@@ -1,4 +1,3 @@
-//
 //  PullCenterModel.h
 //  智能车
 //
@@ -27,6 +26,7 @@ typedef NS_ENUM(NSInteger,YCLPullEvent){
     YCLCarEventFindCarSilence, //静音寻车 ~> 7
     
     YCLCarEventMatchPhone = 11,
+    YCLCarEvenMatchAuthKey,
     YCLCarEventAddPhone,
     YCLCarEventDeletePhone,
     YCLCarEventEnd,
@@ -57,7 +57,11 @@ typedef NS_ENUM(NSInteger,YCLPullEvent){
 @property (assign, readonly) BOOL isPullStart;
 + (PullCenterModel *)sharePullCenter;
 
+
 - (BOOL) addPullEvent:(YCLPullEvent) YCLEventName forView:(UIView *)view;
+- (BOOL) addPullEvent:(YCLPullEvent) YCLEventName
+              forView:(UIView *)view
+             userInfo:(NSArray *)infoArray;
 - (void)pullLoopStart;
 
 - (MBProgressHUD *)showProgresstoView:(UIView *)view ;

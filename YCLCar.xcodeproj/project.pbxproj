@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0D033371C9E3C59AB6686ED2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73EB9212159418199A4E0E0E /* libPods.a */; };
+		CE039E601C08D9B80009C4B9 /* CoverView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE039E5F1C08D9B80009C4B9 /* CoverView.xib */; };
+		CE039E631C08E37E0009C4B9 /* CoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE039E621C08E37E0009C4B9 /* CoverView.m */; };
 		CE1165B81BEF41EE008C2FC6 /* YCLCarEventUnlockModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1165B71BEF41EE008C2FC6 /* YCLCarEventUnlockModel.m */; };
 		CE367B301C077FF200B8094A /* YCLCarEventFindCarOutsideModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE367B2F1C077FF200B8094A /* YCLCarEventFindCarOutsideModel.m */; };
 		CE367B341C07809C00B8094A /* YCLCarEventFindCarSilenceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE367B331C07809C00B8094A /* YCLCarEventFindCarSilenceModel.m */; };
@@ -59,6 +61,9 @@
 /* Begin PBXFileReference section */
 		49B9B2A4749628EDFBFA77D6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		73EB9212159418199A4E0E0E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE039E5F1C08D9B80009C4B9 /* CoverView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CoverView.xib; path = PullCenter/CoverView.xib; sourceTree = "<group>"; };
+		CE039E611C08E37E0009C4B9 /* CoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoverView.h; path = PullCenter/CoverView.h; sourceTree = "<group>"; };
+		CE039E621C08E37E0009C4B9 /* CoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoverView.m; path = PullCenter/CoverView.m; sourceTree = "<group>"; };
 		CE1165B61BEF41EE008C2FC6 /* YCLCarEventUnlockModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCLCarEventUnlockModel.h; sourceTree = "<group>"; };
 		CE1165B71BEF41EE008C2FC6 /* YCLCarEventUnlockModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCLCarEventUnlockModel.m; sourceTree = "<group>"; };
 		CE367B2E1C077FF200B8094A /* YCLCarEventFindCarOutsideModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCLCarEventFindCarOutsideModel.h; sourceTree = "<group>"; };
@@ -404,8 +409,11 @@
 		CE7F663B1BEC80A8006EA7E9 /* 接收处理队列 */ = {
 			isa = PBXGroup;
 			children = (
+				CE039E611C08E37E0009C4B9 /* CoverView.h */,
+				CE039E621C08E37E0009C4B9 /* CoverView.m */,
 				CE7F663C1BEC8156006EA7E9 /* PullCenterModel.h */,
 				CE7F663D1BEC8156006EA7E9 /* PullCenterModel.m */,
+				CE039E5F1C08D9B80009C4B9 /* CoverView.xib */,
 			);
 			name = "接收处理队列";
 			sourceTree = "<group>";
@@ -555,6 +563,7 @@
 				CEB70A5B1BFB973E00FC3163 /* power_on.png in Resources */,
 				CE4334181BE77DF1000C407D /* LaunchScreen.xib in Resources */,
 				CEB70A5C1BFB973E00FC3163 /* search_car.png in Resources */,
+				CE039E601C08D9B80009C4B9 /* CoverView.xib in Resources */,
 				CEB70A551BFB973E00FC3163 /* kongdiao.png in Resources */,
 				CE4334151BE77DF1000C407D /* Images.xcassets in Resources */,
 				CEB70A5A1BFB973E00FC3163 /* power_off.png in Resources */,
@@ -629,6 +638,7 @@
 				CE43343C1BE79D14000C407D /* LoginEntry.m in Sources */,
 				CE7971761BF1CB0900358D57 /* YCLCarEventOpenAirModel.m in Sources */,
 				CE367B341C07809C00B8094A /* YCLCarEventFindCarSilenceModel.m in Sources */,
+				CE039E631C08E37E0009C4B9 /* CoverView.m in Sources */,
 				CEE42FB91C0618470021AB59 /* PhoneChangeViewController.m in Sources */,
 				CE43340A1BE77DF1000C407D /* main.m in Sources */,
 				CE1165B81BEF41EE008C2FC6 /* YCLCarEventUnlockModel.m in Sources */,
