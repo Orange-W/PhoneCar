@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "PullCenterModel.h"
-
+#import "MatchPhoneViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -17,23 +17,35 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [NSTimeZone setDefaultTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
+
    
     _pullCenter = [PullCenterModel sharePullCenter];
     NSString *pullPhone = [[NSUserDefaults standardUserDefaults] objectForKey:@"pullPhone"];
+#warning 跳过匹配设备,正式请去掉
     if (!pullPhone) {
         pullPhone = kTestPhone;
+        [[NSUserDefaults standardUserDefaults] setObject:pullPhone forKey:kApplicationUserDefaultKeyPullPhone];
     }
+    
     _pullCenter.pullPhone = pullPhone;
     [_pullCenter pullLoopStart];
     
     
+//    [_pullCenter addPullEvent:YCLCarEventCloseAir forView:nil];
+    
+//    MatchPhoneViewController *matController = [[MatchPhoneViewController alloc]init];
+//    self.window.rootViewController = matController;
+
 //    RequestBaseModel *model = [[RequestBaseModel alloc] init];
 
 //    [model sendMessageWithPhone:@"18883867540" content:@"【益车利】a5551\n(以上为益车利给您的车载设备的命令,命令类型号: {1})"];
 
 //    [model getReplyMessagesWithPhone:@"18883867540" startTime:[NSDate distantPast] endTime:[NSDate distantFuture]];
     // Override point for customization after application launch.
+    
+
+    NSLog(@"%@",self.window);
+//    [self.window makeKeyAndVisible];
     return YES;
 }
 

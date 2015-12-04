@@ -26,7 +26,7 @@
     fprintf(stderr, "-------\n");                                               \
     } while (0)
 
-    #define kTestPhone @"18883867540"
+    #define kTestPhone @""
 
 #else
     #define DDLog(xx, ...)     ;
@@ -34,25 +34,41 @@
     #define kTestPhone @""
 #endif
 
+#define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+#define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+#define IS_RETINA ([[UIScreen mainScreen] scale] >= 2.0)
+
+#define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
+#define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
+#define SCREEN_MAX_LENGTH (MAX(SCREEN_WIDTH, SCREEN_HEIGHT))
+#define SCREEN_MIN_LENGTH (MIN(SCREEN_WIDTH, SCREEN_HEIGHT))
+
+#define IS_IPHONE_4_OR_LESS (IS_IPHONE && SCREEN_MAX_LENGTH < 568.0)
+#define IS_IPHONE_5 (IS_IPHONE && SCREEN_MAX_LENGTH == 568.0)
+#define IS_IPHONE_6 (IS_IPHONE && SCREEN_MAX_LENGTH == 667.0)
+#define IS_IPHONE_6P (IS_IPHONE && SCREEN_MAX_LENGTH == 736.0)
+
+
 #define kColorMainColor  [UIColor colorWithRed:3/255.0 green:169/255.0 blue:244/255.0 alpha:1]
+#define kColorBarTintColor [UIColor blueColor]
+#define kColorItemTintColor [UIColor blackColor]
 
 #define kSizeMainScreenHeight [UIScreen mainScreen].bounds.size.height
 #define kSizeMainScreenWdth [UIScreen mainScreen].bounds.size.width
-#define kColorBarTintColor MAIN_COLOR
-#define kColorItemTintColor [UIColor blackColor]
 #define kPasswordNumberSet @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
 #define kApplicationUserDefaultKeyPullPhone @"pullPhone"
 #define kApplicationUserDefaultKeyPassword @"appPassword"
+#define kApplicationUserDefaultHasMatchAuthKey @"hasMatchAuthKey"
 
 
 
 #define RGBColor(r,g,b,a) ([UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a])
 
 /** url宏 **/
-#define APPKEY @"64b56d71e0de2a45427bac0077e4a4a6"
-#define kRequestUrlSendMessage  @"http://yunpian.com/v1/sms/send.json"
-#define kRequestUrlPullStatus   @"http://yunpian.com/v1/sms/pull_status.json"
-#define kRequestUrlPullReply    @"http://yunpian.com/v1/sms/get_reply.json"
+#define APPKEY @"bd8fa178c5a9e0a8ca18a85cf041709b"
+#define kRequestUrlSendMessage  @"https://yunpian.com/v1/sms/send.json"
+#define kRequestUrlPullStatus   @"https://yunpian.com/v1/sms/pull_status.json"
+#define kRequestUrlPullReply    @"https://yunpian.com/v1/sms/get_reply.json"
 
 
 #endif

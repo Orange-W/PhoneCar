@@ -8,21 +8,29 @@
 
 #import "YCLMatchPhoneModel.h"
 #import "PullCenterModel.h"
-#import <MBProgressHUD.h>
+#import "MatchPhoneViewController.h"
 
 @implementation YCLMatchPhoneModel
 - (NSString *) infoStringFromCodeString:(NSString *)codeString andConfigArray:(NSArray *)configArray{
     BOOL isContain = [codeString containsString:[self pullPhone]];
     NSLog(@"解析匹配返回");
     if (!isContain) {
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:kApplicationUserDefaultKeyPullPhone];
         return @"本机不是合法手机，不能进行下一步";
     }
-    
+    self.analysisData = codeString;
     return @"匹配完成";
+}
+
+- (void)pushToNextFromViewController:(UIViewController *)viewController{
+    UIStoryboard *storyBord = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    MatchPhoneViewController *matchPhoneViewController = [storyBord instantiateViewControllerWithIdentifier:@"MatchStoryBord"];
+    matchPhoneViewController.matchMode = YCLMatchAuthKey;
+    [viewController.navigationController pushViewController:matchPhoneViewController animated:YES];
 }
 
 - (NSString *)code{return @"TC0";}
 - (NSString *)description{return @"匹配号码";}
 - (NSArray *)configArray{return nil;}
--(void)sendMessage{}
+//-(void)sendMessage{}
 @end

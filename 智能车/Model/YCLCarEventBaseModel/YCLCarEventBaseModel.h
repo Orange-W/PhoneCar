@@ -9,6 +9,7 @@
 #import "RequestBaseModel.h"
 
 @interface YCLCarEventBaseModel : RequestBaseModel
+@property (strong,nonatomic) id analysisData;
 
 - (NSString *)pullPhone;//返回当前绑定手机
 - (NSArray *)configArray;//配置数组
@@ -17,6 +18,6 @@
 - (NSString *) analysisCodeWithString:(NSString *)codeString;//解析返回值
 - (void)sendMessage;//发送命令
 
-
+- (void) pushToNextFromViewController:(UIViewController *)viewController;
 
 @end

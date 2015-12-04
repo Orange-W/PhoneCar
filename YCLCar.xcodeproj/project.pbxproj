@@ -8,20 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		0D033371C9E3C59AB6686ED2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73EB9212159418199A4E0E0E /* libPods.a */; };
+		CE039E601C08D9B80009C4B9 /* CoverView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE039E5F1C08D9B80009C4B9 /* CoverView.xib */; };
+		CE039E631C08E37E0009C4B9 /* CoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE039E621C08E37E0009C4B9 /* CoverView.m */; };
 		CE1165B81BEF41EE008C2FC6 /* YCLCarEventUnlockModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1165B71BEF41EE008C2FC6 /* YCLCarEventUnlockModel.m */; };
+		CE367B301C077FF200B8094A /* YCLCarEventFindCarOutsideModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE367B2F1C077FF200B8094A /* YCLCarEventFindCarOutsideModel.m */; };
+		CE367B341C07809C00B8094A /* YCLCarEventFindCarSilenceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE367B331C07809C00B8094A /* YCLCarEventFindCarSilenceModel.m */; };
+		CE367B381C07813900B8094A /* YCLCarEventCarSituationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE367B371C07813900B8094A /* YCLCarEventCarSituationModel.m */; };
+		CE3B1E901C03791000617D72 /* SetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3B1E8F1C03791000617D72 /* SetingViewController.m */; };
 		CE3BC7871BE863F10002CBA4 /* RequestBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3BC7861BE863F10002CBA4 /* RequestBaseModel.m */; };
 		CE42DCCB1BF8C550007363FD /* SetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE42DCCA1BF8C550007363FD /* SetPasswordViewController.m */; };
 		CE43340A1BE77DF1000C407D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4334091BE77DF1000C407D /* main.m */; };
 		CE43340D1BE77DF1000C407D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE43340C1BE77DF1000C407D /* AppDelegate.m */; };
-		CE4334101BE77DF1000C407D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE43340F1BE77DF1000C407D /* ViewController.m */; };
+		CE4334101BE77DF1000C407D /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE43340F1BE77DF1000C407D /* MainViewController.m */; };
 		CE4334131BE77DF1000C407D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4334111BE77DF1000C407D /* Main.storyboard */; };
 		CE4334151BE77DF1000C407D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE4334141BE77DF1000C407D /* Images.xcassets */; };
 		CE4334181BE77DF1000C407D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4334161BE77DF1000C407D /* LaunchScreen.xib */; };
 		CE43343C1BE79D14000C407D /* LoginEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4334361BE79D14000C407D /* LoginEntry.m */; };
 		CE43343D1BE79D14000C407D /* NetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4334391BE79D14000C407D /* NetWork.m */; };
-		CE566B811BF66A5300DBB839 /* 112.png in Resources */ = {isa = PBXBuildFile; fileRef = CE566B801BF66A5300DBB839 /* 112.png */; };
+		CE4A99021C019F3400FD635F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4A99011C019F3400FD635F /* LoginViewController.m */; };
 		CE566B831BF6702500DBB839 /* default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE566B821BF6702500DBB839 /* default.jpg */; };
-		CE566B851BF6703900DBB839 /* indexbc.png in Resources */ = {isa = PBXBuildFile; fileRef = CE566B841BF6703900DBB839 /* indexbc.png */; };
 		CE79716A1BF1B90500358D57 /* YCLCarEventLockModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7971691BF1B90500358D57 /* YCLCarEventLockModel.m */; };
 		CE79716E1BF1BE9B00358D57 /* YCLCarEventBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE79716D1BF1BE9B00358D57 /* YCLCarEventBaseModel.m */; };
 		CE7971731BF1CAF100358D57 /* YCLCarEventCloseAirModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7971721BF1CAF100358D57 /* YCLCarEventCloseAirModel.m */; };
@@ -47,14 +52,27 @@
 		CEB70A611BFB973E00FC3163 /* xiansu.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB70A501BFB973E00FC3163 /* xiansu.png */; };
 		CEB70A701BFB981C00FC3163 /* FastTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB70A6C1BFB981C00FC3163 /* FastTestViewController.m */; };
 		CEB70A711BFB981C00FC3163 /* MatchPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB70A6F1BFB981C00FC3163 /* MatchPhoneViewController.m */; };
+		CECA3E0B1C0CBF940093B14A /* YCLCarEvenMatchAuthKeyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CECA3E0A1C0CBF940093B14A /* YCLCarEvenMatchAuthKeyModel.m */; };
+		CEE42FB91C0618470021AB59 /* PhoneChangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE42FB81C0618470021AB59 /* PhoneChangeViewController.m */; };
 		CEE614761BEA32B8004873AA /* MatchPhoneModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE614751BEA32B8004873AA /* MatchPhoneModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		49B9B2A4749628EDFBFA77D6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		73EB9212159418199A4E0E0E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE039E5F1C08D9B80009C4B9 /* CoverView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CoverView.xib; path = PullCenter/CoverView.xib; sourceTree = "<group>"; };
+		CE039E611C08E37E0009C4B9 /* CoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoverView.h; path = PullCenter/CoverView.h; sourceTree = "<group>"; };
+		CE039E621C08E37E0009C4B9 /* CoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoverView.m; path = PullCenter/CoverView.m; sourceTree = "<group>"; };
 		CE1165B61BEF41EE008C2FC6 /* YCLCarEventUnlockModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCLCarEventUnlockModel.h; sourceTree = "<group>"; };
 		CE1165B71BEF41EE008C2FC6 /* YCLCarEventUnlockModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCLCarEventUnlockModel.m; sourceTree = "<group>"; };
+		CE367B2E1C077FF200B8094A /* YCLCarEventFindCarOutsideModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCLCarEventFindCarOutsideModel.h; sourceTree = "<group>"; };
+		CE367B2F1C077FF200B8094A /* YCLCarEventFindCarOutsideModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCLCarEventFindCarOutsideModel.m; sourceTree = "<group>"; };
+		CE367B321C07809C00B8094A /* YCLCarEventFindCarSilenceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCLCarEventFindCarSilenceModel.h; sourceTree = "<group>"; };
+		CE367B331C07809C00B8094A /* YCLCarEventFindCarSilenceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCLCarEventFindCarSilenceModel.m; sourceTree = "<group>"; };
+		CE367B361C07813900B8094A /* YCLCarEventCarSituationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCLCarEventCarSituationModel.h; sourceTree = "<group>"; };
+		CE367B371C07813900B8094A /* YCLCarEventCarSituationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCLCarEventCarSituationModel.m; sourceTree = "<group>"; };
+		CE3B1E8E1C03791000617D72 /* SetingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SetingViewController.h; path = Seting/SetingViewController.h; sourceTree = "<group>"; };
+		CE3B1E8F1C03791000617D72 /* SetingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetingViewController.m; path = Seting/SetingViewController.m; sourceTree = "<group>"; };
 		CE3BC7851BE863F10002CBA4 /* RequestBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestBaseModel.h; sourceTree = "<group>"; };
 		CE3BC7861BE863F10002CBA4 /* RequestBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestBaseModel.m; sourceTree = "<group>"; };
 		CE42DCC91BF8C550007363FD /* SetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetPasswordViewController.h; sourceTree = "<group>"; };
@@ -64,8 +82,8 @@
 		CE4334091BE77DF1000C407D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CE43340B1BE77DF1000C407D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CE43340C1BE77DF1000C407D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CE43340E1BE77DF1000C407D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CE43340F1BE77DF1000C407D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		CE43340E1BE77DF1000C407D /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		CE43340F1BE77DF1000C407D /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		CE4334121BE77DF1000C407D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE4334141BE77DF1000C407D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CE4334171BE77DF1000C407D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -76,9 +94,9 @@
 		CE4334361BE79D14000C407D /* LoginEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginEntry.m; sourceTree = "<group>"; };
 		CE4334381BE79D14000C407D /* NetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWork.h; sourceTree = "<group>"; };
 		CE4334391BE79D14000C407D /* NetWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWork.m; sourceTree = "<group>"; };
-		CE566B801BF66A5300DBB839 /* 112.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 112.png; sourceTree = "<group>"; };
+		CE4A99001C019F3400FD635F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Login/LoginViewController.h; sourceTree = "<group>"; };
+		CE4A99011C019F3400FD635F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Login/LoginViewController.m; sourceTree = "<group>"; };
 		CE566B821BF6702500DBB839 /* default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default.jpg; sourceTree = "<group>"; };
-		CE566B841BF6703900DBB839 /* indexbc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = indexbc.png; sourceTree = "<group>"; };
 		CE7971681BF1B90500358D57 /* YCLCarEventLockModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCLCarEventLockModel.h; sourceTree = "<group>"; };
 		CE7971691BF1B90500358D57 /* YCLCarEventLockModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCLCarEventLockModel.m; sourceTree = "<group>"; };
 		CE79716C1BF1BE9B00358D57 /* YCLCarEventBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YCLCarEventBaseModel.h; path = YCLCarEventBaseModel/YCLCarEventBaseModel.h; sourceTree = "<group>"; };
@@ -112,6 +130,10 @@
 		CEB70A6C1BFB981C00FC3163 /* FastTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FastTestViewController.m; sourceTree = "<group>"; };
 		CEB70A6E1BFB981C00FC3163 /* MatchPhoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchPhoneViewController.h; sourceTree = "<group>"; };
 		CEB70A6F1BFB981C00FC3163 /* MatchPhoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchPhoneViewController.m; sourceTree = "<group>"; };
+		CECA3E091C0CBF940093B14A /* YCLCarEvenMatchAuthKeyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YCLCarEvenMatchAuthKeyModel.h; path = MatchAuthKey/YCLCarEvenMatchAuthKeyModel.h; sourceTree = "<group>"; };
+		CECA3E0A1C0CBF940093B14A /* YCLCarEvenMatchAuthKeyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YCLCarEvenMatchAuthKeyModel.m; path = MatchAuthKey/YCLCarEvenMatchAuthKeyModel.m; sourceTree = "<group>"; };
+		CEE42FB71C0618470021AB59 /* PhoneChangeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhoneChangeViewController.h; path = PhoneChange/PhoneChangeViewController.h; sourceTree = "<group>"; };
+		CEE42FB81C0618470021AB59 /* PhoneChangeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhoneChangeViewController.m; path = PhoneChange/PhoneChangeViewController.m; sourceTree = "<group>"; };
 		CEE614741BEA32B8004873AA /* MatchPhoneModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchPhoneModel.h; sourceTree = "<group>"; };
 		CEE614751BEA32B8004873AA /* MatchPhoneModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchPhoneModel.m; sourceTree = "<group>"; };
 		DF493D1521F524A3CAE4B433 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -146,13 +168,49 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		CE1165B51BEF412E008C2FC6 /* 开锁 */ = {
+		CE1165B51BEF412E008C2FC6 /* 开锁9 */ = {
 			isa = PBXGroup;
 			children = (
 				CE1165B61BEF41EE008C2FC6 /* YCLCarEventUnlockModel.h */,
 				CE1165B71BEF41EE008C2FC6 /* YCLCarEventUnlockModel.m */,
 			);
-			name = "开锁";
+			name = "开锁9";
+			sourceTree = "<group>";
+		};
+		CE367B2D1C077F8300B8094A /* 野外寻车5 */ = {
+			isa = PBXGroup;
+			children = (
+				CE367B2E1C077FF200B8094A /* YCLCarEventFindCarOutsideModel.h */,
+				CE367B2F1C077FF200B8094A /* YCLCarEventFindCarOutsideModel.m */,
+			);
+			name = "野外寻车5";
+			sourceTree = "<group>";
+		};
+		CE367B311C07802C00B8094A /* 静音寻车2 */ = {
+			isa = PBXGroup;
+			children = (
+				CE367B321C07809C00B8094A /* YCLCarEventFindCarSilenceModel.h */,
+				CE367B331C07809C00B8094A /* YCLCarEventFindCarSilenceModel.m */,
+			);
+			name = "静音寻车2";
+			sourceTree = "<group>";
+		};
+		CE367B351C0780C700B8094A /* 车辆状况1 */ = {
+			isa = PBXGroup;
+			children = (
+				CE367B361C07813900B8094A /* YCLCarEventCarSituationModel.h */,
+				CE367B371C07813900B8094A /* YCLCarEventCarSituationModel.m */,
+			);
+			name = "车辆状况1";
+			sourceTree = "<group>";
+		};
+		CE3B1E8D1C0378F500617D72 /* 设置 */ = {
+			isa = PBXGroup;
+			children = (
+				CE3B1E8E1C03791000617D72 /* SetingViewController.h */,
+				CE3B1E8F1C03791000617D72 /* SetingViewController.m */,
+			);
+			name = "设置";
 			sourceTree = "<group>";
 		};
 		CE42DCC81BF8C550007363FD /* 设置密码 */ = {
@@ -190,12 +248,13 @@
 				CE43342D1BE77E72000C407D /* Tool */,
 				CE43342E1BE77E7D000C407D /* Config */,
 				CE4FDEC61BEB34CB00AC7601 /* Contriller */,
+				CEB70A6A1BFB981C00FC3163 /* 快速测试 */,
 				CE4334301BE77E8C000C407D /* Model */,
 				CE566B7F1BF66A4B00DBB839 /* Images */,
 				CE43340B1BE77DF1000C407D /* AppDelegate.h */,
 				CE43340C1BE77DF1000C407D /* AppDelegate.m */,
-				CE43340E1BE77DF1000C407D /* ViewController.h */,
-				CE43340F1BE77DF1000C407D /* ViewController.m */,
+				CE43340E1BE77DF1000C407D /* MainViewController.h */,
+				CE43340F1BE77DF1000C407D /* MainViewController.m */,
 				CE4334111BE77DF1000C407D /* Main.storyboard */,
 				CE4334141BE77DF1000C407D /* Images.xcassets */,
 				CE4334161BE77DF1000C407D /* LaunchScreen.xib */,
@@ -250,13 +309,17 @@
 		CE4334301BE77E8C000C407D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CECA3E081C0CBF1B0093B14A /* 匹配授权 */,
 				CEA24BF71BF72B1C001BF0A5 /* 匹配设备 */,
-				CE7971701BF1CACA00358D57 /* 关空调 */,
-				CE79716F1BF1CABE00358D57 /* 开空调 */,
-				CE7971671BF1B84A00358D57 /* 关锁 */,
-				CE1165B51BEF412E008C2FC6 /* 开锁 */,
+				CE367B351C0780C700B8094A /* 车辆状况1 */,
+				CE367B311C07802C00B8094A /* 静音寻车2 */,
+				CE367B2D1C077F8300B8094A /* 野外寻车5 */,
+				CE7971701BF1CACA00358D57 /* 关空调0 */,
+				CE79716F1BF1CABE00358D57 /* 开空调3 */,
+				CE7971671BF1B84A00358D57 /* 关锁6 */,
+				CE1165B51BEF412E008C2FC6 /* 开锁9 */,
 				CE7F663B1BEC80A8006EA7E9 /* 接收处理队列 */,
-				CEE614771BEA32C1004873AA /* 匹配功能 */,
+				CEE614771BEA32C1004873AA /* 匹配设备码 */,
 				CE3BC7851BE863F10002CBA4 /* RequestBaseModel.h */,
 				CE3BC7861BE863F10002CBA4 /* RequestBaseModel.m */,
 				CE79716C1BF1BE9B00358D57 /* YCLCarEventBaseModel.h */,
@@ -283,10 +346,21 @@
 			path = NetWork;
 			sourceTree = "<group>";
 		};
+		CE4A98FF1C019E9D00FD635F /* 登录功能 */ = {
+			isa = PBXGroup;
+			children = (
+				CE4A99001C019F3400FD635F /* LoginViewController.h */,
+				CE4A99011C019F3400FD635F /* LoginViewController.m */,
+			);
+			name = "登录功能";
+			sourceTree = "<group>";
+		};
 		CE4FDEC61BEB34CB00AC7601 /* Contriller */ = {
 			isa = PBXGroup;
 			children = (
-				CEB70A6A1BFB981C00FC3163 /* 快速测试 */,
+				CEE42FB61C0617F10021AB59 /* 添加/减少手机号 */,
+				CE3B1E8D1C0378F500617D72 /* 设置 */,
+				CE4A98FF1C019E9D00FD635F /* 登录功能 */,
 				CEB70A6D1BFB981C00FC3163 /* 匹配测试号 */,
 				CE42DCC81BF8C550007363FD /* 设置密码 */,
 			);
@@ -298,45 +372,46 @@
 			children = (
 				CEB70A3E1BFB973E00FC3163 /* mipmap-xhdpi */,
 				CEB70A401BFB973E00FC3163 /* mipmap-xxhdpi */,
-				CE566B841BF6703900DBB839 /* indexbc.png */,
 				CE566B821BF6702500DBB839 /* default.jpg */,
-				CE566B801BF66A5300DBB839 /* 112.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
 		};
-		CE7971671BF1B84A00358D57 /* 关锁 */ = {
+		CE7971671BF1B84A00358D57 /* 关锁6 */ = {
 			isa = PBXGroup;
 			children = (
 				CE7971681BF1B90500358D57 /* YCLCarEventLockModel.h */,
 				CE7971691BF1B90500358D57 /* YCLCarEventLockModel.m */,
 			);
-			name = "关锁";
+			name = "关锁6";
 			sourceTree = "<group>";
 		};
-		CE79716F1BF1CABE00358D57 /* 开空调 */ = {
+		CE79716F1BF1CABE00358D57 /* 开空调3 */ = {
 			isa = PBXGroup;
 			children = (
 				CE7971741BF1CB0900358D57 /* YCLCarEventOpenAirModel.h */,
 				CE7971751BF1CB0900358D57 /* YCLCarEventOpenAirModel.m */,
 			);
-			name = "开空调";
+			name = "开空调3";
 			sourceTree = "<group>";
 		};
-		CE7971701BF1CACA00358D57 /* 关空调 */ = {
+		CE7971701BF1CACA00358D57 /* 关空调0 */ = {
 			isa = PBXGroup;
 			children = (
 				CE7971711BF1CAF100358D57 /* YCLCarEventCloseAirModel.h */,
 				CE7971721BF1CAF100358D57 /* YCLCarEventCloseAirModel.m */,
 			);
-			name = "关空调";
+			name = "关空调0";
 			sourceTree = "<group>";
 		};
 		CE7F663B1BEC80A8006EA7E9 /* 接收处理队列 */ = {
 			isa = PBXGroup;
 			children = (
+				CE039E611C08E37E0009C4B9 /* CoverView.h */,
+				CE039E621C08E37E0009C4B9 /* CoverView.m */,
 				CE7F663C1BEC8156006EA7E9 /* PullCenterModel.h */,
 				CE7F663D1BEC8156006EA7E9 /* PullCenterModel.m */,
+				CE039E5F1C08D9B80009C4B9 /* CoverView.xib */,
 			);
 			name = "接收处理队列";
 			sourceTree = "<group>";
@@ -388,7 +463,7 @@
 				CEB70A6C1BFB981C00FC3163 /* FastTestViewController.m */,
 			);
 			name = "快速测试";
-			path = FastTest;
+			path = Contriller/FastTest;
 			sourceTree = "<group>";
 		};
 		CEB70A6D1BFB981C00FC3163 /* 匹配测试号 */ = {
@@ -401,13 +476,31 @@
 			path = MatchPhone;
 			sourceTree = "<group>";
 		};
-		CEE614771BEA32C1004873AA /* 匹配功能 */ = {
+		CECA3E081C0CBF1B0093B14A /* 匹配授权 */ = {
+			isa = PBXGroup;
+			children = (
+				CECA3E091C0CBF940093B14A /* YCLCarEvenMatchAuthKeyModel.h */,
+				CECA3E0A1C0CBF940093B14A /* YCLCarEvenMatchAuthKeyModel.m */,
+			);
+			name = "匹配授权";
+			sourceTree = "<group>";
+		};
+		CEE42FB61C0617F10021AB59 /* 添加/减少手机号 */ = {
+			isa = PBXGroup;
+			children = (
+				CEE42FB71C0618470021AB59 /* PhoneChangeViewController.h */,
+				CEE42FB81C0618470021AB59 /* PhoneChangeViewController.m */,
+			);
+			name = "添加/减少手机号";
+			sourceTree = "<group>";
+		};
+		CEE614771BEA32C1004873AA /* 匹配设备码 */ = {
 			isa = PBXGroup;
 			children = (
 				CEE614741BEA32B8004873AA /* MatchPhoneModel.h */,
 				CEE614751BEA32B8004873AA /* MatchPhoneModel.m */,
 			);
-			name = "匹配功能";
+			name = "匹配设备码";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -438,7 +531,7 @@
 		CE4333FC1BE77DF0000C407D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Orange-W";
 				TargetAttributes = {
 					CE4334031BE77DF0000C407D = {
@@ -471,12 +564,12 @@
 			files = (
 				CEB70A531BFB973E00FC3163 /* car_status.png in Resources */,
 				CEB70A571BFB973E00FC3163 /* lockclosed.png in Resources */,
-				CE566B811BF66A5300DBB839 /* 112.png in Resources */,
 				CE4334131BE77DF1000C407D /* Main.storyboard in Resources */,
 				CEB70A5F1BFB973E00FC3163 /* slider.png in Resources */,
 				CEB70A5B1BFB973E00FC3163 /* power_on.png in Resources */,
 				CE4334181BE77DF1000C407D /* LaunchScreen.xib in Resources */,
 				CEB70A5C1BFB973E00FC3163 /* search_car.png in Resources */,
+				CE039E601C08D9B80009C4B9 /* CoverView.xib in Resources */,
 				CEB70A551BFB973E00FC3163 /* kongdiao.png in Resources */,
 				CE4334151BE77DF1000C407D /* Images.xcassets in Resources */,
 				CEB70A5A1BFB973E00FC3163 /* power_off.png in Resources */,
@@ -484,7 +577,6 @@
 				CEB70A601BFB973E00FC3163 /* slider_control.png in Resources */,
 				CEB70A611BFB973E00FC3163 /* xiansu.png in Resources */,
 				CE566B831BF6702500DBB839 /* default.jpg in Resources */,
-				CE566B851BF6703900DBB839 /* indexbc.png in Resources */,
 				CEB70A581BFB973E00FC3163 /* lockopen.png in Resources */,
 				CEB70A5D1BFB973E00FC3163 /* search_car_voice_off.png in Resources */,
 				CEB70A591BFB973E00FC3163 /* more.png in Resources */,
@@ -538,17 +630,25 @@
 				CEB70A701BFB981C00FC3163 /* FastTestViewController.m in Sources */,
 				CE79716E1BF1BE9B00358D57 /* YCLCarEventBaseModel.m in Sources */,
 				CEB70A711BFB981C00FC3163 /* MatchPhoneViewController.m in Sources */,
+				CECA3E0B1C0CBF940093B14A /* YCLCarEvenMatchAuthKeyModel.m in Sources */,
 				CE79716A1BF1B90500358D57 /* YCLCarEventLockModel.m in Sources */,
 				CE42DCCB1BF8C550007363FD /* SetPasswordViewController.m in Sources */,
 				CEE614761BEA32B8004873AA /* MatchPhoneModel.m in Sources */,
-				CE4334101BE77DF1000C407D /* ViewController.m in Sources */,
+				CE4334101BE77DF1000C407D /* MainViewController.m in Sources */,
 				CE3BC7871BE863F10002CBA4 /* RequestBaseModel.m in Sources */,
 				CE43343D1BE79D14000C407D /* NetWork.m in Sources */,
+				CE367B301C077FF200B8094A /* YCLCarEventFindCarOutsideModel.m in Sources */,
+				CE3B1E901C03791000617D72 /* SetingViewController.m in Sources */,
 				CE43340D1BE77DF1000C407D /* AppDelegate.m in Sources */,
+				CE367B381C07813900B8094A /* YCLCarEventCarSituationModel.m in Sources */,
 				CE43343C1BE79D14000C407D /* LoginEntry.m in Sources */,
 				CE7971761BF1CB0900358D57 /* YCLCarEventOpenAirModel.m in Sources */,
+				CE367B341C07809C00B8094A /* YCLCarEventFindCarSilenceModel.m in Sources */,
+				CE039E631C08E37E0009C4B9 /* CoverView.m in Sources */,
+				CEE42FB91C0618470021AB59 /* PhoneChangeViewController.m in Sources */,
 				CE43340A1BE77DF1000C407D /* main.m in Sources */,
 				CE1165B81BEF41EE008C2FC6 /* YCLCarEventUnlockModel.m in Sources */,
+				CE4A99021C019F3400FD635F /* LoginViewController.m in Sources */,
 				CE7971731BF1CAF100358D57 /* YCLCarEventCloseAirModel.m in Sources */,
 				CE7F663E1BEC8156006EA7E9 /* PullCenterModel.m in Sources */,
 				CEA24BFA1BF72B8A001BF0A5 /* YCLMatchPhoneModel.m in Sources */,
@@ -598,6 +698,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -667,7 +768,9 @@
 				INFOPLIST_FILE = "智能车/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Redrock-iOS.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = YCLCar;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -681,7 +784,9 @@
 				INFOPLIST_FILE = "智能车/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Redrock-iOS.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = YCLCar;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
