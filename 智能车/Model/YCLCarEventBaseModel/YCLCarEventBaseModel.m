@@ -10,7 +10,14 @@
 #import "PullCenterModel.h"
 @implementation YCLCarEventBaseModel
 
-
+/**
+ *  @author Orange-W, 15-12-04 16:12:18
+ *
+ *  @brief  解析函数,个别功能重写此函数
+ *  @param codeString  车载设备返回的反馈码
+ *  @param configArray 配置数组
+ *  @return 解析返回字符串
+ */
 - (NSString *) infoStringFromCodeString:(NSString *)codeString andConfigArray:(NSArray *)configArray{
     NSString *outPut=@"";
     for(int i=0;i<configArray.count;i++){
@@ -32,15 +39,33 @@
     return outPut;
 }
 
+/**
+ *  @author Orange-W, 15-12-04 16:12:54
+ *
+ *  @brief  内部调用,不要重写
+ *  @param codeString 原始反馈码
+ *  @return 解析结果
+ */
 - (NSString *)analysisCodeWithString: (NSString *)codeString{
     return [self infoStringFromCodeString:codeString andConfigArray:self.configArray];
 }
 
+/**
+ *  @author Orange-W, 15-12-04 16:12:26
+ *
+ *  @brief  向车载设备发送命令
+ */
 - (void)sendMessage{
     NSString *phoneNumber = [self pullPhone];
     NSLog(@"%@",[self description]);
     [self sendMessageWithPhone:phoneNumber content:[NSString stringWithFormat:@"【益车利】%@\n(以上为益车利给您的车载设备的命令码)",self.code]];
 }
+
+/**
+ *  @author Orange-W, 15-12-04 16:12:50
+ *
+ *  @brief  配置数组
+ */
 - (NSArray *)configArray{
     return @[
              @[ //命令类型
@@ -76,9 +101,25 @@
 }
 - (NSString *)code{return @"";}
 
+/**
+ *  @author Orange-W, 15-12-04 16:12:07
+ *
+ *  @brief  返回请求中心单例的绑定手机
+ *  @return 绑定手机号
+ */
 - (NSString *)pullPhone{
     PullCenterModel *phoneModel = [PullCenterModel sharePullCenter];
     return [phoneModel pullPhone];
+}
+
+/**
+ *  @author Orange-W, 15-12-04 16:12:40
+ *
+ *  @brief  push 去下一个页面,如果使用,需要自己重写(也可进行Present操作)
+ *  @param viewController push 去的ViewControll
+ */
+- (void) pushToNextFromViewController:(UIViewController *)viewController{
+    
 }
 
 @end

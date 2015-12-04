@@ -16,5 +16,5 @@
 - (NSString *)description{
     return @"车辆状况!";
 }
-- (void)sendMessage{}
+//- (void)sendMessage{}
 @end

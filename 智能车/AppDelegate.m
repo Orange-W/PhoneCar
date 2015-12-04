@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "PullCenterModel.h"
-
+#import "MatchPhoneViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -17,7 +17,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [NSTimeZone setDefaultTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
+
    
     _pullCenter = [PullCenterModel sharePullCenter];
     NSString *pullPhone = [[NSUserDefaults standardUserDefaults] objectForKey:@"pullPhone"];
@@ -30,6 +30,11 @@
     _pullCenter.pullPhone = pullPhone;
     [_pullCenter pullLoopStart];
     
+    
+//    [_pullCenter addPullEvent:YCLCarEventCloseAir forView:nil];
+    
+//    MatchPhoneViewController *matController = [[MatchPhoneViewController alloc]init];
+//    self.window.rootViewController = matController;
 
 //    RequestBaseModel *model = [[RequestBaseModel alloc] init];
 
@@ -37,6 +42,10 @@
 
 //    [model getReplyMessagesWithPhone:@"18883867540" startTime:[NSDate distantPast] endTime:[NSDate distantFuture]];
     // Override point for customization after application launch.
+    
+
+    NSLog(@"%@",self.window);
+//    [self.window makeKeyAndVisible];
     return YES;
 }
 

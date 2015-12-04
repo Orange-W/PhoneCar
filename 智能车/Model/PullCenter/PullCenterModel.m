@@ -12,20 +12,29 @@
 #import "CoverView.h"
 
 @interface PullCenterModel()
-@property (strong, nonatomic) NSDate *pullInitTime;
-@property (strong, nonatomic) UIWindow *detailWindow;
-@property (strong, nonatomic) CoverView *detailView;
+@property (strong, nonatomic) NSDate *pullInitTime;     //当前请求节点
+@property (strong, nonatomic) UIWindow *detailWindow;   //详情的 window
+@property (strong, nonatomic) CoverView *detailView;    //详情页
 @end
 
 @implementation PullCenterModel
 
 static PullCenterModel *sharedInstance = nil;
 
-static const unsigned int  pullEveryTime = 2;
-static const unsigned int  outTimeMax = 120;
+static const unsigned int  pullEveryTime = 2;           //每pullTime秒请求一次
+static const unsigned int  outTimeMax = 120;            //超时时间
 
 #pragma mark -
 #pragma mark 请求入列
+/**
+ *  @author Orange-W, 15-12-04 16:12:34
+ *
+ *  @brief  向请求队列添加请求事件
+ *  @param YCLEventName 请求事件类型
+ *  @param view         显示 "加载中..." ProgressView的页面
+ *  @param infoArray    UserInfo 额外参数的数组
+ *  @return YES/NO
+ */
 - (BOOL) addPullEvent:(YCLPullEvent) YCLEventName
               forView:(UIView *)view
              userInfo:(NSArray *)infoArray{
@@ -48,9 +57,7 @@ static const unsigned int  outTimeMax = 120;
         case YCLCarEventCloseAir:
             [self.closeAirModel sendMessage];
             break;
-        case YCLCarEventMatchPhone:
-            [self.matchModel sendMessage];
-            break;
+            
         case YCLCarEventCarSituation:
             [self.carSituationModel sendMessage];
             break;
@@ -60,10 +67,12 @@ static const unsigned int  outTimeMax = 120;
         case YCLCarEventFindCarSilence:
             [self.carSilenceModel sendMessage];
             break;
-            //        case YCLCarEventAddPhone: //发送消息和删除一样
-            //        case YCLCarEventDeletePhone:
-            //            [self.matchModel sendMessage];
-            //            break;
+        case YCLCarEventMatchPhone:
+            [self.matchModel sendMessage];
+            break;
+        case YCLCarEvenMatchAuthKey:
+            [self.authKeyModel sendMessageWithAuthCode:[infoArray firstObject]];
+            break;
         default:
             NSLog(@"wrong");
             break;
@@ -86,10 +95,12 @@ static const unsigned int  outTimeMax = 120;
 
 
 - (void)registEvent:(YCLPullEvent) YCLEventName forView:(UIView *)view{
+    NSLog(@"添加事件");
     [_pullQueueIdSet addObject:@(YCLEventName)];
     _pullInitTime = [NSDate date];
 //    _pullEventStartTimeArray[YCLEventName] = [NSDate date];
     _outTime = outTimeMax;
+    
     [self showProgresstoView:view];
 }
 
@@ -146,7 +157,6 @@ static const unsigned int  outTimeMax = 120;
     
     if (_outTime<0) {
         [self.progressHUD setLabelText:@"请求超时"];
-        [self.progressHUD setDetailsLabelText:@""];
         [self.progressHUD hide:YES afterDelay:3];
         [_pullQueueIdSet removeAllObjects];
     }
@@ -181,7 +191,7 @@ static const unsigned int  outTimeMax = 120;
 //    codeString = @"0a0000";
     
     if (!codeString) {
-        NSLog(@"本次无数据");
+//        NSLog(@"本次无数据");
         return NO;
     }
     NSLog(@"返回:%@",textArray);
@@ -221,21 +231,30 @@ static const unsigned int  outTimeMax = 120;
                 case YCLCarEventMatchPhone:
 //                    baseModel = self.carSilenceModel;
                     //把逻辑提出成函数
-                    return [self isMatchPhoneWithCodeString:codeString];
-//                case YCLCarEventAddPhone:
-//                case YCLCarEventDeletePhone:
-//                    return [self isSuccessMatchPhoneWithCodeTring:codeString forEventString:@"addPhone"];
-//                    return [self isSuccessMatchPhoneWithCodeTring:codeString forEventString:@"deletePhone"];
+                    return [self isMatchPhoneWithCodeString:codeString model:self.matchModel];
+                    
+                case YCLCarEvenMatchAuthKey:
+                    return [self isMatchPhoneWithCodeString:codeString model:self.authKeyModel];
                 default:
                     NSLog(@"wrong");
                     break;
             }
-            
-            //命令不一致就不执行
-            if (![commandCode isEqualToString:baseModel.code]) {
-                
-                NSLog(@"非匹配回复:%@,%@",commandCode,baseModel.code);//
-                return NO;
+            NSLog(@"匹配完成:%@",description);
+            //这7个功能,防止重复调用
+            if(    i==YCLCarEventUnlock
+                || i==YCLCarEventLock
+                || i==YCLCarEventOpenAir
+                || i==YCLCarEventCloseAir
+                || i==YCLCarEventFindCarOutside
+                || i==YCLCarEventFindCarSilence
+                || i==YCLCarEventCarSituation
+               ){
+                //命令不一致就不执行
+                if (![commandCode isEqualToString:baseModel.code]) {
+                    
+                    NSLog(@"非匹配回复:%@,%@",commandCode,baseModel.code);//
+                    return NO;
+                }
             }
             
             //使用返回
@@ -328,25 +347,33 @@ static const unsigned int  outTimeMax = 120;
     return  _carSilenceModel;
 }
 
+- (YCLCarEvenMatchAuthKeyModel *)authKeyModel{
+    if (!_authKeyModel) {
+        _authKeyModel = [[YCLCarEvenMatchAuthKeyModel alloc] init];
+    }
+    return _authKeyModel;
+}
+
 - (UIWindow *)detailWindow
 {
     if (!_detailWindow) {
+        
         _detailWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
         [_detailWindow setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.4]];
-       
+
         NSArray *nibContents = [[NSBundle mainBundle] loadNibNamed:@"CoverView" owner:self options:nil];
         CoverView *plainView = [nibContents lastObject];
         self.detailView = plainView;
-        
+        _detailWindow.window.rootViewController = [[UIViewController alloc] init];
         plainView.frame = CGRectMake(30, 100, kSizeMainScreenWdth-60, kSizeMainScreenHeight-200);
-        
+
         // Add to the view hierarchy (thus retain).
         [self.progressHUD addSubview:plainView];
 
         [_detailWindow setWindowLevel:UIWindowLevelAlert + 1];//
         
         [_detailWindow addSubview:plainView];
-        
+        _detailWindow.rootViewController = [[UIViewController alloc] init];
     }
     return _detailWindow;
 }
@@ -416,6 +443,10 @@ static const unsigned int  outTimeMax = 120;
 
 #pragma 进度框配置
 - (MBProgressHUD *)showProgresstoView:(UIView *)view {
+    if (!view) {
+        return nil;
+    }
+    
     // 快速显示一个提示信息
     MBProgressHUD *HUD = [MBProgressHUD showHUDAddedTo:view animated:YES];
     HUD.labelText = @"命令已发送,等待回复";
@@ -431,18 +462,15 @@ static const unsigned int  outTimeMax = 120;
 }
 
 #pragma match phone 操作的逻辑函数
-- (BOOL) isMatchPhoneWithCodeString:(NSString *)codeString{
-    NSString *returnString = [self.matchModel analysisCodeWithString:codeString];
+- (BOOL) isMatchPhoneWithCodeString:(NSString *)codeString model:(YCLCarEventBaseModel *)model{
+    NSString *returnString = [model analysisCodeWithString:codeString];
     [self.progressHUD setLabelText:returnString];
     [self.progressHUD setDetailsLabelText:@""];
     [self.progressHUD hide:YES afterDelay:3];
     [_pullQueueIdSet removeAllObjects];
     
     if ([returnString isEqualToString:@"匹配完成"]) {
-        UIStoryboard *storyBord = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-        MatchPhoneViewController *matchPhoneViewController = [storyBord instantiateViewControllerWithIdentifier:@"MatchStoryBord"];
-        matchPhoneViewController.matchMode = YCLMatchAuthKey;
-        [self.localViewController presentViewController:matchPhoneViewController animated:YES completion:nil];
+        [model pushToNextFromViewController:self.localViewController];
         return YES;
     }
     
@@ -450,21 +478,21 @@ static const unsigned int  outTimeMax = 120;
     return NO;
 }
 
-- (BOOL) isSuccessMatchPhoneWithCodeTring:(NSString *)codeString
-                                 forEventString:(NSString *)eventString{
-    if (![self isMatchPhoneWithCodeString:codeString]) {
-        return NO;
-    }
-    //push 去添加设备
-    
-    if ([eventString isEqualToString:@"addPhone"]) {
-        
-    }else{
-        
-    }
-    
-    return YES;
-}
+//- (BOOL) isSuccessMatchPhoneWithCodeTring:(NSString *)codeString
+//                                 forEventString:(NSString *)eventString{
+//    if (![self isMatchPhoneWithCodeString:codeString]) {
+//        return NO;
+//    }
+//    //push 去添加设备
+//    
+//    if ([eventString isEqualToString:@"addPhone"]) {
+//        
+//    }else{
+//        
+//    }
+//    
+//    return YES;
+//}
 
 
 @end

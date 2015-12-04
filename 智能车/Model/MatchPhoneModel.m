@@ -26,7 +26,7 @@ static const NSString *matchStartPrefix = @"a5";
 
 - (void)failureTodo:(NSInteger)returnCode{
     if (returnCode == 1001) {
-        NSLog(@"匹配码不合法");//
+        NSLog(@"匹配码不合法");
     }
 }
 

@@ -8,7 +8,7 @@
 
 #import "YCLMatchPhoneModel.h"
 #import "PullCenterModel.h"
-#import <MBProgressHUD.h>
+#import "MatchPhoneViewController.h"
 
 @implementation YCLMatchPhoneModel
 - (NSString *) infoStringFromCodeString:(NSString *)codeString andConfigArray:(NSArray *)configArray{
@@ -20,6 +20,13 @@
     }
     self.analysisData = codeString;
     return @"匹配完成";
+}
+
+- (void)pushToNextFromViewController:(UIViewController *)viewController{
+    UIStoryboard *storyBord = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    MatchPhoneViewController *matchPhoneViewController = [storyBord instantiateViewControllerWithIdentifier:@"MatchStoryBord"];
+    matchPhoneViewController.matchMode = YCLMatchAuthKey;
+    [viewController.navigationController pushViewController:matchPhoneViewController animated:YES];
 }
 
 - (NSString *)code{return @"TC0";}

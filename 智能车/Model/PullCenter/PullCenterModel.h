@@ -14,6 +14,7 @@
 #import "YCLCarEventCarSituationModel.h"
 #import "YCLCarEventFindCarOutsideModel.h"
 #import "YCLCarEventFindCarSilenceModel.h"
+#import "YCLCarEvenMatchAuthKeyModel.h"
 
 typedef NS_ENUM(NSInteger,YCLPullEvent){
     YCLCarEventNone = 0,
@@ -47,6 +48,7 @@ typedef NS_ENUM(NSInteger,YCLPullEvent){
 @property (strong, nonatomic) YCLCarEventCarSituationModel *carSituationModel;
 @property (strong, nonatomic) YCLCarEventFindCarOutsideModel *carOutsideModel;
 @property (strong, nonatomic) YCLCarEventFindCarSilenceModel *carSilenceModel;
+@property (strong, nonatomic) YCLCarEvenMatchAuthKeyModel *authKeyModel;
 
 @property (copy, atomic)NSString *pullPhone;
 @property (strong, atomic)NSDate* earilyPullTime;

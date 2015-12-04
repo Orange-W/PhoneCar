@@ -38,8 +38,8 @@
     MBProgressHUD *progress =[MBProgressHUD showHUDAddedTo:self.view animated:YES];
     progress.removeFromSuperViewOnHide = YES;
     progress.dimBackground = YES;
-#warning 测试默认通过
-    if ([_appPasswordTextField.text isEqualToString:appPassword] || YES) {
+
+    if ([_appPasswordTextField.text isEqualToString:appPassword]) {
         progress.labelText = @"登录成功";
         UIStoryboard *storyBord = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
         UIViewController *loginViewController = [storyBord instantiateViewControllerWithIdentifier:@"MainNav"];

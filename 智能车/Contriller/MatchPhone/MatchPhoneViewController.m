@@ -11,13 +11,10 @@
 #import "SetPasswordViewController.h"
 
 @interface MatchPhoneViewController()
-
+@property (assign ,readonly ,nonatomic) BOOL phoneIsAllow;
 @end
 
 @implementation MatchPhoneViewController
--(void)viewDidLoad{
-
-}
 
 - (IBAction)touchMatchButton:(UIButton *)sender {
     
@@ -33,13 +30,17 @@
             HUD.detailsLabelText = @"请检查: 设置->电话->本机号码";
             [HUD show:YES];
             [HUD hide:YES afterDelay:3];
+        }else if (!self.phoneIsAllow){
+            [self isAllowable:_matchTextField];
         }else{
+            pullCenter.pullPhone = self.matchTextField.text;
+//            NSLog(@"as");
 //            [[NSUserDefaults standardUserDefaults] setObject:number forKey:kApplicationUserDefaultKeyPullPhone];
             [pullCenter addPullEvent:YCLCarEventMatchPhone forView:self.view];
         }
     }else if(self.matchMode == YCLMatchAuthKey){
         NSLog(@"验证");
-        [pullCenter addPullEvent:YCLCarEvenMatchAuthKey forView:self.view userInfo:@[self.matchTestField.text]];
+        [pullCenter addPullEvent:YCLCarEvenMatchAuthKey forView:self.view userInfo:@[self.matchTextField.text]];
     }
     
 }
@@ -50,9 +51,10 @@
             _warningLabel.text = @"绑定设备号应为11位!";
             _warningLabel.textColor = [UIColor redColor];
         }else{
+            _phoneIsAllow = YES;
             _warningLabel.textColor = [UIColor greenColor];
             _warningLabel.text = @"设备号合格!";
-            [[NSUserDefaults standardUserDefaults] setObject:sender.text forKey:@"pullPhone"];
+//            [[NSUserDefaults standardUserDefaults] setObject:sender.text forKey:@"pullPhone"];
         }
     }else if(self.matchMode == YCLMatchAuthKey){
         
@@ -61,7 +63,7 @@
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    [_matchTestField resignFirstResponder];
+    [_matchTextField resignFirstResponder];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
@@ -75,26 +77,29 @@
     NSString *appPassword = [[NSUserDefaults standardUserDefaults] objectForKey:kApplicationUserDefaultKeyPassword];
     BOOL hasMatchAuthKey = [[NSUserDefaults standardUserDefaults] boolForKey:kApplicationUserDefaultHasMatchAuthKey];
     
-    _matchTestField.delegate = self;
-    _matchTestField.keyboardType = UIKeyboardTypeNumberPad;
+    _matchTextField.delegate = self;
+    _matchTextField.keyboardType = UIKeyboardTypeNumberPad;
     //所有都完成
-    if (appPassword && pullPhone && hasMatchAuthKey) {
+    if (appPassword.length && pullPhone.length && hasMatchAuthKey) {
         NSLog(@"登录页面");
         UIStoryboard *storyBord = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
         UIViewController *loginViewController = [storyBord instantiateViewControllerWithIdentifier:@"LoginNav"];
         [self presentViewController:loginViewController animated:NO completion:nil];
-    }else if (pullPhone && hasMatchAuthKey){    //没有设置密码
+    }else if (pullPhone.length && hasMatchAuthKey){    //没有设置密码
         NSLog(@"设置密码");
         UIStoryboard *storyBord = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
         SetPasswordViewController *setPasswordViewController = [storyBord instantiateViewControllerWithIdentifier:@"SetPasswordNav"];
         [self presentViewController:setPasswordViewController animated:NO completion:nil];
-    }else if(pullPhone){                        //没有授权
+    }else if(pullPhone.length){
+//        NSLog(@"12%@",pullPhone.length);
+        //没有授权
         self.matchMode = YCLMatchAuthKey;
         self.title = @"匹配授权";
         [self.matchButton setTitle:@"授权"forState:UIControlStateNormal];
-        self.matchTestField.placeholder = @"请输入你的授权码";
+        self.matchTextField.placeholder = @"请输入你的授权码";
     }else{                                      //收么都没有
         self.matchMode = YCLMatchPhone;
+        _phoneIsAllow = NO;
         NSLog(@"匹配设备");
     }
 }

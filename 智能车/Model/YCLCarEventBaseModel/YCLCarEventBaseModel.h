@@ -18,6 +18,6 @@
 - (NSString *) analysisCodeWithString:(NSString *)codeString;//解析返回值
 - (void)sendMessage;//发送命令
 
-
+- (void) pushToNextFromViewController:(UIViewController *)viewController;
 
 @end

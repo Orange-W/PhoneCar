@@ -33,7 +33,25 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    if(IS_IPHONE_6){
+        for(int i=1;i<=9;i++){
+            UIButton *myButton = (UIButton *)[self.view viewWithTag:i];
+            //        CGFloat buttomEdge = myButton.titleEdgeInsets.bottom;
+            NSInteger buttonLabelTextLength = myButton.titleLabel.text.length;
+            CGFloat rate = kSizeMainScreenWdth/320;
+            
+            myButton.titleEdgeInsets =
+            (UIEdgeInsets){0,0,-40*rate*1.6,myButton.frame.size.width-30+(buttonLabelTextLength-3)*rate*6};
+        }
+    }
+    
+    
+}
+
 - (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
     _scrollowView.delegate = self;
     _scrollowView.contentSize = (CGSize){kSizeMainScreenWdth*2,[_scrollowView frame].size.height};
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0,kSizeMainScreenWdth,_scrollowView.frame.size.height)];
@@ -44,17 +62,6 @@
     
     [_scrollowView addSubview:imageView];
     [_scrollowView addSubview:imageView2];
-    for(int i=1;i<=9;i++){
-        UIButton *myButton = (UIButton *)[self.view viewWithTag:i];
-        CGFloat buttomEdge = myButton.titleEdgeInsets.bottom;
-        NSInteger buttonLabelTextLength = myButton.titleLabel.text.length;
-        CGFloat rate = kSizeMainScreenWdth/320;
-//        NSLog(@"%f",rate);
-        myButton.titleEdgeInsets =
-            (UIEdgeInsets){0,0,-40*rate*1.6,myButton.frame.size.width-30+(buttonLabelTextLength-3)*rate*6};
-    }
-   
-
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{

@@ -73,24 +73,24 @@
     _pullCenter = [PullCenterModel sharePullCenter];
     
     //读取沙盒数据
-    NSUserDefaults * settings1 = [NSUserDefaults standardUserDefaults];
-    NSString *key1 = [NSString stringWithFormat:@"isFirstLaunch"];
-    BOOL value = [settings1 boolForKey:key1];
+//    NSUserDefaults * settings1 = [NSUserDefaults standardUserDefaults];
+//    NSString *key1 = [NSString stringWithFormat:@"isFirstLaunch"];
+//    BOOL value = [settings1 boolForKey:key1];
 //    if (!value)  //如果没有数据
 //    {
         //STEP 1 Construct Panels
-        MYIntroductionPanel *panel = [[MYIntroductionPanel alloc] initWithimage:[UIImage imageNamed:@"default.jpg"] title:@"第一步" description:@"欢迎使用益车利,使用前请先匹配您的设备号"];
-        
-        //You may also add in a title for each panel
-        MYIntroductionPanel *panel2 = [[MYIntroductionPanel alloc] initWithimage:[UIImage imageNamed:@"indexbc.png"] title:@"第二步" description:@"为您的 app 谁定开启密码"];
-        /*A more customized version*/
-        MYIntroductionView *introductionView = [[MYIntroductionView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) headerText:@"初始化设置" panels:@[panel, panel2] languageDirection:MYLanguageDirectionLeftToRight];
-        [introductionView setBackgroundImage:[UIImage imageNamed:@"112.png"]];
-        
-    
-        
-        //STEP 3: Show introduction view
-        [introductionView showInView:self.view animateDuration:1];
+//        MYIntroductionPanel *panel = [[MYIntroductionPanel alloc] initWithimage:[UIImage imageNamed:@"default.jpg"] title:@"第一步" description:@"欢迎使用益车利,使用前请先匹配您的设备号"];
+//        
+//        //You may also add in a title for each panel
+//        MYIntroductionPanel *panel2 = [[MYIntroductionPanel alloc] initWithimage:[UIImage imageNamed:@"indexbc.png"] title:@"第二步" description:@"为您的 app 设定开启密码"];
+//        /*A more customized version*/
+//        MYIntroductionView *introductionView = [[MYIntroductionView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) headerText:@"初始化设置" panels:@[panel, panel2] languageDirection:MYLanguageDirectionLeftToRight];
+//        [introductionView setBackgroundImage:[UIImage imageNamed:@"112.png"]];
+//        [UIImage imageNamed:@]
+//
+//        
+//        //STEP 3: Show introduction view
+//        [introductionView showInView:self.view animateDuration:1];
 
         //写入数据
 //        NSUserDefaults * setting = [NSUserDefaults standardUserDefaults];
