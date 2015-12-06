@@ -15,6 +15,8 @@
 #import "YCLCarEventFindCarOutsideModel.h"
 #import "YCLCarEventFindCarSilenceModel.h"
 #import "YCLCarEvenMatchAuthKeyModel.h"
+#import "CoverView.h"
+#import "PullCenterModel+PullRunLoop.h"
 
 typedef NS_ENUM(NSInteger,YCLPullEvent){
     YCLCarEventNone = 0,
@@ -35,6 +37,8 @@ typedef NS_ENUM(NSInteger,YCLPullEvent){
 };
 
 
+
+
 @interface PullCenterModel : RequestBaseModel
 
 @property (strong, nonatomic) UIViewController *localViewController;
@@ -52,19 +56,25 @@ typedef NS_ENUM(NSInteger,YCLPullEvent){
 
 @property (copy, atomic)NSString *pullPhone;
 @property (strong, atomic)NSDate* earilyPullTime;
+@property (strong, nonatomic) NSDate *pullInitTime;     //当前请求节点
+
+@property (strong, nonatomic) UIWindow *detailWindow;   //详情的 window
+@property (strong, nonatomic) CoverView *detailView;    //详情页
 
 @property (strong, atomic) NSMutableSet *pullQueueIdSet;
 @property (strong, atomic) NSMutableArray *pullEventStartTimeArray;
 
-@property (assign, readonly) BOOL isPullStart;
+@property (assign, readwrite) BOOL isPullStart;
 + (PullCenterModel *)sharePullCenter;
 
 
+- (MBProgressHUD *)showProgresstoView:(UIView *)view ;
+@end
+
+@interface PullCenterModel (PullRunLoop)
 - (BOOL) addPullEvent:(YCLPullEvent) YCLEventName forView:(UIView *)view;
 - (BOOL) addPullEvent:(YCLPullEvent) YCLEventName
               forView:(UIView *)view
              userInfo:(NSArray *)infoArray;
 - (void)pullLoopStart;
-
-- (MBProgressHUD *)showProgresstoView:(UIView *)view ;
 @end

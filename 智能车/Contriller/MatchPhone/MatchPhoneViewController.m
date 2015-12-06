@@ -23,18 +23,22 @@
     if (self.matchMode == YCLMatchPhone) {
         NSString *number = [[NSUserDefaults standardUserDefaults] stringForKey:@"SBFormattedPhoneNumber"];
         number = number?:kTestPhone;
-        if(!number){
+#warning 测试用,删除
+        number = @"123456";
+        if(!number.length){
             NSLog(@"号码不合法");
             MBProgressHUD *HUD = [pullCenter showProgresstoView:self.view];
             HUD.labelText = @"获取手机号失败";
-            HUD.detailsLabelText = @"请检查: 设置->电话->本机号码";
+            HUD.detailsLabelText = @"请按照提示设置: 设置->电话->本机号码";
             [HUD show:YES];
             [HUD hide:YES afterDelay:3];
         }else if (!self.phoneIsAllow){
             [self isAllowable:_matchTextField];
         }else{
             pullCenter.pullPhone = self.matchTextField.text;
-//            NSLog(@"as");
+            [[NSUserDefaults standardUserDefaults] setObject:number forKey:kApplicationUserDefaultKeyLocalPhone];
+            
+            NSLog(@"%@",pullCenter.pullPhone);
 //            [[NSUserDefaults standardUserDefaults] setObject:number forKey:kApplicationUserDefaultKeyPullPhone];
             [pullCenter addPullEvent:YCLCarEventMatchPhone forView:self.view];
         }
@@ -93,11 +97,21 @@
     }else if(pullPhone.length){
 //        NSLog(@"12%@",pullPhone.length);
         //没有授权
+        [self initViewWithMode:YCLMatchAuthKey];
+    }else{                                      //收么都没有
+        [self initViewWithMode:YCLMatchPhone];
+    }
+}
+
+- (void)initViewWithMode:(YCLMatchMode)mode{
+    self.matchMode = mode;
+    if (mode==YCLMatchAuthKey) {
+         NSLog(@"验证授权");
         self.matchMode = YCLMatchAuthKey;
-        self.title = @"匹配授权";
+        self.title = @"授权验证";
         [self.matchButton setTitle:@"授权"forState:UIControlStateNormal];
         self.matchTextField.placeholder = @"请输入你的授权码";
-    }else{                                      //收么都没有
+    }else{
         self.matchMode = YCLMatchPhone;
         _phoneIsAllow = NO;
         NSLog(@"匹配设备");

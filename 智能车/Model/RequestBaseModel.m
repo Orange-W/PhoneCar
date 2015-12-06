@@ -40,7 +40,7 @@ static const NSInteger replyPageSize = 20;
 
     [formatter setTimeZone:timeZone];
     [formatter setDateFormat : @"yyyy-MM-dd HH:mm:ss"];
-    NSDate *trueDate = [NSDate dateWithTimeIntervalSince1970:[startTime timeIntervalSince1970]+3600*8-60];
+    NSDate *trueDate = [NSDate dateWithTimeIntervalSince1970:[startTime timeIntervalSince1970]-60];
     NSDictionary *paramer = @{
                          @"apikey":APPKEY,
                          @"mobile":phoneNumber,
@@ -49,7 +49,7 @@ static const NSInteger replyPageSize = 20;
                          @"page_num":@1,
                          @"page_size":[NSNumber numberWithInteger:replyPageSize],
                          };
-//    NSLog(@"请求参数:%@",paramer);
+    NSLog(@"请求参数:%@",paramer);
     NSLog(@"%@",trueDate);
     [NetWork NetRequestPOSTWithRequestURL:kRequestUrlPullReply
                             WithParameter:paramer
@@ -78,9 +78,10 @@ static const NSInteger replyPageSize = 20;
 
 - (void) failureTodo:(NSInteger)returnCode{
     PullCenterModel *pullcenter = [PullCenterModel sharePullCenter];
-    [pullcenter.progressHUD setLabelText:@"操作过于频繁!"];
+//    MBProgressHUD *HUD =  [pullcenter showProgresstoView:pullcenter.localViewController.view];
+    [pullcenter.progressHUD setLabelText:@"操作错误或过于频繁!"];
     [pullcenter.progressHUD hide:YES afterDelay:3];
-    
+    [pullcenter.pullQueueIdSet removeAllObjects];
     NSLog(@"错误码:%ld",(long)returnCode);
 }
 

@@ -12,25 +12,27 @@
 
 @implementation YCLMatchPhoneModel
 - (NSString *) infoStringFromCodeString:(NSString *)codeString andConfigArray:(NSArray *)configArray{
-    BOOL isContain = [codeString containsString:[self pullPhone]];
+    BOOL isContain = [codeString containsString:[[NSUserDefaults standardUserDefaults] objectForKey:kApplicationUserDefaultKeyLocalPhone]];
     NSLog(@"解析匹配返回");
     if (!isContain) {
-        [[NSUserDefaults standardUserDefaults] removeObjectForKey:kApplicationUserDefaultKeyPullPhone];
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:kApplicationUserDefaultKeyLocalPhone];
         return @"本机不是合法手机，不能进行下一步";
     }
     self.analysisData = codeString;
+    [[NSUserDefaults standardUserDefaults] setObject:[self pullPhone] forKey:kApplicationUserDefaultKeyPullPhone];
     return @"匹配完成";
 }
 
 - (void)pushToNextFromViewController:(UIViewController *)viewController{
     UIStoryboard *storyBord = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     MatchPhoneViewController *matchPhoneViewController = [storyBord instantiateViewControllerWithIdentifier:@"MatchStoryBord"];
-    matchPhoneViewController.matchMode = YCLMatchAuthKey;
+    [matchPhoneViewController initViewWithMode:YCLMatchAuthKey];
     [viewController.navigationController pushViewController:matchPhoneViewController animated:YES];
 }
 
 - (NSString *)code{return @"TC0";}
 - (NSString *)description{return @"匹配号码";}
 - (NSArray *)configArray{return nil;}
-//-(void)sendMessage{}
+#warning 测试,
+-(void)sendMessage{}
 @end

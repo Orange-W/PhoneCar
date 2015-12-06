@@ -18,5 +18,5 @@ typedef NS_ENUM(NSUInteger, YCLMatchMode) {
 @property (weak, nonatomic) IBOutlet UITextField *matchTextField;
 @property (weak, nonatomic) IBOutlet UIButton *matchButton;
 @property (weak, nonatomic) IBOutlet UILabel *warningLabel;
-
+- (void)initViewWithMode:(YCLMatchMode)mode;
 @end

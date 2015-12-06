@@ -27,6 +27,7 @@
 		CE43343D1BE79D14000C407D /* NetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4334391BE79D14000C407D /* NetWork.m */; };
 		CE4A99021C019F3400FD635F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4A99011C019F3400FD635F /* LoginViewController.m */; };
 		CE566B831BF6702500DBB839 /* default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE566B821BF6702500DBB839 /* default.jpg */; };
+		CE64800B1C12EB79009D933A /* PullCenterModel+PullRunLoop.m in Sources */ = {isa = PBXBuildFile; fileRef = CE64800A1C12EB79009D933A /* PullCenterModel+PullRunLoop.m */; };
 		CE79716A1BF1B90500358D57 /* YCLCarEventLockModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7971691BF1B90500358D57 /* YCLCarEventLockModel.m */; };
 		CE79716E1BF1BE9B00358D57 /* YCLCarEventBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE79716D1BF1BE9B00358D57 /* YCLCarEventBaseModel.m */; };
 		CE7971731BF1CAF100358D57 /* YCLCarEventCloseAirModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7971721BF1CAF100358D57 /* YCLCarEventCloseAirModel.m */; };
@@ -97,6 +98,8 @@
 		CE4A99001C019F3400FD635F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Login/LoginViewController.h; sourceTree = "<group>"; };
 		CE4A99011C019F3400FD635F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Login/LoginViewController.m; sourceTree = "<group>"; };
 		CE566B821BF6702500DBB839 /* default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default.jpg; sourceTree = "<group>"; };
+		CE6480091C12EB79009D933A /* PullCenterModel+PullRunLoop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PullCenterModel+PullRunLoop.h"; sourceTree = "<group>"; };
+		CE64800A1C12EB79009D933A /* PullCenterModel+PullRunLoop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PullCenterModel+PullRunLoop.m"; sourceTree = "<group>"; };
 		CE7971681BF1B90500358D57 /* YCLCarEventLockModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCLCarEventLockModel.h; sourceTree = "<group>"; };
 		CE7971691BF1B90500358D57 /* YCLCarEventLockModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCLCarEventLockModel.m; sourceTree = "<group>"; };
 		CE79716C1BF1BE9B00358D57 /* YCLCarEventBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YCLCarEventBaseModel.h; path = YCLCarEventBaseModel/YCLCarEventBaseModel.h; sourceTree = "<group>"; };
@@ -377,6 +380,16 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		CE6480081C12EB79009D933A /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				CE6480091C12EB79009D933A /* PullCenterModel+PullRunLoop.h */,
+				CE64800A1C12EB79009D933A /* PullCenterModel+PullRunLoop.m */,
+			);
+			name = Category;
+			path = PullCenter/Category;
+			sourceTree = "<group>";
+		};
 		CE7971671BF1B84A00358D57 /* 关锁6 */ = {
 			isa = PBXGroup;
 			children = (
@@ -407,6 +420,7 @@
 		CE7F663B1BEC80A8006EA7E9 /* 接收处理队列 */ = {
 			isa = PBXGroup;
 			children = (
+				CE6480081C12EB79009D933A /* Category */,
 				CE039E611C08E37E0009C4B9 /* CoverView.h */,
 				CE039E621C08E37E0009C4B9 /* CoverView.m */,
 				CE7F663C1BEC8156006EA7E9 /* PullCenterModel.h */,
@@ -536,6 +550,7 @@
 				TargetAttributes = {
 					CE4334031BE77DF0000C407D = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = FYYE36HAH8;
 					};
 				};
 			};
@@ -637,6 +652,7 @@
 				CE4334101BE77DF1000C407D /* MainViewController.m in Sources */,
 				CE3BC7871BE863F10002CBA4 /* RequestBaseModel.m in Sources */,
 				CE43343D1BE79D14000C407D /* NetWork.m in Sources */,
+				CE64800B1C12EB79009D933A /* PullCenterModel+PullRunLoop.m in Sources */,
 				CE367B301C077FF200B8094A /* YCLCarEventFindCarOutsideModel.m in Sources */,
 				CE3B1E901C03791000617D72 /* SetingViewController.m in Sources */,
 				CE43340D1BE77DF1000C407D /* AppDelegate.m in Sources */,
@@ -763,6 +779,8 @@
 			baseConfigurationReference = 49B9B2A4749628EDFBFA77D6 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/智能车/Config/PrefixHeader.pch";
 				INFOPLIST_FILE = "智能车/Info.plist";
@@ -770,6 +788,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Redrock-iOS.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = YCLCar;
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -779,6 +798,8 @@
 			baseConfigurationReference = DF493D1521F524A3CAE4B433 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/智能车/Config/PrefixHeader.pch";
 				INFOPLIST_FILE = "智能车/Info.plist";
@@ -786,6 +807,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Redrock-iOS.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = YCLCar;
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

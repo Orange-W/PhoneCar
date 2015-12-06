@@ -57,6 +57,7 @@
 #define kSizeMainScreenWdth [UIScreen mainScreen].bounds.size.width
 #define kPasswordNumberSet @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
 #define kApplicationUserDefaultKeyPullPhone @"pullPhone"
+#define kApplicationUserDefaultKeyLocalPhone @"localPhone"
 #define kApplicationUserDefaultKeyPassword @"appPassword"
 #define kApplicationUserDefaultHasMatchAuthKey @"hasMatchAuthKey"
 
