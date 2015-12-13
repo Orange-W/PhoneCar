@@ -25,7 +25,18 @@
     }else{
         _titleLabel.text = @"益车利,你的最佳选择";
     }
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    _scrollowView.delegate = self;
+    _scrollowView.contentSize = (CGSize){kSizeMainScreenWdth*2,[_scrollowView frame].size.height};
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0,kSizeMainScreenWdth,_scrollowView.frame.size.height)];
+    imageView.image = [UIImage imageNamed:@"slider.png"];
+    UIImageView *imageView2 = [[UIImageView alloc] initWithFrame:CGRectMake(kSizeMainScreenWdth, 0,kSizeMainScreenWdth,_scrollowView.frame.size.height)];
+    imageView2.image = [UIImage imageNamed:@"slider_control.png"];
+    imageView.center = (CGPoint){imageView.center.x,imageView.center.y-20};
+    
+    [_scrollowView addSubview:imageView];
+    [_scrollowView addSubview:imageView2];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,6 +56,26 @@
             myButton.titleEdgeInsets =
             (UIEdgeInsets){0,0,-40*rate*1.6,myButton.frame.size.width-30+(buttonLabelTextLength-3)*rate*6};
         }
+    }else if (IS_IPHONE_4_OR_LESS){
+        for(int i=1;i<=9;i++){
+            UIButton *myButton = (UIButton *)[self.view viewWithTag:i];
+            //        CGFloat buttomEdge = myButton.titleEdgeInsets.bottom;
+            NSInteger buttonLabelTextLength = myButton.titleLabel.text.length;
+//            CGFloat rate = kSizeMainScreenWdth/320;
+            
+            myButton.titleEdgeInsets =
+            (UIEdgeInsets){0,0,-50,78-(4-buttonLabelTextLength)*9.5};
+        }
+    }else if (IS_IPHONE_5){
+        for(int i=1;i<=9;i++){
+            UIButton *myButton = (UIButton *)[self.view viewWithTag:i];
+            //        CGFloat buttomEdge = myButton.titleEdgeInsets.bottom;
+            NSInteger buttonLabelTextLength = myButton.titleLabel.text.length;
+//            CGFloat rate = kSizeMainScreenWdth/320;
+            
+            myButton.titleEdgeInsets =
+            (UIEdgeInsets){0,0,-65,86-(4-buttonLabelTextLength)*9.2};
+        }
     }
     
     
@@ -52,16 +83,6 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    _scrollowView.delegate = self;
-    _scrollowView.contentSize = (CGSize){kSizeMainScreenWdth*2,[_scrollowView frame].size.height};
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0,kSizeMainScreenWdth,_scrollowView.frame.size.height)];
-    imageView.image = [UIImage imageNamed:@"slider.png"];
-    UIImageView *imageView2 = [[UIImageView alloc] initWithFrame:CGRectMake(kSizeMainScreenWdth, 0,kSizeMainScreenWdth,_scrollowView.frame.size.height)];
-    imageView2.image = [UIImage imageNamed:@"slider_control.png"];
-    imageView.center = (CGPoint){imageView.center.x,imageView.center.y-20};
-    
-    [_scrollowView addSubview:imageView];
-    [_scrollowView addSubview:imageView2];
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{

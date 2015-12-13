@@ -735,6 +735,20 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" bounces="NO" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="white" maximumZoomScale="2" translatesAutoresizingMaskIntoConstraints="NO" id="d6D-TP-3VP">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="242.5"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="d6D-TP-3VP" secondAttribute="height" multiplier="125:88" id="9F3-9r-rv4"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="aeH-ft-eXk"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="9F3-9r-rv4"/>
+                                    </mask>
+                                </variation>
+                            </scrollView>
                             <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7E6-76-bwb">
                                 <rect key="frame" x="0.0" y="212" width="375" height="30"/>
                                 <subviews>
@@ -775,20 +789,6 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" bounces="NO" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="white" maximumZoomScale="2" translatesAutoresizingMaskIntoConstraints="NO" id="d6D-TP-3VP">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="242.5"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="d6D-TP-3VP" secondAttribute="height" multiplier="125:88" id="9F3-9r-rv4"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="aeH-ft-eXk"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="9F3-9r-rv4"/>
-                                    </mask>
-                                </variation>
-                            </scrollView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

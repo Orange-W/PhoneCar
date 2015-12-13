@@ -49,8 +49,8 @@ static const NSInteger replyPageSize = 20;
                          @"page_num":@1,
                          @"page_size":[NSNumber numberWithInteger:replyPageSize],
                          };
-    NSLog(@"请求参数:%@",paramer);
-    NSLog(@"%@",trueDate);
+//    NSLog(@"请求参数:%@",paramer);
+//    NSLog(@"%@",trueDate);
     [NetWork NetRequestPOSTWithRequestURL:kRequestUrlPullReply
                             WithParameter:paramer
                      WithReturnValeuBlock:^(id returnValue) {
@@ -64,7 +64,7 @@ static const NSInteger replyPageSize = 20;
                          
                      } WithFailureBlock:^{
                          PullCenterModel *pullcenter = [PullCenterModel sharePullCenter];
-                         [pullcenter.progressHUD setLabelText:@"网络错误,清洁差您的网络状况!"];
+                         [pullcenter.progressHUD setLabelText:@"网络错误,请检查您的网络状况!"];
                          [pullcenter.progressHUD hide:YES afterDelay:3];
                          
                      }];

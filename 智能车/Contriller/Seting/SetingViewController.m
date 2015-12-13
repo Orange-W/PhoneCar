@@ -32,11 +32,14 @@
         NSLog(@"初始化");
         [self clear];
     }
-    if (indexPath.section == 1 && indexPath.row == 0) {
-        [[PullCenterModel sharePullCenter] addPullEvent:YCLCarEventAddPhone forView:self.view];
-    }else if (indexPath.section == 1 && indexPath.row == 1){
-        [[PullCenterModel sharePullCenter] addPullEvent:YCLCarEventDeletePhone forView:self.view];
-    }
+//    if (indexPath.section == 1 && indexPath.row == 0) {
+//        [[PullCenterModel sharePullCenter] addPullEvent:YCLCarEventAddPhone forView:self.view];
+//          return;
+//    }
+    MBProgressHUD *HUD =  [[PullCenterModel sharePullCenter] showProgresstoView:self.view];
+    HUD.labelText = @"功能开发中";
+    [HUD hide:YES afterDelay:2];
+
 }
 
 

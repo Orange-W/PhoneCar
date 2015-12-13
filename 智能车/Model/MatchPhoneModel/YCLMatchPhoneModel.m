@@ -12,7 +12,11 @@
 
 @implementation YCLMatchPhoneModel
 - (NSString *) infoStringFromCodeString:(NSString *)codeString andConfigArray:(NSArray *)configArray{
-    BOOL isContain = [codeString containsString:[[NSUserDefaults standardUserDefaults] objectForKey:kApplicationUserDefaultKeyLocalPhone]];
+    NSString *matchPhone = [[NSUserDefaults standardUserDefaults] stringForKey:kApplicationUserDefaultKeyLocalPhone];
+    
+    NSRange range = [codeString rangeOfString:matchPhone];
+    BOOL isContain = range.length!=0?YES:NO;
+    
     NSLog(@"解析匹配返回");
     if (!isContain) {
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:kApplicationUserDefaultKeyLocalPhone];
@@ -34,5 +38,5 @@
 - (NSString *)description{return @"匹配号码";}
 - (NSArray *)configArray{return nil;}
 #warning 测试,
--(void)sendMessage{}
+//-(void)sendMessage{}
 @end

@@ -19,19 +19,6 @@
 static PullCenterModel *sharedInstance = nil;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 - (YCLCarEventUnlockModel *)unlockModel{
     if (!_unlockModel) {
         _unlockModel = [[YCLCarEventUnlockModel alloc] init];
@@ -99,18 +86,20 @@ static PullCenterModel *sharedInstance = nil;
         CoverView *plainView = [nibContents lastObject];
         self.detailView = plainView;
         _detailWindow.window.rootViewController = [[UIViewController alloc] init];
-        plainView.frame = CGRectMake(30, 100, kSizeMainScreenWdth-60, kSizeMainScreenHeight-200);
+        plainView.frame = CGRectMake(30, 30, kSizeMainScreenWdth-60, kSizeMainScreenHeight-60);
 
         // Add to the view hierarchy (thus retain).
-        [self.progressHUD addSubview:plainView];
 
         [_detailWindow setWindowLevel:UIWindowLevelAlert + 1];//
         
-        [_detailWindow addSubview:plainView];
+//        [_detailWindow addSubview:plainView];
         _detailWindow.rootViewController = [[UIViewController alloc] init];
+        [_detailWindow.rootViewController.view addSubview:plainView];
     }
     return _detailWindow;
 }
+
+
 - (IBAction)closeDetailView:(id)sender {
     [UIView animateWithDuration:1 animations:^{
         self.detailWindow.alpha = 0;

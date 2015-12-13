@@ -23,6 +23,7 @@
     if (self.matchMode == YCLMatchPhone) {
         NSString *number = [[NSUserDefaults standardUserDefaults] stringForKey:@"SBFormattedPhoneNumber"];
         number = number?:kTestPhone;
+        NSLog(@"number:%@",number);
 #warning 测试用,删除
         number = @"123456";
         if(!number.length){
