@@ -16,7 +16,7 @@
 
 @implementation YCLCarEvenMatchAuthKeyModel
 static const NSString *matchSendPrefix = @"a5";
-static const NSString *matchReturnPrefix = @"b6";
+static const NSString *matchReturnPrefix = @"6b";
 
 - (void)sendMessageWithAuthCode:(NSString *)authCode{
     NSNumber *n = @((int)([authCode length]/2));

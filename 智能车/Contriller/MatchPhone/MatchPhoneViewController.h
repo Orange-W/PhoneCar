@@ -14,6 +14,7 @@ typedef NS_ENUM(NSUInteger, YCLMatchMode) {
 };
 
 @interface MatchPhoneViewController : UIViewController <UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *nowPhoneTextField;
 @property (assign, nonatomic) YCLMatchMode matchMode;
 @property (weak, nonatomic) IBOutlet UITextField *matchTextField;
 @property (weak, nonatomic) IBOutlet UIButton *matchButton;

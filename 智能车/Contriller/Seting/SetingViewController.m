@@ -62,6 +62,8 @@
         NSLog(@"确定重置");
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:kApplicationUserDefaultKeyPassword];
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:kApplicationUserDefaultKeyPullPhone];
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:kApplicationUserDefaultKeyLocalPhone];
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:kApplicationUserDefaultHasMatchAuthKey];
         [[NSUserDefaults standardUserDefaults] synchronize];
         
         UIStoryboard *storyBord = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
