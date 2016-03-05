@@ -23,7 +23,6 @@
 		CE4334131BE77DF1000C407D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4334111BE77DF1000C407D /* Main.storyboard */; };
 		CE4334151BE77DF1000C407D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE4334141BE77DF1000C407D /* Images.xcassets */; };
 		CE4334181BE77DF1000C407D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4334161BE77DF1000C407D /* LaunchScreen.xib */; };
-		CE43343C1BE79D14000C407D /* LoginEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4334361BE79D14000C407D /* LoginEntry.m */; };
 		CE43343D1BE79D14000C407D /* NetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4334391BE79D14000C407D /* NetWork.m */; };
 		CE47343B1C1DB5AF009710B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE47343A1C1DB5AF009710B4 /* Images.xcassets */; };
 		CE4A99021C019F3400FD635F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4A99011C019F3400FD635F /* LoginViewController.m */; };
@@ -53,7 +52,6 @@
 		CEB70A5F1BFB973E00FC3163 /* slider.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB70A4E1BFB973E00FC3163 /* slider.png */; };
 		CEB70A601BFB973E00FC3163 /* slider_control.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB70A4F1BFB973E00FC3163 /* slider_control.png */; };
 		CEB70A611BFB973E00FC3163 /* xiansu.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB70A501BFB973E00FC3163 /* xiansu.png */; };
-		CEB70A701BFB981C00FC3163 /* FastTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB70A6C1BFB981C00FC3163 /* FastTestViewController.m */; };
 		CEB70A711BFB981C00FC3163 /* MatchPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB70A6F1BFB981C00FC3163 /* MatchPhoneViewController.m */; };
 		CECA3E0B1C0CBF940093B14A /* YCLCarEvenMatchAuthKeyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CECA3E0A1C0CBF940093B14A /* YCLCarEvenMatchAuthKeyModel.m */; };
 		CEE42FB91C0618470021AB59 /* PhoneChangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE42FB81C0618470021AB59 /* PhoneChangeViewController.m */; };
@@ -93,8 +91,6 @@
 		CE4334221BE77DF1000C407D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE4334231BE77DF1000C407D /* ___Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "___Tests.m"; sourceTree = "<group>"; };
 		CE4334331BE786A9000C407D /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		CE4334351BE79D14000C407D /* LoginEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginEntry.h; sourceTree = "<group>"; };
-		CE4334361BE79D14000C407D /* LoginEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginEntry.m; sourceTree = "<group>"; };
 		CE4334381BE79D14000C407D /* NetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWork.h; sourceTree = "<group>"; };
 		CE4334391BE79D14000C407D /* NetWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWork.m; sourceTree = "<group>"; };
 		CE47343A1C1DB5AF009710B4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = YCLCar/Images.xcassets; sourceTree = "<group>"; };
@@ -134,8 +130,6 @@
 		CEB70A4E1BFB973E00FC3163 /* slider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slider.png; sourceTree = "<group>"; };
 		CEB70A4F1BFB973E00FC3163 /* slider_control.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slider_control.png; sourceTree = "<group>"; };
 		CEB70A501BFB973E00FC3163 /* xiansu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xiansu.png; sourceTree = "<group>"; };
-		CEB70A6B1BFB981C00FC3163 /* FastTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastTestViewController.h; sourceTree = "<group>"; };
-		CEB70A6C1BFB981C00FC3163 /* FastTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FastTestViewController.m; sourceTree = "<group>"; };
 		CEB70A6E1BFB981C00FC3163 /* MatchPhoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchPhoneViewController.h; sourceTree = "<group>"; };
 		CEB70A6F1BFB981C00FC3163 /* MatchPhoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchPhoneViewController.m; sourceTree = "<group>"; };
 		CECA3E091C0CBF940093B14A /* YCLCarEvenMatchAuthKeyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YCLCarEvenMatchAuthKeyModel.h; path = MatchAuthKey/YCLCarEvenMatchAuthKeyModel.h; sourceTree = "<group>"; };
@@ -257,7 +251,6 @@
 				CE43342D1BE77E72000C407D /* Tool */,
 				CE43342E1BE77E7D000C407D /* Config */,
 				CE4FDEC61BEB34CB00AC7601 /* Contriller */,
-				CEB70A6A1BFB981C00FC3163 /* 快速测试 */,
 				CE4334301BE77E8C000C407D /* Model */,
 				CE566B7F1BF66A4B00DBB839 /* Images */,
 				CE43340B1BE77DF1000C407D /* AppDelegate.h */,
@@ -301,7 +294,6 @@
 		CE43342D1BE77E72000C407D /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				CE4334341BE79D14000C407D /* Login */,
 				CE4334371BE79D14000C407D /* NetWork */,
 			);
 			path = Tool;
@@ -336,15 +328,6 @@
 				CE79716D1BF1BE9B00358D57 /* YCLCarEventBaseModel.m */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		CE4334341BE79D14000C407D /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				CE4334351BE79D14000C407D /* LoginEntry.h */,
-				CE4334361BE79D14000C407D /* LoginEntry.m */,
-			);
-			path = Login;
 			sourceTree = "<group>";
 		};
 		CE4334371BE79D14000C407D /* NetWork */ = {
@@ -484,16 +467,6 @@
 				CEB70A501BFB973E00FC3163 /* xiansu.png */,
 			);
 			path = "mipmap-xxhdpi";
-			sourceTree = "<group>";
-		};
-		CEB70A6A1BFB981C00FC3163 /* 快速测试 */ = {
-			isa = PBXGroup;
-			children = (
-				CEB70A6B1BFB981C00FC3163 /* FastTestViewController.h */,
-				CEB70A6C1BFB981C00FC3163 /* FastTestViewController.m */,
-			);
-			name = "快速测试";
-			path = Contriller/FastTest;
 			sourceTree = "<group>";
 		};
 		CEB70A6D1BFB981C00FC3163 /* 匹配测试号 */ = {
@@ -659,7 +632,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEB70A701BFB981C00FC3163 /* FastTestViewController.m in Sources */,
 				CE79716E1BF1BE9B00358D57 /* YCLCarEventBaseModel.m in Sources */,
 				CEB70A711BFB981C00FC3163 /* MatchPhoneViewController.m in Sources */,
 				CECA3E0B1C0CBF940093B14A /* YCLCarEvenMatchAuthKeyModel.m in Sources */,
@@ -674,7 +646,6 @@
 				CE3B1E901C03791000617D72 /* SetingViewController.m in Sources */,
 				CE43340D1BE77DF1000C407D /* AppDelegate.m in Sources */,
 				CE367B381C07813900B8094A /* YCLCarEventCarSituationModel.m in Sources */,
-				CE43343C1BE79D14000C407D /* LoginEntry.m in Sources */,
 				CE7971761BF1CB0900358D57 /* YCLCarEventOpenAirModel.m in Sources */,
 				CE367B341C07809C00B8094A /* YCLCarEventFindCarSilenceModel.m in Sources */,
 				CE039E631C08E37E0009C4B9 /* CoverView.m in Sources */,
