@@ -40,7 +40,7 @@ static const NSInteger replyPageSize = 20;
 
     [formatter setTimeZone:timeZone];
     [formatter setDateFormat : @"yyyy-MM-dd HH:mm:ss"];
-    NSDate *trueDate = [NSDate dateWithTimeIntervalSince1970:[startTime timeIntervalSince1970]-60];
+    NSDate *trueDate = [NSDate dateWithTimeIntervalSince1970:[startTime timeIntervalSince1970]-90];
     NSDictionary *paramer = @{
                          @"apikey":APPKEY,
                          @"mobile":phoneNumber,

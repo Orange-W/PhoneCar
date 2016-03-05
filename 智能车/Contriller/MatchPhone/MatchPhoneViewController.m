@@ -9,6 +9,7 @@
 #import "MatchPhoneViewController.h"
 #import "PullCenterModel.h"
 #import "SetPasswordViewController.h"
+#import "YCLFunctionUserDefault.h"
 
 @interface MatchPhoneViewController()
 @property (assign ,readonly ,nonatomic) BOOL phoneIsAllow;
@@ -78,6 +79,7 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    
     NSString *pullPhone = [[NSUserDefaults standardUserDefaults] objectForKey:kApplicationUserDefaultKeyPullPhone];
     NSString *appPassword = [[NSUserDefaults standardUserDefaults] objectForKey:kApplicationUserDefaultKeyPassword];
     BOOL hasMatchAuthKey = [[NSUserDefaults standardUserDefaults] boolForKey:kApplicationUserDefaultHasMatchAuthKey];
@@ -99,10 +101,25 @@
         NSLog(@"进行授权");
         //没有授权
         [self initViewWithMode:YCLMatchAuthKey];
+        [self.navigationItem setHidesBackButton:NO];
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]
+                                                  initWithTitle:@"取消"
+                                                  style:UIBarButtonItemStylePlain
+                                                  target:self
+                                                  action:@selector(goBack)];
+        [self.navigationItem leftBarButtonItem].tintColor = [UIColor lightGrayColor];
     }else{
         NSLog(@"匹配手机");//收么都没有
         [self initViewWithMode:YCLMatchPhone];
+        [self.navigationItem setHidesBackButton:YES];
     }
+}
+
+- (void)goBack{
+    [YCLFunctionUserDefault clearAll];
+    [self viewWillAppear:YES];
+    [self.navigationController popViewControllerAnimated:YES];
+    
 }
 
 - (void)initViewWithMode:(YCLMatchMode)mode{

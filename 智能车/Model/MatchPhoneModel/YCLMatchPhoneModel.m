@@ -24,7 +24,7 @@
     }
     self.analysisData = codeString;
     [[NSUserDefaults standardUserDefaults] setObject:[self pullPhone] forKey:kApplicationUserDefaultKeyPullPhone];
-    return @"匹配完成";
+    return @"匹配已完成";
 }
 
 - (void)pushToNextFromViewController:(UIViewController *)viewController{

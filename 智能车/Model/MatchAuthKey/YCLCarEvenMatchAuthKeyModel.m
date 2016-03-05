@@ -18,6 +18,10 @@
 static const NSString *matchSendPrefix = @"a5";
 static const NSString *matchReturnPrefix = @"6b";
 
+- (NSString *)authPrefix{
+    return [matchReturnPrefix copy];
+}
+
 - (void)sendMessageWithAuthCode:(NSString *)authCode{
     NSNumber *n = @((int)([authCode length]/2));
     
@@ -30,7 +34,7 @@ static const NSString *matchReturnPrefix = @"6b";
     NSLog(@"%@-%@",codeString,trueBackString);
     if ([codeString isEqualToString:trueBackString]) {
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kApplicationUserDefaultHasMatchAuthKey];
-        return @"匹配完成";
+        return @"匹配已完成";
     }
     
     return @"匹配不成功";

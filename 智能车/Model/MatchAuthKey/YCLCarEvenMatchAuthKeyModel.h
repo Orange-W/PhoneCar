@@ -9,5 +9,6 @@
 #import "YCLCarEventBaseModel.h"
 
 @interface YCLCarEvenMatchAuthKeyModel : YCLCarEventBaseModel
+@property (strong,readonly,nonatomic) NSString *authPrefix;
 - (void)sendMessageWithAuthCode:(NSString *)authCode;
 @end
