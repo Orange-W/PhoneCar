@@ -11,7 +11,7 @@
 #import "SetPasswordViewController.h"
 
 @interface YCLCarEvenMatchAuthKeyModel()
-@property (strong, nonatomic) NSString *authKey;
+@property (copy, nonatomic) NSString *authKey;
 @end
 
 @implementation YCLCarEvenMatchAuthKeyModel

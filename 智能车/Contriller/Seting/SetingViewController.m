@@ -8,6 +8,8 @@
 
 #import "SetingViewController.h"
 #import "PullCenterModel.h"
+#import "YCLFunctionUserDefault.h"
+
 @interface SetingViewController ()
 
 @end
@@ -60,11 +62,7 @@
     }else if(buttonIndex == 1){
         
         NSLog(@"确定重置");
-        [[NSUserDefaults standardUserDefaults] removeObjectForKey:kApplicationUserDefaultKeyPassword];
-        [[NSUserDefaults standardUserDefaults] removeObjectForKey:kApplicationUserDefaultKeyPullPhone];
-        [[NSUserDefaults standardUserDefaults] removeObjectForKey:kApplicationUserDefaultKeyLocalPhone];
-        [[NSUserDefaults standardUserDefaults] removeObjectForKey:kApplicationUserDefaultHasMatchAuthKey];
-        [[NSUserDefaults standardUserDefaults] synchronize];
+        [YCLFunctionUserDefault clearAll];
         
         UIStoryboard *storyBord = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
         UIViewController *loginViewController = [storyBord instantiateViewControllerWithIdentifier:@"MatchNav"];

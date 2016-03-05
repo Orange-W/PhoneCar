@@ -95,7 +95,7 @@
         UIStoryboard *storyBord = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
         SetPasswordViewController *setPasswordViewController = [storyBord instantiateViewControllerWithIdentifier:@"SetPasswordNav"];
         [self presentViewController:setPasswordViewController animated:NO completion:nil];
-    }else if(pullPhone.length){
+    }else if(pullPhone.length){//不能直接判断@""为true
         NSLog(@"进行授权");
         //没有授权
         [self initViewWithMode:YCLMatchAuthKey];

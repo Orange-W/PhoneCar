@@ -28,6 +28,7 @@
 		CE47343B1C1DB5AF009710B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE47343A1C1DB5AF009710B4 /* Images.xcassets */; };
 		CE4A99021C019F3400FD635F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4A99011C019F3400FD635F /* LoginViewController.m */; };
 		CE566B831BF6702500DBB839 /* default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE566B821BF6702500DBB839 /* default.jpg */; };
+		CE5FEC751C8AECC0001D170A /* YCLFunctionUserDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5FEC741C8AECC0001D170A /* YCLFunctionUserDefault.m */; };
 		CE64800B1C12EB79009D933A /* PullCenterModel+PullRunLoop.m in Sources */ = {isa = PBXBuildFile; fileRef = CE64800A1C12EB79009D933A /* PullCenterModel+PullRunLoop.m */; };
 		CE79716A1BF1B90500358D57 /* YCLCarEventLockModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7971691BF1B90500358D57 /* YCLCarEventLockModel.m */; };
 		CE79716E1BF1BE9B00358D57 /* YCLCarEventBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE79716D1BF1BE9B00358D57 /* YCLCarEventBaseModel.m */; };
@@ -100,6 +101,8 @@
 		CE4A99001C019F3400FD635F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Login/LoginViewController.h; sourceTree = "<group>"; };
 		CE4A99011C019F3400FD635F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Login/LoginViewController.m; sourceTree = "<group>"; };
 		CE566B821BF6702500DBB839 /* default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default.jpg; sourceTree = "<group>"; };
+		CE5FEC731C8AECC0001D170A /* YCLFunctionUserDefault.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCLFunctionUserDefault.h; sourceTree = "<group>"; };
+		CE5FEC741C8AECC0001D170A /* YCLFunctionUserDefault.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCLFunctionUserDefault.m; sourceTree = "<group>"; };
 		CE6480091C12EB79009D933A /* PullCenterModel+PullRunLoop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PullCenterModel+PullRunLoop.h"; sourceTree = "<group>"; };
 		CE64800A1C12EB79009D933A /* PullCenterModel+PullRunLoop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PullCenterModel+PullRunLoop.m"; sourceTree = "<group>"; };
 		CE7971681BF1B90500358D57 /* YCLCarEventLockModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCLCarEventLockModel.h; sourceTree = "<group>"; };
@@ -315,6 +318,7 @@
 		CE4334301BE77E8C000C407D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CE5FEC721C8AEC30001D170A /* 函数功能 */,
 				CECA3E081C0CBF1B0093B14A /* 匹配授权 */,
 				CEA24BF71BF72B1C001BF0A5 /* 匹配设备 */,
 				CE367B351C0780C700B8094A /* 车辆状况1 */,
@@ -381,6 +385,15 @@
 				CE566B821BF6702500DBB839 /* default.jpg */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		CE5FEC721C8AEC30001D170A /* 函数功能 */ = {
+			isa = PBXGroup;
+			children = (
+				CE5FEC731C8AECC0001D170A /* YCLFunctionUserDefault.h */,
+				CE5FEC741C8AECC0001D170A /* YCLFunctionUserDefault.m */,
+			);
+			name = "函数功能";
 			sourceTree = "<group>";
 		};
 		CE6480081C12EB79009D933A /* Category */ = {
@@ -670,6 +683,7 @@
 				CE1165B81BEF41EE008C2FC6 /* YCLCarEventUnlockModel.m in Sources */,
 				CE4A99021C019F3400FD635F /* LoginViewController.m in Sources */,
 				CE7971731BF1CAF100358D57 /* YCLCarEventCloseAirModel.m in Sources */,
+				CE5FEC751C8AECC0001D170A /* YCLFunctionUserDefault.m in Sources */,
 				CE7F663E1BEC8156006EA7E9 /* PullCenterModel.m in Sources */,
 				CEA24BFA1BF72B8A001BF0A5 /* YCLMatchPhoneModel.m in Sources */,
 			);

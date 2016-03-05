@@ -23,8 +23,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *sendMessageButton;
 
 
-@property (strong, nonatomic) NSString *nowPhone;
-@property (strong, nonatomic) NSString *showReturn;
+@property (copy, nonatomic) NSString *nowPhone;
+@property (copy, nonatomic) NSString *showReturn;
 
 @property (weak, nonatomic)PullCenterModel *pullCenter;
 @end

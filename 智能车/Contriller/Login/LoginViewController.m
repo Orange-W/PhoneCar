@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "YCLFunctionUserDefault.h"
 
 @interface LoginViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *appPasswordTextField;
@@ -76,12 +77,7 @@
     }else if(buttonIndex == 1){
         
         NSLog(@"确定重置");
-        [[NSUserDefaults standardUserDefaults] removeObjectForKey:kApplicationUserDefaultKeyPassword];
-        [[NSUserDefaults standardUserDefaults] removeObjectForKey:kApplicationUserDefaultKeyPullPhone];
-        [[NSUserDefaults standardUserDefaults] removeObjectForKey:kApplicationUserDefaultKeyLocalPhone];
-        [[NSUserDefaults standardUserDefaults] removeObjectForKey:kApplicationUserDefaultHasMatchAuthKey];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        
+        [YCLFunctionUserDefault clearAll];
         UIStoryboard *storyBord = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
         UIViewController *loginViewController = [storyBord instantiateViewControllerWithIdentifier:@"MatchNav"];
         [self presentViewController:loginViewController animated:NO completion:nil];
