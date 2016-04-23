@@ -10,7 +10,7 @@
 
 @implementation YCLCarEventLockModel
 - (NSString *)code{
-    return @"9";
+    return @"6";
 }
 
 - (NSString *)description{

@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationController.navigationBarHidden = NO;
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
 //    self.title = @"设置";
 //    self.navigationController.navigationBar.barTintColor = kColorBarTintColor;
     self.navigationController.navigationBar.backItem.title = @"设置";
@@ -29,15 +29,22 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillDisappear:(BOOL)animated{
+     [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0 && indexPath.row == 0) {
         NSLog(@"初始化");
         [self clear];
+        return;
     }
-//    if (indexPath.section == 1 && indexPath.row == 0) {
-//        [[PullCenterModel sharePullCenter] addPullEvent:YCLCarEventAddPhone forView:self.view];
-//          return;
-//    }
+    if (indexPath.section == 1 && indexPath.row == 0) {
+//        PullCenterModel *pullCenter = [PullCenterModel sharePullCenter];
+//        [pullCenter addPullEvent:YCLCarEventAddPhone forView:self.view];
+//        pullCenter.localViewController = self;
+        return;
+    }
     MBProgressHUD *HUD =  [[PullCenterModel sharePullCenter] showProgresstoView:self.view];
     HUD.labelText = @"功能开发中";
     [HUD hide:YES afterDelay:2];

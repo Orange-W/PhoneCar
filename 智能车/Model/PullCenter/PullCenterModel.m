@@ -75,6 +75,13 @@ static PullCenterModel *sharedInstance = nil;
     return _authKeyModel;
 }
 
+- (YCLCarEventAddPhoneModel *)addPhoneModel{
+    if (!_addPhoneModel) {
+        _addPhoneModel = [[YCLCarEventAddPhoneModel alloc] init];
+    }
+    return _addPhoneModel;
+}
+
 - (UIWindow *)detailWindow
 {
     if (!_detailWindow) {

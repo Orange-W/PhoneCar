@@ -10,7 +10,7 @@
 #import "PullCenterModel.h"
 @implementation RequestBaseModel
 
-static const NSInteger replyPageSize = 20;
+static const NSInteger replyPageSize = 2;
 
 
 - (void)sendMessageWithPhone:(NSString *)phoneNumber
@@ -40,7 +40,7 @@ static const NSInteger replyPageSize = 20;
 
     [formatter setTimeZone:timeZone];
     [formatter setDateFormat : @"yyyy-MM-dd HH:mm:ss"];
-    NSDate *trueDate = [NSDate dateWithTimeIntervalSince1970:[startTime timeIntervalSince1970]-90];
+    NSDate *trueDate = [NSDate dateWithTimeIntervalSince1970:[startTime timeIntervalSince1970]-300];
     NSDictionary *paramer = @{
                          @"apikey":APPKEY,
                          @"mobile":phoneNumber,
@@ -66,7 +66,7 @@ static const NSInteger replyPageSize = 20;
                          PullCenterModel *pullcenter = [PullCenterModel sharePullCenter];
                          [pullcenter.progressHUD setLabelText:@"网络错误,请检查您的网络状况!"];
                          [pullcenter.progressHUD hide:YES afterDelay:3];
-                         
+                         [[pullcenter pullQueueIdSet] removeAllObjects];
                      }];
 }
 

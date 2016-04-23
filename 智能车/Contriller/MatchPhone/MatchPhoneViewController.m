@@ -54,6 +54,7 @@
 - (IBAction)isAllowable:(UITextField *)sender {
     if (self.matchMode == YCLMatchPhone) {
         if ( self.matchTextField.text.length!=11 || self.nowPhoneTextField.text.length != 11) {
+            _phoneIsAllow = NO;
             _warningLabel.text = @"手机和车载设备号应均为11位!";
             _warningLabel.textColor = [UIColor redColor];
         }else{

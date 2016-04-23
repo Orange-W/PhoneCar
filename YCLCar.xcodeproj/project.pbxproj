@@ -54,6 +54,7 @@
 		CEB70A611BFB973E00FC3163 /* xiansu.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB70A501BFB973E00FC3163 /* xiansu.png */; };
 		CEB70A711BFB981C00FC3163 /* MatchPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB70A6F1BFB981C00FC3163 /* MatchPhoneViewController.m */; };
 		CECA3E0B1C0CBF940093B14A /* YCLCarEvenMatchAuthKeyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CECA3E0A1C0CBF940093B14A /* YCLCarEvenMatchAuthKeyModel.m */; };
+		CEDCCBFD1CCA9A46001EBDB9 /* YCLCarEventAddPhoneModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDCCBFC1CCA9A46001EBDB9 /* YCLCarEventAddPhoneModel.m */; };
 		CEE42FB91C0618470021AB59 /* PhoneChangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE42FB81C0618470021AB59 /* PhoneChangeViewController.m */; };
 		CEE614761BEA32B8004873AA /* MatchPhoneModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE614751BEA32B8004873AA /* MatchPhoneModel.m */; };
 /* End PBXBuildFile section */
@@ -134,6 +135,8 @@
 		CEB70A6F1BFB981C00FC3163 /* MatchPhoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchPhoneViewController.m; sourceTree = "<group>"; };
 		CECA3E091C0CBF940093B14A /* YCLCarEvenMatchAuthKeyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YCLCarEvenMatchAuthKeyModel.h; path = MatchAuthKey/YCLCarEvenMatchAuthKeyModel.h; sourceTree = "<group>"; };
 		CECA3E0A1C0CBF940093B14A /* YCLCarEvenMatchAuthKeyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YCLCarEvenMatchAuthKeyModel.m; path = MatchAuthKey/YCLCarEvenMatchAuthKeyModel.m; sourceTree = "<group>"; };
+		CEDCCBFB1CCA9A46001EBDB9 /* YCLCarEventAddPhoneModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YCLCarEventAddPhoneModel.h; path = ChangePhone/YCLCarEventAddPhoneModel.h; sourceTree = "<group>"; };
+		CEDCCBFC1CCA9A46001EBDB9 /* YCLCarEventAddPhoneModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YCLCarEventAddPhoneModel.m; path = ChangePhone/YCLCarEventAddPhoneModel.m; sourceTree = "<group>"; };
 		CEE42FB71C0618470021AB59 /* PhoneChangeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhoneChangeViewController.h; path = PhoneChange/PhoneChangeViewController.h; sourceTree = "<group>"; };
 		CEE42FB81C0618470021AB59 /* PhoneChangeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhoneChangeViewController.m; path = PhoneChange/PhoneChangeViewController.m; sourceTree = "<group>"; };
 		CEE614741BEA32B8004873AA /* MatchPhoneModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchPhoneModel.h; sourceTree = "<group>"; };
@@ -320,6 +323,7 @@
 				CE79716F1BF1CABE00358D57 /* 开空调3 */,
 				CE7971671BF1B84A00358D57 /* 关锁6 */,
 				CE1165B51BEF412E008C2FC6 /* 开锁9 */,
+				CEDCCBFA1CCA98B9001EBDB9 /* 添加号码TA */,
 				CE7F663B1BEC80A8006EA7E9 /* 接收处理队列 */,
 				CEE614771BEA32C1004873AA /* 匹配设备码 */,
 				CE3BC7851BE863F10002CBA4 /* RequestBaseModel.h */,
@@ -488,6 +492,15 @@
 			name = "匹配授权";
 			sourceTree = "<group>";
 		};
+		CEDCCBFA1CCA98B9001EBDB9 /* 添加号码TA */ = {
+			isa = PBXGroup;
+			children = (
+				CEDCCBFB1CCA9A46001EBDB9 /* YCLCarEventAddPhoneModel.h */,
+				CEDCCBFC1CCA9A46001EBDB9 /* YCLCarEventAddPhoneModel.m */,
+			);
+			name = "添加号码TA";
+			sourceTree = "<group>";
+		};
 		CEE42FB61C0617F10021AB59 /* 添加/减少手机号 */ = {
 			isa = PBXGroup;
 			children = (
@@ -633,6 +646,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE79716E1BF1BE9B00358D57 /* YCLCarEventBaseModel.m in Sources */,
+				CEDCCBFD1CCA9A46001EBDB9 /* YCLCarEventAddPhoneModel.m in Sources */,
 				CEB70A711BFB981C00FC3163 /* MatchPhoneViewController.m in Sources */,
 				CECA3E0B1C0CBF940093B14A /* YCLCarEvenMatchAuthKeyModel.m in Sources */,
 				CE79716A1BF1B90500358D57 /* YCLCarEventLockModel.m in Sources */,
@@ -779,7 +793,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Orange-W.YCLCar";
 				PRODUCT_NAME = YCLCar;
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -799,7 +813,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Orange-W.YCLCar";
 				PRODUCT_NAME = YCLCar;
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

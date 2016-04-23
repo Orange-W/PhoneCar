@@ -12,6 +12,8 @@
 
 @implementation YCLMatchPhoneModel
 - (NSString *) infoStringFromCodeString:(NSString *)codeString andConfigArray:(NSArray *)configArray{
+    [[NSUserDefaults standardUserDefaults] setObject:codeString forKey:kApplicationUserDefaultPhoneString];
+    
     NSString *matchPhone = [[NSUserDefaults standardUserDefaults] stringForKey:kApplicationUserDefaultKeyLocalPhone];
     
     NSRange range = [codeString rangeOfString:matchPhone];

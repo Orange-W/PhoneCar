@@ -27,7 +27,7 @@
     }
     
     _scrollowView.delegate = self;
-    _scrollowView.contentSize = (CGSize){kSizeMainScreenWdth*2,[_scrollowView frame].size.height};
+    _scrollowView.contentSize = (CGSize){kSizeMainScreenWdth*2,0};
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0,kSizeMainScreenWdth,_scrollowView.frame.size.height)];
     imageView.image = [UIImage imageNamed:@"slider.png"];
     UIImageView *imageView2 = [[UIImageView alloc] initWithFrame:CGRectMake(kSizeMainScreenWdth, 0,kSizeMainScreenWdth,_scrollowView.frame.size.height)];

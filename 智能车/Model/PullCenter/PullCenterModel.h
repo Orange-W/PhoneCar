@@ -15,6 +15,7 @@
 #import "YCLCarEventFindCarOutsideModel.h"
 #import "YCLCarEventFindCarSilenceModel.h"
 #import "YCLCarEvenMatchAuthKeyModel.h"
+#import "YCLCarEventAddPhoneModel.h"
 #import "CoverView.h"
 #import "PullCenterModel+PullRunLoop.h"
 
@@ -53,7 +54,9 @@ typedef NS_ENUM(NSInteger,YCLPullEvent){
 @property (strong, nonatomic) YCLCarEventFindCarOutsideModel *carOutsideModel;
 @property (strong, nonatomic) YCLCarEventFindCarSilenceModel *carSilenceModel;
 @property (strong, nonatomic) YCLCarEvenMatchAuthKeyModel *authKeyModel;
+@property (strong, nonatomic) YCLCarEventAddPhoneModel *addPhoneModel;
 
+@property (copy, atomic) void (^completeBlock)(BOOL isSuccess);
 @property (copy, atomic)NSString *pullPhone;
 @property (strong, atomic)NSDate* earilyPullTime;
 @property (strong, nonatomic) NSDate *pullInitTime;     //当前请求节点
