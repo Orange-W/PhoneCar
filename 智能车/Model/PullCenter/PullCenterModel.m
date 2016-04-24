@@ -82,6 +82,13 @@ static PullCenterModel *sharedInstance = nil;
     return _addPhoneModel;
 }
 
+- (YCLCarEventDeletePhoneModel *)deletePhoneModel{
+    if (!_deletePhoneModel) {
+        _deletePhoneModel = [[YCLCarEventDeletePhoneModel alloc] init];
+    }
+    return _deletePhoneModel;
+}
+
 - (UIWindow *)detailWindow
 {
     if (!_detailWindow) {

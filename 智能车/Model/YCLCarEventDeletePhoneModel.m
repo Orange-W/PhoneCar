@@ -1,28 +1,25 @@
 //
-//  YCLCarEventAddPhone.m
+//  YCLCarEventDeletePhone.m
 //  YCLCar
 //
-//  Created by user on 16/4/23.
+//  Created by user on 16/4/24.
 //  Copyright © 2016年 Orange-W. All rights reserved.
 //
 
-#import "YCLCarEventAddPhoneModel.h"
-#import "PullCenterModel.h"
-#import "PhoneChangeViewController.h"
-
-@interface YCLCarEventAddPhoneModel()
-@property (copy, nonatomic) NSString *addPhone;
+#import "YCLCarEventDeletePhoneModel.h"
+@interface YCLCarEventDeletePhoneModel()
+@property (copy, nonatomic) NSString *deletePhone;
 @end
 
-@implementation YCLCarEventAddPhoneModel
-static const NSString *staticSendPrefix = @"TA";
+@implementation YCLCarEventDeletePhoneModel
+static const NSString *staticSendPrefix = @"TD";
 
 - (NSString *)sendPrefix{
     return [staticSendPrefix copy];
 }
 
 - (void)sendMessageWithAuthCode:(NSString *)phone{
-    self.addPhone = phone;
+    self.deletePhone = phone;
     //[self sendMessage];
 }
 
@@ -33,14 +30,15 @@ static const NSString *staticSendPrefix = @"TA";
     [phoneArray removeObjectAtIndex:0];
     NSLog(@"%@",phoneArray);
     for (NSString *string in phoneArray) {
-        if ([string isEqualToString:_addPhone]) {
+        if ([string isEqualToString:_deletePhone]) {
             isHas=YES;
         }
     }
-    return isHas?@"成功":@"不成功";
+    
+    return isHas?@"不成功":@"成功";
 }
 
-- (NSString *)code{return [NSString stringWithFormat:@"%@%@",self.sendPrefix,self.addPhone];}
-- (NSString *)description{return @"添加号码";}
+- (NSString *)code{return [NSString stringWithFormat:@"%@%@",self.sendPrefix,self.deletePhone];}
+- (NSString *)description{return @"删除号码";}
 - (NSArray *)configArray{return nil;}
 @end

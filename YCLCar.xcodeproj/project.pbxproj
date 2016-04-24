@@ -33,6 +33,7 @@
 		CE79716E1BF1BE9B00358D57 /* YCLCarEventBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE79716D1BF1BE9B00358D57 /* YCLCarEventBaseModel.m */; };
 		CE7971731BF1CAF100358D57 /* YCLCarEventCloseAirModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7971721BF1CAF100358D57 /* YCLCarEventCloseAirModel.m */; };
 		CE7971761BF1CB0900358D57 /* YCLCarEventOpenAirModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7971751BF1CB0900358D57 /* YCLCarEventOpenAirModel.m */; };
+		CE7B908B1CCD20A000DBE8DC /* YCLCarEventDeletePhoneModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7B908A1CCD20A000DBE8DC /* YCLCarEventDeletePhoneModel.m */; };
 		CE7F663E1BEC8156006EA7E9 /* PullCenterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7F663D1BEC8156006EA7E9 /* PullCenterModel.m */; };
 		CEA24BFA1BF72B8A001BF0A5 /* YCLMatchPhoneModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA24BF91BF72B8A001BF0A5 /* YCLMatchPhoneModel.m */; };
 		CEB70A511BFB973E00FC3163 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB70A3F1BFB973E00FC3163 /* logo.png */; };
@@ -110,6 +111,8 @@
 		CE7971721BF1CAF100358D57 /* YCLCarEventCloseAirModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCLCarEventCloseAirModel.m; sourceTree = "<group>"; };
 		CE7971741BF1CB0900358D57 /* YCLCarEventOpenAirModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCLCarEventOpenAirModel.h; sourceTree = "<group>"; };
 		CE7971751BF1CB0900358D57 /* YCLCarEventOpenAirModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCLCarEventOpenAirModel.m; sourceTree = "<group>"; };
+		CE7B90891CCD20A000DBE8DC /* YCLCarEventDeletePhoneModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCLCarEventDeletePhoneModel.h; sourceTree = "<group>"; };
+		CE7B908A1CCD20A000DBE8DC /* YCLCarEventDeletePhoneModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCLCarEventDeletePhoneModel.m; sourceTree = "<group>"; };
 		CE7F663C1BEC8156006EA7E9 /* PullCenterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PullCenterModel.h; path = PullCenter/PullCenterModel.h; sourceTree = "<group>"; };
 		CE7F663D1BEC8156006EA7E9 /* PullCenterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PullCenterModel.m; path = PullCenter/PullCenterModel.m; sourceTree = "<group>"; };
 		CEA24BF81BF72B8A001BF0A5 /* YCLMatchPhoneModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YCLMatchPhoneModel.h; path = MatchPhoneModel/YCLMatchPhoneModel.h; sourceTree = "<group>"; };
@@ -324,6 +327,7 @@
 				CE7971671BF1B84A00358D57 /* 关锁6 */,
 				CE1165B51BEF412E008C2FC6 /* 开锁9 */,
 				CEDCCBFA1CCA98B9001EBDB9 /* 添加号码TA */,
+				CE7B90881CCD1F3700DBE8DC /* 减少号码TD */,
 				CE7F663B1BEC80A8006EA7E9 /* 接收处理队列 */,
 				CEE614771BEA32C1004873AA /* 匹配设备码 */,
 				CE3BC7851BE863F10002CBA4 /* RequestBaseModel.h */,
@@ -418,6 +422,15 @@
 				CE7971721BF1CAF100358D57 /* YCLCarEventCloseAirModel.m */,
 			);
 			name = "关空调0";
+			sourceTree = "<group>";
+		};
+		CE7B90881CCD1F3700DBE8DC /* 减少号码TD */ = {
+			isa = PBXGroup;
+			children = (
+				CE7B90891CCD20A000DBE8DC /* YCLCarEventDeletePhoneModel.h */,
+				CE7B908A1CCD20A000DBE8DC /* YCLCarEventDeletePhoneModel.m */,
+			);
+			name = "减少号码TD";
 			sourceTree = "<group>";
 		};
 		CE7F663B1BEC80A8006EA7E9 /* 接收处理队列 */ = {
@@ -666,6 +679,7 @@
 				CEE42FB91C0618470021AB59 /* PhoneChangeViewController.m in Sources */,
 				CE43340A1BE77DF1000C407D /* main.m in Sources */,
 				CE1165B81BEF41EE008C2FC6 /* YCLCarEventUnlockModel.m in Sources */,
+				CE7B908B1CCD20A000DBE8DC /* YCLCarEventDeletePhoneModel.m in Sources */,
 				CE4A99021C019F3400FD635F /* LoginViewController.m in Sources */,
 				CE7971731BF1CAF100358D57 /* YCLCarEventCloseAirModel.m in Sources */,
 				CE5FEC751C8AECC0001D170A /* YCLFunctionUserDefault.m in Sources */,

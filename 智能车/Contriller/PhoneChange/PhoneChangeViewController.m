@@ -61,7 +61,7 @@
     NSString *allPhoneString = [[NSUserDefaults standardUserDefaults] objectForKey:kApplicationUserDefaultPhoneString];
     _phoneArray = [[NSMutableArray alloc] initWithArray:[allPhoneString componentsSeparatedByString:@"#"]];
     [_phoneArray removeObjectAtIndex:0];
-    
+    [_phoneList reloadData];
     //self.phoneArray = @[@"18883867540",@"11111111111"];
 }
 
@@ -81,10 +81,13 @@
     PullCenterModel *pullCenter = [PullCenterModel sharePullCenter];
     __weak PhoneChangeViewController *weakSelf = self;
     [pullCenter setCompleteBlock:^(BOOL isSuccess){
-        if ((BOOL)isSuccess == YES) {
-            [weakSelf.phoneArray addObject:addPhone];
-            [_phoneList reloadData];
-        }
+            NSString *allPhoneString = [[NSUserDefaults standardUserDefaults] objectForKey:kApplicationUserDefaultPhoneString];
+        
+            NSMutableArray *phoneArray = [[NSMutableArray alloc] initWithArray:[allPhoneString componentsSeparatedByString:@"#"]];
+            [phoneArray removeObjectAtIndex:0];
+            weakSelf.phoneArray = [phoneArray mutableCopy];
+            [weakSelf.phoneList reloadData];
+
     }];
     [pullCenter addPullEvent:YCLCarEventAddPhone forView:self.view userInfo:@[addPhone]];
     
@@ -144,9 +147,22 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [_phoneArray removeObjectAtIndex:indexPath.row];
+  
         // Delete the row from the data source.
-        [self.phoneList deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        PullCenterModel *pullCenter = [PullCenterModel sharePullCenter];
+        NSString *deletePhone = [_phoneList cellForRowAtIndexPath:indexPath].textLabel.text;
+        
+        [pullCenter addPullEvent:YCLCarEventDeletePhone forView:self.view userInfo:@[deletePhone]];
+        __weak PhoneChangeViewController *weakSelf = self;
+        
+        [pullCenter setCompleteBlock:^(BOOL isSuccess){
+            NSString *allPhoneString = [[NSUserDefaults standardUserDefaults] objectForKey:kApplicationUserDefaultPhoneString];
+            
+            NSMutableArray *phoneArray = [[NSMutableArray alloc] initWithArray:[allPhoneString componentsSeparatedByString:@"#"]];
+            [phoneArray removeObjectAtIndex:0];
+            weakSelf.phoneArray = [phoneArray mutableCopy];
+            [weakSelf.phoneList reloadData];
+        }];
         
     }
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
